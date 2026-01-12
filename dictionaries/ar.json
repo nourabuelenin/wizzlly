@@ -1,0 +1,14 @@
+{
+  "common": {
+    "welcome": "مرحباً",
+    "getStarted": "ابدأ بتحرير",
+    "docs": "التوثيق",
+    "docsDescription": "اعثر على معلومات متعمقة حول ميزات Next.js وواجهة برمجة التطبيقات.",
+    "learn": "تعلم",
+    "learnDescription": "تعلم عن Next.js في دورة تفاعلية مع اختبارات!",
+    "templates": "القوالب",
+    "templatesDescription": "استكشف قوالب البداية لـ Next.js.",
+    "deploy": "انشر",
+    "deployDescription": "انشر موقع Next.js الخاص بك على الفور إلى عنوان URL قابل للمشاركة مع Vercel."
+  }
+}

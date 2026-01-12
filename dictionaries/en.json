@@ -1,0 +1,14 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "getStarted": "Get started by editing",
+    "docs": "Docs",
+    "docsDescription": "Find in-depth information about Next.js features and API.",
+    "learn": "Learn",
+    "learnDescription": "Learn about Next.js in an interactive course with quizzes!",
+    "templates": "Templates",
+    "templatesDescription": "Explore starter templates for Next.js.",
+    "deploy": "Deploy",
+    "deployDescription": "Instantly deploy your Next.js site to a shareable URL with Vercel."
+  }
+}
