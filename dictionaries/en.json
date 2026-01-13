@@ -10,5 +10,19 @@
     "templatesDescription": "Explore starter templates for Next.js.",
     "deploy": "Deploy",
     "deployDescription": "Instantly deploy your Next.js site to a shareable URL with Vercel."
+  },
+  "homepage": {
+    "hero": {
+      "title": "Crafting Future",
+      "titleHighlight": "Software Today!",
+      "subtitle": "Transforming Ideas Into Software Success Stories",
+      "cta": "Let's Connect"
+    }
+  },
+  "navbar": {
+    "whoWeAre": "Who We Are",
+    "whatWeDo": "What We Do",
+    "blog": "Blog",
+    "pages": "Pages"
   }
 }

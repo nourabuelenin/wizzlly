@@ -15,10 +15,10 @@ export default function Navbar({ lang, dict }: NavbarProps) {
 
         {/* Nav links */}
         <ul className="flex items-center gap-5 text-lg font-medium">
-          <li>Who We Are</li>
-          <li>What we do</li>
-          <li>Blog</li>
-          <li>Pages</li>
+          <li>{dict.navbar.whoWeAre}</li>
+          <li>{dict.navbar.whatWeDo}</li>
+          <li>{dict.navbar.blog}</li>
+          <li>{dict.navbar.pages}</li>
         </ul>
 
         {/* Language */}

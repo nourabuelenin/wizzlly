@@ -21,7 +21,7 @@ export default async function Home({
     <>
       <main className="bg-black space-y-20">
         <Navbar lang={lang as Locale} dict={dict} />
-        <HomepageHeroSection />
+        <HomepageHeroSection dict={dict} />
       </main>
     </>
   );

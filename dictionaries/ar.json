@@ -10,5 +10,19 @@
     "templatesDescription": "استكشف قوالب البداية لـ Next.js.",
     "deploy": "انشر",
     "deployDescription": "انشر موقع Next.js الخاص بك على الفور إلى عنوان URL قابل للمشاركة مع Vercel."
+  },
+  "homepage": {
+    "hero": {
+      "title": "صناعة مستقبل",
+      "titleHighlight": "البرمجيات اليوم!",
+      "subtitle": "تحويل الأفكار إلى قصص نجاح برمجية",
+      "cta": "لنتواصل"
+    }
+  },
+  "navbar": {
+    "whoWeAre": "من نحن",
+    "whatWeDo": "ماذا نفعل",
+    "blog": "المدونة",
+    "pages": "الصفحات"
   }
 }
