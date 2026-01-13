@@ -1,5 +1,8 @@
+import HomepageHeroSection from "@/components/HomepageHeroSection";
+import Navbar from "@/components/Navbar";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
+import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 export default async function Home({
@@ -15,11 +18,11 @@ export default async function Home({
   const dict = await getDictionary(lang as Locale);
 
   return (
-    <main className=" bg-black">
-      <section className="text-white p-10">
-        <h1>{dict.common.welcome}</h1>
-        <p>Your hero section content goes here.</p>
-      </section>
-    </main>
+    <>
+      <main className="bg-black space-y-20">
+        <Navbar lang={lang as Locale} dict={dict} />
+        <HomepageHeroSection />
+      </main>
+    </>
   );
 }

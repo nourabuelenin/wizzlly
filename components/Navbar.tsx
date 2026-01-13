@@ -15,7 +15,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
 
         {/* Nav links */}
         <ul className="flex items-center gap-5 text-lg font-medium">
-          <li>{dict.common.welcome}</li>
+          <li>Who We Are</li>
           <li>What we do</li>
           <li>Blog</li>
           <li>Pages</li>
