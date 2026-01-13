@@ -1,6 +1,7 @@
 import { getDictionary } from "@/dictionaries";
 import { type Locale } from "@/lib/i18n/config";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import Navbar from "@/components/Navbar";
 
 export default async function Home({
   params,
@@ -11,13 +12,8 @@ export default async function Home({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="p-20">
-      <header className="w-full flex mb-10">
-        <LanguageSwitcher currentLang={lang} />
-      </header>
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-4xl font-bold">{dict.common.welcome}</h1>
-      </main>
-    </div>
+    <main className="min-h-screen bg-black">
+      <Navbar params={params} />
+    </main>
   );
 }

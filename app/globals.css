@@ -3,11 +3,11 @@
 :root {
   /* Base */
   --background: #f7f6f7;
-  --foreground: #000000;
+  --foreground: #1e1e1e;
 
   /* Surfaces */
   --surface: #ffffff;
-  --surface-muted: #e3dfe8;
+  --surface-muted: #f3f3f5;
   --border: #e3dfe8;
 
   /* Brand */

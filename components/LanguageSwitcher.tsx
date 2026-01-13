@@ -2,37 +2,47 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { locales, localeNames, type Locale } from "@/lib/i18n/config";
+import { Globe } from "lucide-react";
+import { type Locale } from "@/lib/i18n/config";
+
+const NEXT_LANG: Record<Locale, Locale> = {
+  en: "ar",
+  ar: "en",
+};
+
+const LANG_LABEL: Record<Locale, string> = {
+  en: "EN",
+  ar: "ع",
+};
 
 export function LanguageSwitcher({ currentLang }: { currentLang: Locale }) {
   const pathname = usePathname();
+  const nextLang = NEXT_LANG[currentLang];
 
-  const redirectedPathname = (locale: Locale) => {
+  const redirectedPathname = () => {
     if (!pathname) return "/";
     const segments = pathname.split("/");
-    segments[1] = locale;
+    segments[1] = nextLang;
     return segments.join("/");
   };
 
   return (
-    <div className="flex gap-4 items-center">
-      {locales.map((locale) => {
-        const isActive = currentLang === locale;
-        return (
-          <Link
-            key={locale}
-            href={redirectedPathname(locale)}
-            className={`px-3  py-1 rounded-md text-sm transition-colors ${
-              isActive
-                ? "bg-foreground text-background font-semibold"
-                : "bg-black/[.05] dark:bg-white/[.06] hover:bg-black/[.1] dark:hover:bg-white/[.1]"
-            }`}
-            aria-current={isActive ? "page" : undefined}
-          >
-            {localeNames[locale]}
-          </Link>
-        );
-      })}
-    </div>
+    <li>
+      <Link
+        href={redirectedPathname()}
+        className="
+          flex items-center gap-2
+          px-3 py-1.5 rounded-full
+           font-medium
+          text-surface-muted
+          hover:bg-background/5
+          transition-colors text-base
+        "
+        aria-label={`Switch language to ${nextLang}`}
+      >
+        <Globe className="h-4 w-4" />
+        <span>{LANG_LABEL[nextLang]}</span>
+      </Link>
+    </li>
   );
 }
