@@ -1,12 +1,12 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
 import Navbar from "@/components/Navbar";
-import WhatWeDo from "@/components/HomepageWhatWeDoSection";
-import WorkStats from "@/components/HomepageWorkStatsSection";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
-import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
+import HomepageWorkStats from "@/components/HomepageWorkStatsSection";
 import HomepageHowWeWork from "@/components/HomepageHowWeWork";
+import HomepageWhyChooseUs from "@/components/HomepageWhyChooseUs";
+import HomepageWhatWeDo from "@/components/HomepageWhatWeDoSection";
 
 export default async function Home({
   params,
@@ -25,9 +25,10 @@ export default async function Home({
       <main>
         <Navbar lang={lang as Locale} dict={dict} />
         <HomepageHeroSection dict={dict} />
-        <WorkStats />
-        <WhatWeDo />
+        <HomepageWorkStats />
+        <HomepageWhatWeDo />
         <HomepageHowWeWork />
+        <HomepageWhyChooseUs />
       </main>
     </>
   );

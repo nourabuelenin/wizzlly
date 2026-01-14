@@ -37,9 +37,9 @@ const PROJECTS_CONFIG = {
 };
 
 // Main Component
-export default function WorkStats() {
+export default function HomepageWorkStats() {
   return (
-    <section className="bg-surface-muted -mt-5 py-20 rounded-t-2xl">
+    <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
       <div className="grid grid-cols-[auto_1fr] gap-2 container mx-auto px-10">
         {/* Left Side - Image */}
         <div>
