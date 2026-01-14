@@ -8,7 +8,7 @@ type NavbarProps = {
 
 export default function Navbar({ lang, dict }: NavbarProps) {
   return (
-    <nav className="sticky top-10 mx-auto max-w-4xl rounded-full bg-foreground backdrop-blur-md">
+    <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4 rounded-full bg-foreground backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-4 text-surface-muted">
         {/* Logo */}
         <div className="font-semibold text-background text-3xl">W</div>

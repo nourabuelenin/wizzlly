@@ -1,5 +1,6 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
 import Navbar from "@/components/Navbar";
+import WorkStats from "@/components/WorkStats";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
 import { ArrowRight } from "lucide-react";
@@ -19,9 +20,10 @@ export default async function Home({
 
   return (
     <>
-      <main className="bg-black space-y-20">
+      <main>
         <Navbar lang={lang as Locale} dict={dict} />
         <HomepageHeroSection dict={dict} />
+        <WorkStats />
       </main>
     </>
   );
