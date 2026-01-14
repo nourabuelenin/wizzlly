@@ -1,7 +1,7 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
 import Navbar from "@/components/Navbar";
-import WhatWeDo from "@/components/WhatWeDo";
-import WorkStats from "@/components/WorkStats";
+import WhatWeDo from "@/components/HomepageWhatWeDoSection";
+import WorkStats from "@/components/HomepageWorkStatsSection";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
 import { ArrowRight } from "lucide-react";
