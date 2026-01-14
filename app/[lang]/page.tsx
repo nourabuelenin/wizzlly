@@ -6,6 +6,7 @@ import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
 import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
+import HomepageHowWeWork from "@/components/HomepageHowWeWork";
 
 export default async function Home({
   params,
@@ -26,6 +27,7 @@ export default async function Home({
         <HomepageHeroSection dict={dict} />
         <WorkStats />
         <WhatWeDo />
+        <HomepageHowWeWork />
       </main>
     </>
   );
