@@ -1,7 +1,7 @@
 import { ServiceCardProps } from "@/models/Workstats";
 import { IconCard } from "./IconCard";
 
-export const ServiceCard = ({
+export const WorkStatsServiceCard = ({
   title,
   description,
   icons,

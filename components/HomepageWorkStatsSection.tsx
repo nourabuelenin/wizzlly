@@ -1,10 +1,9 @@
 import Image from "next/image";
 import DevelopImage from "@/public/images/workstats.png";
 import { Clock10, Code2, Globe, PhoneCall, Cloud } from "lucide-react";
-import { ServiceCardProps, StatCardProps } from "@/models/Workstats";
-import { StatCard } from "./WorkStats/StatCard";
-import { ServiceCard } from "./WorkStats/ServiceCard";
-import { ProjectsCard } from "./WorkStats/ProjectsCard";
+import { StatCard } from "./StatCard";
+import { WorkStatsServiceCard } from "./WorkStatsServiceCard";
+import { ProjectsCard } from "./ProjectsCard";
 
 // Configuration
 const STATS_CONFIG = {
@@ -56,7 +55,7 @@ export default function WorkStats() {
         <div className="flex flex-col gap-4">
           {/* Top Row */}
           <div className="grid grid-cols-2 gap-4">
-            <ServiceCard {...SERVICE_CONFIG} />
+            <WorkStatsServiceCard {...SERVICE_CONFIG} />
             <ProjectsCard {...PROJECTS_CONFIG} />
           </div>
 

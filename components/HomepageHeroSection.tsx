@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroImg from "@/public/images/hero-image.png";
 import Button from "./Button";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HomepageHeroSection({ dict }: any) {
   return (
     <section className="bg-black text-white pt-32 pb-20">

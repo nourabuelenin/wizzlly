@@ -1,5 +1,5 @@
 import { ServiceCardProps } from "@/models/WhatWeDo";
-import { ServiceCard } from "./ServiceCard";
+import { ServiceCard } from "./WhatWeDoServiceCard";
 
 export const ServicesGrid = ({
   services,
