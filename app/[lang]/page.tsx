@@ -1,5 +1,6 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
 import Navbar from "@/components/Navbar";
+import WhatWeDo from "@/components/WhatWeDo";
 import WorkStats from "@/components/WorkStats";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
@@ -24,6 +25,7 @@ export default async function Home({
         <Navbar lang={lang as Locale} dict={dict} />
         <HomepageHeroSection dict={dict} />
         <WorkStats />
+        <WhatWeDo />
       </main>
     </>
   );
