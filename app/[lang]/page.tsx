@@ -8,6 +8,8 @@ import HomepageWhyChooseUs from "@/components/HomepageWhyChooseUs";
 import HomepageWhatWeDo from "@/components/HomepageWhatWeDoSection";
 import HomepageCTASection from "@/components/HomepageCTASection";
 import HomepageCaseStudies from "@/components/HomepageCaseStudies";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default async function Home({
   params,
@@ -23,6 +25,7 @@ export default async function Home({
 
   return (
     <>
+      <Navbar lang={lang as Locale} dict={dict} />
       <main>
         <HomepageHeroSection dict={dict} />
         <HomepageWorkStats dict={dict} />
@@ -31,6 +34,7 @@ export default async function Home({
         <HomepageWhyChooseUs dict={dict} />
         <HomepageCaseStudies dict={dict} />
         <HomepageCTASection dict={dict} lang={lang} />
+        <Footer dict={dict} />
       </main>
     </>
   );

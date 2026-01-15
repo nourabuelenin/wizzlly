@@ -5,9 +5,6 @@ import "../globals.css";
 import localFont from "next/font/local";
 import { Alexandria } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
-import Navbar from "@/components/Navbar";
-import React from "react";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Wizlly",
@@ -144,9 +141,7 @@ export default async function RootLayout({
           isArabic ? alexandria.className : roundsNeue.className
         } antialiased `}
       >
-        <Navbar lang={lang as Locale} dict={dict} />
         {children}
-        <Footer dict={dict} />
       </body>
     </html>
   );
