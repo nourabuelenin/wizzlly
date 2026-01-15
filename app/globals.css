@@ -11,7 +11,8 @@
   --border: #e3dfe8;
 
   /* Brand */
-  --primary: #723ff4;
+  --primary: #8256f0;
+  --primary-secondary: #3356ea;
   --secondary: #0062a5;
   --accent: #098ed1;
 }
@@ -25,6 +26,7 @@
   --color-border: var(--border);
 
   --color-primary: var(--primary);
+  --color-primary-secondary: var(--primary-secondary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
 
