@@ -26,15 +26,13 @@ export default async function Home({
   return (
     <>
       <main>
-        <Navbar lang={lang as Locale} dict={dict} />
         <HomepageHeroSection dict={dict} />
-        <HomepageWorkStats />
+        <HomepageWorkStats dict={dict} />
         <HomepageWhatWeDo />
         <HomepageHowWeWork />
         <HomepageWhyChooseUs />
         <HomepageCaseStudies />
         <HomepageCTASection />
-        <Footer />
       </main>
     </>
   );

@@ -5,39 +5,37 @@ import { StatCard } from "./StatCard";
 import { WorkStatsServiceCard } from "./WorkStatsServiceCard";
 import { ProjectsCard } from "./ProjectsCard";
 
-// Configuration
-const STATS_CONFIG = {
-  experience: {
-    icon: Clock10,
-    value: "15+",
-    label: "Years of Experience",
-  },
-  codingHours: {
-    icon: Code2,
-    value: "1M+",
-    label: "Coding Hours",
-  },
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HomepageWorkStats({ dict }: any) {
+  // Configuration
+  const STATS_CONFIG = {
+    experience: {
+      icon: Clock10,
+      value: "15+",
+      label: dict.homepage.workStats.experience,
+    },
+    codingHours: {
+      icon: Code2,
+      value: "1M+",
+      label: dict.homepage.workStats.codingHours,
+    },
+  };
 
-const SERVICE_CONFIG = {
-  title: "Web",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nisi laboriosam esse quibusdam quas porro explicabo error doloribus perspiciatis animi.",
-  icons: [
-    { icon: Globe, variant: "primary" as const },
-    { icon: PhoneCall, variant: "secondary" as const },
-    { icon: Cloud, variant: "secondary" as const },
-  ],
-};
+  const SERVICE_CONFIG = {
+    title: dict.homepage.workStats.serviceTitle,
+    description: dict.homepage.workStats.serviceDescription,
+    icons: [
+      { icon: Globe, variant: "primary" as const },
+      { icon: PhoneCall, variant: "secondary" as const },
+      { icon: Cloud, variant: "secondary" as const },
+    ],
+  };
 
-const PROJECTS_CONFIG = {
-  count: "500+",
-  label: "Projects",
-  status: "Delivered",
-};
-
-// Main Component
-export default function HomepageWorkStats() {
+  const PROJECTS_CONFIG = {
+    count: "500+",
+    label: dict.homepage.workStats.projectsLabel,
+    status: dict.homepage.workStats.projectsStatus,
+  };
   return (
     <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
       <div className="grid grid-cols-[auto_1fr] gap-2 container mx-auto px-10">

@@ -17,6 +17,14 @@
       "titleHighlight": "Software Today!",
       "subtitle": "Transforming Ideas Into Software Success Stories",
       "cta": "Let's Connect"
+    },
+    "workStats": {
+      "experience": "Years of Experience",
+      "codingHours": "Coding Hours",
+      "serviceTitle": "Web",
+      "serviceDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nisi laboriosam esse quibusdam quas porro explicabo error doloribus perspiciatis animi.",
+      "projectsLabel": "Projects",
+      "projectsStatus": "Delivered"
     }
   },
   "navbar": {
