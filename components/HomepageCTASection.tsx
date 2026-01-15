@@ -1,27 +1,27 @@
 import Button from "./Button";
 import Globe from "./lightswind/globe";
+import { Locale } from "@/lib/i18n/config";
 
-const SECTION_CONFIG = {
-  headline: "Connect with us",
-  description:
-    "Having helped many clients globally with MVP development, prototyping, and full-cycle application development to go to market quickly, efficiently and cost effectively, We would like to do the same for you.",
-  buttonText: "Let's Connect",
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HomepageCTASection({ dict, lang }: any) {
+  const isArabic = lang === "ar";
 
-export default function HomepageCTASection() {
   return (
     <section className="bg-background py-36 relative overflow-hidden">
-      <div className="container mx-auto px-10 flex">
+      <div
+        className={`container mx-auto px-10 flex ${
+          isArabic ? "flex-row-reverse" : ""
+        }`}
+      >
         <div className="max-w-xl space-y-6">
           <h2 className="text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
-            {SECTION_CONFIG.headline}
+            {dict.homepage.cta.headline}
           </h2>
           <p className="text-black font-medium text-xl leading-relaxed">
-            {SECTION_CONFIG.description}
+            {dict.homepage.cta.description}
           </p>
-          {/* <Button text={SECTION_CONFIG.buttonText} ShowArrow={true} /> */}
           <Button
-            text={SECTION_CONFIG.buttonText}
+            text={dict.homepage.cta.buttonText}
             ShowArrow={true}
             variant="secondary"
           />

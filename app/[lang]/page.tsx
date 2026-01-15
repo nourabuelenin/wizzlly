@@ -1,5 +1,4 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
-import Navbar from "@/components/Navbar";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
 import { notFound } from "next/navigation";
@@ -8,7 +7,6 @@ import HomepageHowWeWork from "@/components/HomepageHowWeWork";
 import HomepageWhyChooseUs from "@/components/HomepageWhyChooseUs";
 import HomepageWhatWeDo from "@/components/HomepageWhatWeDoSection";
 import HomepageCTASection from "@/components/HomepageCTASection";
-import Footer from "@/components/Footer";
 import HomepageCaseStudies from "@/components/HomepageCaseStudies";
 
 export default async function Home({
@@ -28,11 +26,11 @@ export default async function Home({
       <main>
         <HomepageHeroSection dict={dict} />
         <HomepageWorkStats dict={dict} />
-        <HomepageWhatWeDo />
-        <HomepageHowWeWork />
-        <HomepageWhyChooseUs />
-        <HomepageCaseStudies />
-        <HomepageCTASection />
+        <HomepageWhatWeDo dict={dict} />
+        <HomepageHowWeWork dict={dict} />
+        <HomepageWhyChooseUs dict={dict} />
+        <HomepageCaseStudies dict={dict} />
+        <HomepageCTASection dict={dict} lang={lang} />
       </main>
     </>
   );

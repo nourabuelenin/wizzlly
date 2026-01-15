@@ -25,7 +25,139 @@
       "serviceDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nisi laboriosam esse quibusdam quas porro explicabo error doloribus perspiciatis animi.",
       "projectsLabel": "Projects",
       "projectsStatus": "Delivered"
+    },
+    "whatWeDo": {
+      "badge": "What We Do",
+      "headline1": "With Wizlly, You Perform Better.",
+      "headline2": "Always! It is our guarantee.",
+      "talentAugmentation": "Talent Augmentation",
+      "talentAugmentationDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi velit ipsum, voluptatem beatae delectus doloremque quis unde voluptatibus ea",
+      "productEngineering": "Product Engineering",
+      "productEngineeringDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi velit ipsum, voluptatem beatae delectus doloremque quis unde voluptatibus ea",
+      "startupService": "Startup Service",
+      "startupServiceDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi velit ipsum, voluptatem beatae delectus doloremque quis unde voluptatibus ea",
+      "technologyConsulting": "Technology Consulting",
+      "technologyConsultingDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit animi velit ipsum, voluptatem beatae delectus doloremque quis unde voluptatibus ea"
+    },
+    "howWeWork": {
+      "badge": "How We Work",
+      "headline": "Our Agile Process",
+      "description": "We have our unique ways of building your ideas efficiently and quickly.",
+      "steps": [
+        "Planning",
+        "Design",
+        "Development",
+        "Testing",
+        "Deployment",
+        "Maintenance"
+      ]
+    },
+    "whyChooseUs": {
+      "badge": "Why Choose Us",
+      "headline1": "Glowing Testimonials",
+      "headline2": "That Speak Volumes",
+      "testimonials": [
+        {
+          "title": "Outstanding Service",
+          "text": "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
+          "name": "James Carter",
+          "role": "Product Manager",
+          "company": "TechNova",
+          "flag": "/flags/us.svg"
+        },
+        {
+          "title": "Outstanding Service",
+          "text": "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
+          "name": "James Carter",
+          "role": "Product Manager",
+          "company": "TechNova",
+          "flag": "/flags/us.svg"
+        },
+        {
+          "title": "Outstanding Service",
+          "text": "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
+          "name": "James Carter",
+          "role": "Product Manager",
+          "company": "TechNova",
+          "flag": "/flags/us.svg"
+        },
+        {
+          "title": "Outstanding Service",
+          "text": "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
+          "name": "James Carter",
+          "role": "Product Manager",
+          "company": "TechNova",
+          "flag": "/flags/us.svg"
+        },
+        {
+          "title": "Highly Recommended",
+          "text": "Clear communication, great execution, and impressive attention to detail throughout the project.",
+          "name": "Amira Hassan",
+          "role": "Marketing Lead",
+          "company": "Brandify",
+          "flag": "/flags/eg.svg"
+        },
+        {
+          "title": "Reliable & Professional",
+          "text": "We saw immediate results after launch. Truly a team you can trust long-term.",
+          "name": "Lucas Müller",
+          "role": "CTO",
+          "company": "CloudEdge",
+          "flag": "/flags/de.svg"
+        }
+      ]
+    },
+    "caseStudies": {
+      "buttonText": "View Case Studies"
+    },
+    "cta": {
+      "headline": "Connect with us",
+      "description": "Having helped many clients globally with MVP development, prototyping, and full-cycle application development to go to market quickly, efficiently and cost effectively, We would like to do the same for you.",
+      "buttonText": "Let's Connect"
     }
+  },
+  "footer": {
+    "description": "Join 31,000+ other and never miss out on new tips, tutorials, and more.",
+    "logo": "W",
+    "sections": [
+      {
+        "title": "About",
+        "links": [
+          { "label": "Company", "href": "#" },
+          { "label": "Community", "href": "#" },
+          { "label": "Careers", "href": "#" }
+        ]
+      },
+      {
+        "title": "Blog",
+        "links": [
+          { "label": "Tech", "href": "#" },
+          { "label": "Music", "href": "#" },
+          { "label": "Videos", "href": "#" }
+        ]
+      },
+      {
+        "title": "Products",
+        "links": [
+          { "label": "Mega cloud", "href": "#" },
+          { "label": "Aperion UI", "href": "#" },
+          { "label": "Meraki UI", "href": "#" }
+        ]
+      },
+      {
+        "title": "Contact",
+        "items": [
+          { "label": "+1 526 654 8965", "type": "text" },
+          { "label": "example@email.com", "type": "text" }
+        ]
+      }
+    ],
+    "bottomLinks": [
+      { "label": "Terms of Service", "href": "#" },
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Cookies", "href": "#" }
+    ],
+    "copyright": "© Wizlly 2026 - All rights reserved"
   },
   "navbar": {
     "whoWeAre": "Who We Are",

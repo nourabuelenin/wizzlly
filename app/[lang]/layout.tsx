@@ -146,7 +146,7 @@ export default async function RootLayout({
       >
         <Navbar lang={lang as Locale} dict={dict} />
         {children}
-        <Footer />
+        <Footer dict={dict} />
       </body>
     </html>
   );

@@ -4,66 +4,20 @@ import { Headline } from "./Headline";
 import Image from "next/image";
 import SaudiFlag from "@/public/images/flag-saudi.svg";
 
-const SECTION_CONFIG = {
-  badge: {
-    icon: Star,
-    text: "Why Choose Us",
-  },
-  headline: ["Glowing Testimonials", "That Speak Volumes"],
-};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HomepageWhyChooseUs({ dict }: any) {
+  const SECTION_CONFIG = {
+    badge: {
+      icon: Star,
+      text: dict.homepage.whyChooseUs.badge,
+    },
+    headline: [
+      dict.homepage.whyChooseUs.headline1,
+      dict.homepage.whyChooseUs.headline2,
+    ],
+  };
 
-const TESTIMONIALS = [
-  {
-    title: "Outstanding Service",
-    text: "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
-    name: "James Carter",
-    role: "Product Manager",
-    company: "TechNova",
-    flag: "/flags/us.svg",
-  },
-  {
-    title: "Outstanding Service",
-    text: "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
-    name: "James Carter",
-    role: "Product Manager",
-    company: "TechNova",
-    flag: "/flags/us.svg",
-  },
-  {
-    title: "Outstanding Service",
-    text: "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
-    name: "James Carter",
-    role: "Product Manager",
-    company: "TechNova",
-    flag: "/flags/us.svg",
-  },
-  {
-    title: "Outstanding Service",
-    text: "The team delivered beyond expectations. Everything was smooth, fast, and professionally handled.",
-    name: "James Carter",
-    role: "Product Manager",
-    company: "TechNova",
-    flag: "/flags/us.svg",
-  },
-  {
-    title: "Highly Recommended",
-    text: "Clear communication, great execution, and impressive attention to detail throughout the project.",
-    name: "Amira Hassan",
-    role: "Marketing Lead",
-    company: "Brandify",
-    flag: "/flags/eg.svg",
-  },
-  {
-    title: "Reliable & Professional",
-    text: "We saw immediate results after launch. Truly a team you can trust long-term.",
-    name: "Lucas Müller",
-    role: "CTO",
-    company: "CloudEdge",
-    flag: "/flags/de.svg",
-  },
-];
-
-export default function HomepageWhyChooseUs() {
+  const TESTIMONIALS = dict.homepage.whyChooseUs.testimonials;
   return (
     <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
       <div className="container mx-auto px-10 space-y-12">
@@ -73,7 +27,7 @@ export default function HomepageWhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((item, index) => (
+          {TESTIMONIALS.map((item: any, index: any) => (
             <div
               key={item.name + index}
               className="bg-white rounded-2xl p-6 shadow-sm flex flex-col"

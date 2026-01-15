@@ -2,7 +2,8 @@ import CaseStudyImage from "@/public/images/case-studies.jpg";
 import MockLogoImage from "@/public/images/mock-logo.png";
 import Image from "next/image";
 
-export default function HomepageCaseStudies() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function HomepageCaseStudies({ dict }: any) {
   return (
     <section className="relative">
       <div className="bg-primary p-10">
@@ -28,7 +29,7 @@ export default function HomepageCaseStudies() {
         {/* Button in center */}
         <div className="absolute inset-0 flex items-center justify-center">
           <button className="bg-white text-black px-14 py-4 rounded-full font-medium text-lg hover:bg-gray-100 transition-colors">
-            View Case Studies
+            {dict.homepage.caseStudies.buttonText}
           </button>
         </div>
       </div>
