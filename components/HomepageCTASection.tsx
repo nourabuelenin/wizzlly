@@ -10,7 +10,7 @@ const SECTION_CONFIG = {
 
 export default function HomepageCTASection() {
   return (
-    <section className="bg-background py-20 relative overflow-hidden">
+    <section className="bg-background py-36 relative overflow-hidden">
       <div className="container mx-auto px-10 flex">
         <div className="max-w-xl space-y-6">
           <h2 className="text-4xl lg:text-5xl font-semibold text-foreground leading-tight">

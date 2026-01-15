@@ -9,6 +9,7 @@ import HomepageWhyChooseUs from "@/components/HomepageWhyChooseUs";
 import HomepageWhatWeDo from "@/components/HomepageWhatWeDoSection";
 import HomepageCTASection from "@/components/HomepageCTASection";
 import Footer from "@/components/Footer";
+import HomepageCaseStudies from "@/components/HomepageCaseStudies";
 
 export default async function Home({
   params,
@@ -31,6 +32,7 @@ export default async function Home({
         <HomepageWhatWeDo />
         <HomepageHowWeWork />
         <HomepageWhyChooseUs />
+        <HomepageCaseStudies />
         <HomepageCTASection />
         <Footer />
       </main>
