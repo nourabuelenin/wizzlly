@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import Button from "./Button";
+import Globe from "./lightswind/globe";
 
 const SECTION_CONFIG = {
   headline: "Connect with us",
@@ -10,8 +10,8 @@ const SECTION_CONFIG = {
 
 export default function HomepageCTASection() {
   return (
-    <section className="bg-background py-20">
-      <div className="container mx-auto px-10">
+    <section className="bg-background py-20 relative overflow-hidden">
+      <div className="container mx-auto px-10 flex">
         <div className="max-w-xl space-y-6">
           <h2 className="text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
             {SECTION_CONFIG.headline}
@@ -26,6 +26,7 @@ export default function HomepageCTASection() {
             variant="secondary"
           />
         </div>
+        <Globe markerColor="#7a49f5" />
       </div>
     </section>
   );
