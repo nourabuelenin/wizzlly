@@ -1,5 +1,6 @@
 import { type Locale } from "@/lib/i18n/config";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LocaleLink } from "./LocaleLink";
 
 type NavbarProps = {
   lang: Locale;
@@ -22,7 +23,10 @@ export default function Navbar({ lang, dict }: NavbarProps) {
         </ul>
 
         {/* Language */}
-        <ul>
+        <ul className="flex items-center gap-5">
+          <LocaleLink href="/auth" className="text-lg font-medium">
+            Auth
+          </LocaleLink>
           <LanguageSwitcher currentLang={lang} />
         </ul>
       </div>
