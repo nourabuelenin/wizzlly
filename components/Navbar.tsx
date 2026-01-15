@@ -24,10 +24,12 @@ export default function Navbar({ lang, dict }: NavbarProps) {
 
         {/* Language */}
         <ul className="flex items-center gap-5">
-          <LocaleLink href="/auth" className="text-lg font-medium">
-            Auth
-          </LocaleLink>
           <LanguageSwitcher currentLang={lang} />
+          <div className="bg-white text-black p-3 rounded-full">
+            <LocaleLink href="/auth" className="text-lg font-medium">
+              Get Started
+            </LocaleLink>
+          </div>
         </ul>
       </div>
     </nav>
