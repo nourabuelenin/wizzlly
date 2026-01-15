@@ -73,9 +73,9 @@ export default function HomepageWhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((item) => (
+          {TESTIMONIALS.map((item, index) => (
             <div
-              key={item.name}
+              key={item.name + index}
               className="bg-white rounded-2xl p-6 shadow-sm flex flex-col"
             >
               {/* Top Content */}
