@@ -1,13 +1,18 @@
+import Sidebar from "@/components/Sidebar";
 import ChatHeader from "@/components/ChatHeader";
 import ChatInterface from "@/components/ChatInterface";
-import Sidebar from "@/components/Sidebar";
 
 export default function Chat() {
   return (
-    <section>
+    <div className="flex h-screen overflow-hidden">
+      {/* Sidebar */}
       <Sidebar />
-      <ChatHeader />
-      <ChatInterface />
-    </section>
+
+      {/* Main Area */}
+      <div className="flex flex-col flex-1">
+        <ChatHeader />
+        <ChatInterface />
+      </div>
+    </div>
   );
 }
