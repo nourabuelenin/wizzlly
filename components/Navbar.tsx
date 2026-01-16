@@ -13,7 +13,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
     <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4 rounded-full bg-foreground backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-4 text-surface-muted">
         {/* Logo */}
-        <Logo className="text-white" />
+        <Logo className="w-16! h-16!" lightMode={true} />
 
         {/* Nav links */}
         <ul className="flex items-center gap-5 text-lg font-medium">

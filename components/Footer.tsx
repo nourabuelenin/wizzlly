@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SOCIAL_LINKS = [
   {
@@ -53,9 +55,7 @@ function Footer({ dict }: any) {
           <div className="w-full -mx-6 lg:w-2/5">
             <div className="px-6">
               <p className="max-w-sm mt-2">{FOOTER_DATA.description}</p>
-              <div className="font-semibold text-background text-3xl">
-                {FOOTER_DATA.logo}
-              </div>
+              <Logo lightMode={true} className="mt-2" />
 
               <div className="flex mt-6 -mx-2">
                 {SOCIAL_LINKS.map((social) => (
