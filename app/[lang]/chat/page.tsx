@@ -3,6 +3,7 @@ import { getDictionary } from "@/dictionaries";
 import Sidebar from "@/components/Sidebar";
 import ChatHeader from "@/components/ChatHeader";
 import ChatInterface from "@/components/ChatInterface";
+import AuthModal from "@/components/AuthModal";
 
 interface ChatPageProps {
   params: Promise<{
@@ -24,6 +25,9 @@ export default async function Chat({ params }: ChatPageProps) {
         <ChatHeader dict={dict} lang={lang} />
         <ChatInterface dict={dict} />
       </div>
+
+      {/* Auth Modal - Opens after 1 second */}
+      <AuthModal dict={dict} />
     </div>
   );
 }

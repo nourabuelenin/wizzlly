@@ -27,7 +27,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
         <ul className="flex items-center gap-5">
           <LanguageSwitcher currentLang={lang} />
           <div className="bg-white text-black p-3 rounded-full">
-            <LocaleLink href="/auth" className="text-lg font-medium">
+            <LocaleLink href="/chat" className="text-lg font-medium">
               {dict.navbar.getStarted}
             </LocaleLink>
           </div>
