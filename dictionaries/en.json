@@ -187,5 +187,48 @@
       "signUpButton": "Sign Up",
       "toggleSignIn": "or sign in"
     }
+  },
+  "chat": {
+    "header": {
+      "title": "Wizlly GPT",
+      "badge": "Plus",
+      "configuration": "Configuration",
+      "share": "Share",
+      "newChat": "New Chat"
+    },
+    "sidebar": {
+      "newChat": "New chat",
+      "saved": "Saved",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "upgradeButton": "Upgrade to Pro",
+      "share": "Share",
+      "rename": "Rename",
+      "delete": "Delete"
+    },
+    "interface": {
+      "greeting": "Hi, There",
+      "subtitle": "Tell us what you need, and we'll handle the rest",
+      "assistantCardTitle": "Sam Lee",
+      "assistantCardBadge": "Data Assistant",
+      "assistantCardDesc": "Designed to help manage sales processes and maximize customer engagement",
+      "tasksCard": "Tasks",
+      "viewAllTasks": "View All",
+      "taskExample1": "Answer ERP documentation",
+      "taskExample2": "Conduct a competitor analysis",
+      "taskExample3": "Provide feedback on communication",
+      "suggestedPrompt": "Suggested Prompt",
+      "suggestedPromptText": "Sample text representing suggested content. You can modify this text to reflect any other content you want",
+      "connectCalendar": "Connect Calendar",
+      "demoTask": "Demo Task",
+      "browseIntegrations": "Browse Integrations",
+      "sharedInNotes": "Shared in Notes",
+      "inputPlaceholder": "Ask me anything...",
+      "selectSource": "Select Source",
+      "attach": "Attach",
+      "voice": "Voice",
+      "send": "Send",
+      "disclaimer": "Wizlly may display inaccurate info, so please double check the response. Your Privacy & Wizlly GPT"
+    }
   }
 }

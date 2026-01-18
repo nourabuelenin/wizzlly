@@ -11,7 +11,11 @@ import {
   MoreVertical,
 } from "lucide-react";
 
-export default function ChatInterface() {
+interface ChatInterfaceProps {
+  dict: Awaited<ReturnType<typeof import("@/dictionaries").getDictionary>>;
+}
+
+export default function ChatInterface({ dict }: ChatInterfaceProps) {
   return (
     <main className="flex-1 overflow-y-auto bg-slate-50 flex flex-col">
       <div className="flex-1 flex items-center justify-center px-4 py-12">
@@ -27,11 +31,13 @@ export default function ChatInterface() {
           {/* Top Text */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <h1 className="text-4xl font-bold text-gray-900">Hi, There</h1>
+              <h1 className="text-4xl font-bold text-gray-900">
+                {dict.chat.interface.greeting}
+              </h1>
               <Sparkles className="w-6 h-6 text-blue-500" />
             </div>
             <p className="text-lg text-gray-600">
-              Tell us what you need, and we'll handle the rest
+              {dict.chat.interface.subtitle}
             </p>
           </div>
 
@@ -44,15 +50,16 @@ export default function ChatInterface() {
                   S
                 </div>
                 <div className="flex items-center justify-between gap-2 flex-1">
-                  <h3 className="font-semibold text-white">Sam Lee</h3>
+                  <h3 className="font-semibold text-white">
+                    {dict.chat.interface.assistantCardTitle}
+                  </h3>
                   <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded-md">
-                    Data Assistant
+                    {dict.chat.interface.assistantCardBadge}
                   </span>
                 </div>
               </div>
               <p className="text-base text-gray-200">
-                Designed to help manage sales processes and maximize customer
-                engagement
+                {dict.chat.interface.assistantCardDesc}
               </p>
             </div>
 
@@ -61,21 +68,23 @@ export default function ChatInterface() {
               <div className="space-y-3 mb-4">
                 <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 cursor-pointer transition-colors">
                   <FileText className="w-4 h-4" />
-                  <span>Answer ERP documentation</span>
+                  <span>{dict.chat.interface.taskExample1}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 cursor-pointer transition-colors">
                   <FileText className="w-4 h-4" />
-                  <span>Conduct a competitor analysis</span>
+                  <span>{dict.chat.interface.taskExample2}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700 hover:text-blue-600 cursor-pointer transition-colors">
                   <FileText className="w-4 h-4" />
-                  <span>Provide feedback on communication</span>
+                  <span>{dict.chat.interface.taskExample3}</span>
                 </div>
               </div>
               <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <span className="text-sm font-medium text-gray-900">Tasks</span>
+                <span className="text-sm font-medium text-gray-900">
+                  {dict.chat.interface.tasksCard}
+                </span>
                 <span className="text-sm text-blue-600 hover:text-blue-700 cursor-pointer">
-                  View All
+                  {dict.chat.interface.viewAllTasks}
                 </span>
               </div>
             </div>
@@ -86,12 +95,11 @@ export default function ChatInterface() {
                 <MoreVertical className="w-5 h-5" />
               </button>
               <p className="text-sm text-gray-700 mb-4 pr-6">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dolorem nisi non perferendis
+                {dict.chat.interface.suggestedPromptText}
               </p>
               <div className="pt-3 border-t border-gray-100 mt-auto">
                 <span className="text-sm font-medium text-gray-900">
-                  Suggested Prompt
+                  {dict.chat.interface.suggestedPrompt}
                 </span>
               </div>
             </div>
@@ -104,7 +112,7 @@ export default function ChatInterface() {
                 <Calendar className="w-5 h-5 text-blue-600" />
               </div>
               <span className="text-sm font-medium text-gray-900">
-                Connect Calendar
+                {dict.chat.interface.connectCalendar}
               </span>
             </button>
 
@@ -113,7 +121,7 @@ export default function ChatInterface() {
                 <CheckSquare className="w-5 h-5 text-green-600" />
               </div>
               <span className="text-sm font-medium text-gray-900">
-                Demo Task
+                {dict.chat.interface.demoTask}
               </span>
             </button>
 
@@ -122,7 +130,7 @@ export default function ChatInterface() {
                 <Puzzle className="w-5 h-5 text-purple-600" />
               </div>
               <span className="text-sm font-medium text-gray-900">
-                Browse Integrations
+                {dict.chat.interface.browseIntegrations}
               </span>
             </button>
 
@@ -131,7 +139,7 @@ export default function ChatInterface() {
                 <Share2 className="w-5 h-5 text-orange-600" />
               </div>
               <span className="text-sm font-medium text-gray-900">
-                Shared in Notes
+                {dict.chat.interface.sharedInNotes}
               </span>
             </button>
           </div>
@@ -146,36 +154,35 @@ export default function ChatInterface() {
               <Sparkles className="w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Ask me anything..."
+                placeholder={dict.chat.interface.inputPlaceholder}
                 className="flex-1 bg-transparent outline-none text-gray-900 placeholder-gray-400"
               />
             </div>
 
             <div className="flex items-center justify-between">
               <button className="px-3 py-1.5 text-sm shadow-lg border font-medium text-gray-700 hover:bg-gray-100 rounded-full transition-colors flex items-center gap-1">
-                <span>Select Source</span>
+                <span>{dict.chat.interface.selectSource}</span>
               </button>
 
               <div className="flex items-center gap-3">
                 <button className="p-2 text-gray-600 shadow-lg border hover:bg-gray-100 rounded-full transition-colors flex items-center gap-1">
                   <Paperclip className="w-5 h-5" />
-                  <span className="text-sm">Attach</span>
+                  <span className="text-sm">{dict.chat.interface.attach}</span>
                 </button>
                 <button className="p-2 text-gray-600 shadow-lg border hover:bg-gray-100 rounded-full transition-colors flex items-center gap-1">
                   <Mic className="w-5 h-5" />
-                  <span className="text-sm">Voice</span>
+                  <span className="text-sm">{dict.chat.interface.voice}</span>
                 </button>
                 <button className="p-2 bg-gray-900 shadow-lg border text-white rounded-full hover:bg-gray-800 transition-colors flex items-center gap-1">
                   <Send className="w-5 h-5" />
-                  <span className="text-sm">Send</span>
+                  <span className="text-sm">{dict.chat.interface.send}</span>
                 </button>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-gray-500 text-center">
-            Wizlly may display inaccurate info, so please double check the
-            response. Your Privacy & Wizlly GPT
+            {dict.chat.interface.disclaimer}
           </p>
         </div>
       </div>

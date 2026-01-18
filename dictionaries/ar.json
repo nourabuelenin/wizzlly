@@ -180,5 +180,48 @@
       "signUpButton": "إنشاء حساب",
       "toggleSignIn": "أو قم بتسجيل الدخول"
     }
+  },
+  "chat": {
+    "header": {
+      "title": "Wizlly GPT",
+      "badge": "Plus",
+      "configuration": "الإعدادات",
+      "share": "مشاركة",
+      "newChat": "محادثة جديدة"
+    },
+    "sidebar": {
+      "newChat": "محادثة جديدة",
+      "saved": "محفوظ",
+      "today": "اليوم",
+      "yesterday": "أمس",
+      "upgradeButton": "الترقية إلى Pro",
+      "share": "مشاركة",
+      "rename": "إعادة تسمية",
+      "delete": "حذف"
+    },
+    "interface": {
+      "greeting": "أهلا بك",
+      "subtitle": "أخبرنا ما تحتاج، وسنتولى الباقي",
+      "assistantCardTitle": "Sam Lee",
+      "assistantCardBadge": "مساعد البيانات",
+      "assistantCardDesc": "مصمم للمساعدة في إدارة عمليات البيع وزيادة الاتصال مع العملاء",
+      "tasksCard": "المهام",
+      "viewAllTasks": "عرض الكل",
+      "taskExample1": "الإجابة على توثيق ERP",
+      "taskExample2": "إجراء تحليل تنافسي",
+      "taskExample3": "تقديم ملاحظات على التواصل",
+      "suggestedPrompt": "الموجه المقترح",
+      "suggestedPromptText": "نص عينة يمثل محتوى مقترح. يمكن تعديل هذا النص ليعكس أي محتوى آخر تريده",
+      "connectCalendar": "ربط التقويم",
+      "demoTask": "مهمة تجريبية",
+      "browseIntegrations": "تصفح التكاملات",
+      "sharedInNotes": "مشاركة في الملاحظات",
+      "inputPlaceholder": "اسأل عن أي شيء...",
+      "selectSource": "اختر المصدر",
+      "attach": "إرفاق",
+      "voice": "صوت",
+      "send": "إرسال",
+      "disclaimer": "قد يعرض Wizlly معلومات غير دقيقة، يرجى التحقق من الرد. خصوصيتك و Wizlly GPT"
+    }
   }
 }

@@ -16,10 +16,7 @@ export default async function Auth({ params }: AuthPageProps) {
   return (
     <section className="container mx-auto min-h-screen flex justify-center items-center relative">
       <div className="absolute top-10 right-10">
-        <LanguageSwitcher
-          currentLang={lang}
-          textColor="text-gray-800 dark:text-gray-200"
-        />
+        <LanguageSwitcher currentLang={lang} textColor="text-gray-800" />
       </div>
       <AuthClient dict={dict} />
     </section>
