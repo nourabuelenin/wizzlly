@@ -28,7 +28,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
           <LanguageSwitcher currentLang={lang} />
           <div className="bg-white text-black p-3 rounded-full">
             <LocaleLink href="/auth" className="text-lg font-medium">
-              Get Started
+              {dict.navbar.getStarted}
             </LocaleLink>
           </div>
         </ul>

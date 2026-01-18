@@ -156,6 +156,29 @@
     "whoWeAre": "من نحن",
     "whatWeDo": "ماذا نفعل",
     "blog": "المدونة",
-    "pages": "الصفحات"
+    "pages": "الصفحات",
+    "getStarted": "ابدأ الآن"
+  },
+  "auth": {
+    "signIn": {
+      "title": "أهلا بعودتك!",
+      "googleButton": "تسجيل الدخول عبر جوجل",
+      "emailDivider": "أو قم بتسجيل الدخول باستخدام البريد الإلكتروني",
+      "emailLabel": "عنوان البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "forgotPassword": "هل نسيت كلمة المرور؟",
+      "signInButton": "تسجيل الدخول",
+      "toggleSignUp": "أو قم بإنشاء حساب"
+    },
+    "signUp": {
+      "title": "إنشاء حسابك",
+      "googleButton": "إنشاء حساب عبر جوجل",
+      "emailDivider": "أو قم بإنشاء حساب باستخدام البريد الإلكتروني",
+      "fullNameLabel": "الاسم الكامل",
+      "emailLabel": "عنوان البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "signUpButton": "إنشاء حساب",
+      "toggleSignIn": "أو قم بتسجيل الدخول"
+    }
   }
 }

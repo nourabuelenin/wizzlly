@@ -163,6 +163,29 @@
     "whoWeAre": "Who We Are",
     "whatWeDo": "What We Do",
     "blog": "Blog",
-    "pages": "Pages"
+    "pages": "Pages",
+    "getStarted": "Get Started"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Welcome back!",
+      "googleButton": "Sign in with Google",
+      "emailDivider": "or login with email",
+      "emailLabel": "Email Address",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forget Password?",
+      "signInButton": "Sign In",
+      "toggleSignUp": "or sign up"
+    },
+    "signUp": {
+      "title": "Create your account",
+      "googleButton": "Sign up with Google",
+      "emailDivider": "or sign up with email",
+      "fullNameLabel": "Full Name",
+      "emailLabel": "Email Address",
+      "passwordLabel": "Password",
+      "signUpButton": "Sign Up",
+      "toggleSignIn": "or sign in"
+    }
   }
 }
