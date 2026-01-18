@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Plus,
   Star,
@@ -7,8 +9,13 @@ import {
   Sun,
   BarChart3,
   Sparkles,
+  Share2,
+  Edit2,
+  Trash2,
 } from "lucide-react";
+import { useState } from "react";
 import Logo from "./Logo";
+import Dropdown from "./Dropdown";
 
 const savedChats = [
   {
@@ -70,11 +77,11 @@ export default function Sidebar() {
 
           <div className="space-y-1">
             {savedChats.map(({ icon: Icon, title, bg, color }) => (
-              <button
+              <div
                 key={title}
-                className="flex items-center justify-between w-full px-2 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+                className="flex items-center cursor-pointer justify-between w-full px-2 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 group"
               >
-                <div className="flex items-center gap-2 truncate">
+                <div className="flex items-center gap-2 truncate flex-1">
                   <span
                     className={`flex items-center justify-center w-8 h-8 rounded-full ${bg}`}
                   >
@@ -82,8 +89,33 @@ export default function Sidebar() {
                   </span>
                   <span className="truncate">{title}</span>
                 </div>
-                <MoreHorizontal className="w-4 h-4 text-gray-400" />
-              </button>
+                <Dropdown
+                  trigger={
+                    <MoreHorizontal className="w-4 h-4 text-gray-400 cursor-pointer" />
+                  }
+                  items={[
+                    {
+                      label: "Share",
+                      icon: <Share2 className="w-4 h-4" />,
+                      onClick: () => console.log("Share", title),
+                    },
+                    {
+                      label: "Rename",
+                      icon: <Edit2 className="w-4 h-4" />,
+                      onClick: () => console.log("Rename", title),
+                    },
+                    {
+                      label: "Delete",
+                      icon: <Trash2 className="w-4 h-4" />,
+                      onClick: () => console.log("Delete", title),
+                      className:
+                        "text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20",
+                    },
+                  ]}
+                  align="right"
+                  triggerClassName="p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -111,25 +143,36 @@ export default function Sidebar() {
 /* -------------------- */
 
 function ChatGroup({ title, chats }: { title: string; chats: string[] }) {
+  const [isExpanded, setIsExpanded] = useState(true);
+
   return (
     <div>
-      <div className="flex items-center justify-between mb-2">
+      <button
+        onClick={() => setIsExpanded((v) => !v)}
+        className="flex items-center justify-between w-full mb-2 group"
+      >
         <span className="text-xs font-semibold text-gray-500 uppercase">
           {title}
         </span>
-        <ChevronDown className="w-4 h-4 text-gray-400 cursor-pointer" />
-      </div>
+        <ChevronDown
+          className={`w-4 h-4 text-gray-400 cursor-pointer transition-transform ${
+            isExpanded ? "rotate-0" : "-rotate-90"
+          }`}
+        />
+      </button>
 
-      <div className="space-y-1">
-        {chats.map((chat) => (
-          <button
-            key={chat}
-            className="w-full px-2 py-2 text-sm text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
-          >
-            <span className="block truncate">{chat}</span>
-          </button>
-        ))}
-      </div>
+      {isExpanded && (
+        <div className="space-y-1">
+          {chats.map((chat) => (
+            <button
+              key={chat}
+              className="w-full px-2 py-2 text-sm text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+            >
+              <span className="block truncate">{chat}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
