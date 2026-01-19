@@ -71,7 +71,12 @@ export function TargetAudienceStep({
             className="block text-sm font-semibold text-gray-900 mb-2"
           >
             {dict?.onboarding?.targetAudience?.interests || "Their Interests"}{" "}
-            <span className="text-gray-400 font-normal">(comma-separated)</span>
+            <span className="text-gray-400 font-normal">
+              (
+              {dict?.onboarding?.targetAudience?.commaSeparated ||
+                "comma-separated"}
+              )
+            </span>
           </label>
           <textarea
             id="interests"
@@ -97,7 +102,12 @@ export function TargetAudienceStep({
           >
             {dict?.onboarding?.targetAudience?.painPoints ||
               "Their Pain Points"}{" "}
-            <span className="text-gray-400 font-normal">(comma-separated)</span>
+            <span className="text-gray-400 font-normal">
+              (
+              {dict?.onboarding?.targetAudience?.commaSeparated ||
+                "comma-separated"}
+              )
+            </span>
           </label>
           <textarea
             id="painPoints"

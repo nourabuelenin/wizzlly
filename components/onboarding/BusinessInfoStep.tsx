@@ -59,7 +59,7 @@ export function BusinessInfoStep({
               "Tasty Bites"
             }
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+            className="w-full px-4 py-3 border placeholder:py-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
           />
         </div>
 

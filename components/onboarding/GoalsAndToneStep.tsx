@@ -15,48 +15,6 @@ interface GoalsAndToneStepProps {
   dict: Dictionary | null;
 }
 
-const BUSINESS_GOALS = [
-  { value: "Increase Brand Awareness", label: "Increase Brand Awareness" },
-  { value: "Generate Leads", label: "Generate Leads" },
-  { value: "Drive Sales", label: "Drive Sales" },
-  { value: "Build Community", label: "Build Community" },
-  {
-    value: "Improve Customer Engagement",
-    label: "Improve Customer Engagement",
-  },
-  { value: "Launch New Product", label: "Launch New Product" },
-  { value: "Expand to New Markets", label: "Expand to New Markets" },
-  {
-    value: "Establish Thought Leadership",
-    label: "Establish Thought Leadership",
-  },
-];
-
-const TONE_OPTIONS = [
-  {
-    value: "Professional",
-    label: "Professional",
-    description: "Formal, trustworthy, expert",
-  },
-  {
-    value: "Friendly",
-    label: "Friendly",
-    description: "Warm, approachable, casual",
-  },
-  { value: "Bold", label: "Bold", description: "Confident, daring, impactful" },
-  { value: "Playful", label: "Playful", description: "Fun, witty, energetic" },
-  {
-    value: "Inspirational",
-    label: "Inspirational",
-    description: "Motivating, uplifting, empowering",
-  },
-  {
-    value: "Educational",
-    label: "Educational",
-    description: "Informative, helpful, clear",
-  },
-];
-
 export function GoalsAndToneStep({
   formData,
   onUpdate,
@@ -65,6 +23,76 @@ export function GoalsAndToneStep({
   dict,
 }: GoalsAndToneStepProps) {
   const [keywordInput, setKeywordInput] = useState("");
+
+  // Get goals from dictionary or fallback to hardcoded
+  const goalsDict = dict?.onboarding?.goalsAndTone?.goals || {};
+  const BUSINESS_GOALS = [
+    {
+      value: "brandAwareness",
+      label: goalsDict.brandAwareness || "Increase Brand Awareness",
+    },
+    {
+      value: "generateLeads",
+      label: goalsDict.generateLeads || "Generate Leads",
+    },
+    { value: "driveSales", label: goalsDict.driveSales || "Drive Sales" },
+    {
+      value: "buildCommunity",
+      label: goalsDict.buildCommunity || "Build Community",
+    },
+    {
+      value: "customerEngagement",
+      label: goalsDict.customerEngagement || "Improve Customer Engagement",
+    },
+    {
+      value: "launchProduct",
+      label: goalsDict.launchProduct || "Launch New Product",
+    },
+    {
+      value: "expandMarkets",
+      label: goalsDict.expandMarkets || "Expand to New Markets",
+    },
+    {
+      value: "thoughtLeadership",
+      label: goalsDict.thoughtLeadership || "Establish Thought Leadership",
+    },
+  ];
+
+  // Get tones from dictionary or fallback to hardcoded
+  const tonesDict = dict?.onboarding?.goalsAndTone?.tones || {};
+  const TONE_OPTIONS = [
+    {
+      value: "professional",
+      label: tonesDict.professional || "Professional",
+      description: tonesDict.professionalDesc || "Formal, trustworthy, expert",
+    },
+    {
+      value: "friendly",
+      label: tonesDict.friendly || "Friendly",
+      description: tonesDict.friendlyDesc || "Warm, approachable, casual",
+    },
+    {
+      value: "bold",
+      label: tonesDict.bold || "Bold",
+      description: tonesDict.boldDesc || "Confident, daring, impactful",
+    },
+    {
+      value: "playful",
+      label: tonesDict.playful || "Playful",
+      description: tonesDict.playfulDesc || "Fun, witty, energetic",
+    },
+    {
+      value: "inspirational",
+      label: tonesDict.inspirational || "Inspirational",
+      description:
+        tonesDict.inspirationalDesc || "Motivating, uplifting, empowering",
+    },
+    {
+      value: "educational",
+      label: tonesDict.educational || "Educational",
+      description: tonesDict.educationalDesc || "Informative, helpful, clear",
+    },
+  ];
 
   const handleGoalToggle = (goal: string) => {
     const currentGoals = formData.businessGoals || [];
@@ -110,12 +138,11 @@ export function GoalsAndToneStep({
         {/* Business Goals */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-3">
-            {dict?.onboarding?.goalsAndTone?.businessGoalsLabel ||
-              "Business Goals"}{" "}
+            {dict?.onboarding?.goalsAndTone?.businessGoals || "Business Goals"}{" "}
             <span className="text-red-500">*</span>
             <span className="text-gray-400 font-normal ml-1">
               (
-              {dict?.onboarding?.goalsAndTone?.selectAllThatApply ||
+              {dict?.onboarding?.goalsAndTone?.businessGoalsHint ||
                 "select all that apply"}
               )
             </span>
@@ -158,7 +185,7 @@ export function GoalsAndToneStep({
         {/* Tone of Voice */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-3">
-            {dict?.onboarding?.goalsAndTone?.toneLabel || "Tone of Voice"}{" "}
+            {dict?.onboarding?.goalsAndTone?.toneOfVoice || "Tone of Voice"}{" "}
             <span className="text-red-500">*</span>
           </label>
           <div className="grid grid-cols-3 gap-3">
@@ -205,8 +232,11 @@ export function GoalsAndToneStep({
             htmlFor="keywords"
             className="block text-sm font-semibold text-gray-900 mb-3"
           >
-            {dict?.onboarding?.goalsAndTone?.keywordsLabel || "Brand Keywords"}{" "}
-            <span className="text-gray-400 font-normal">(optional)</span>
+            {dict?.onboarding?.goalsAndTone?.brandKeywords || "Brand Keywords"}{" "}
+            <span className="text-gray-400 font-normal">
+              {dict?.onboarding?.goalsAndTone?.brandKeywordsHint ||
+                "(optional)"}
+            </span>
           </label>
           <div className="flex gap-2">
             <input
@@ -221,7 +251,7 @@ export function GoalsAndToneStep({
                 }
               }}
               placeholder={
-                dict?.onboarding?.goalsAndTone?.keywordsPlaceholder ||
+                dict?.onboarding?.goalsAndTone?.brandKeywordsPlaceholder ||
                 "Add a keyword..."
               }
               className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
@@ -231,7 +261,7 @@ export function GoalsAndToneStep({
               onClick={handleAddKeyword}
               className="px-6 py-3 bg-gray-100 text-foreground font-semibold rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
             >
-              {dict?.onboarding?.goalsAndTone?.addKeyword || "Add"}
+              {dict?.onboarding?.goalsAndTone?.add || "Add"}
             </button>
           </div>
           {formData.brandKeywords.length > 0 && (

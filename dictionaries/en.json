@@ -272,12 +272,16 @@
       "demographics": "Target Demographics",
       "demographicsPlaceholder": "e.g., Business owners, Young professionals, Parents",
       "interests": "Their Interests",
+      "interestsLabel": "Their Interests (comma-separated)",
       "interestsPlaceholder": "e.g., Healthy eating, Sustainability, Local food",
       "interestsHint": "Separate multiple interests with commas",
       "painPoints": "Their Pain Points",
+      "painPointsLabel": "Their Pain Points (comma-separated)",
       "painPointsPlaceholder": "e.g., Limited time, Budget constraints, Finding quality options",
       "painPointsHint": "Separate multiple pain points with commas",
-      "back": "Back"
+      "commaSeparated": "comma-separated",
+      "back": "Back",
+      "continue": "Continue"
     },
     "goalsAndTone": {
       "heading": "Goals & Brand Voice",
@@ -289,6 +293,8 @@
       "brandKeywordsHint": "(optional)",
       "brandKeywordsPlaceholder": "Add a keyword...",
       "add": "Add",
+      "back": "Back",
+      "continue": "Continue",
       "goals": {
         "brandAwareness": "Increase Brand Awareness",
         "generateLeads": "Generate Leads",
@@ -329,6 +335,7 @@
         "keywords": "Brand Keywords"
       },
       "message": "💡 You can always update these settings later from your dashboard.",
+      "back": "Back",
       "getStarted": "Get Started"
     }
   }

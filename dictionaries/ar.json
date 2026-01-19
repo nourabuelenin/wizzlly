@@ -239,7 +239,7 @@
       "heading": "أخبرنا عن عملك",
       "subheading": "معلومات أساسية لتخصيص المحتوى الخاص بك",
       "businessName": "اسم الأعمال",
-      "businessNamePlaceholder": "Tasty Bites",
+      "businessNamePlaceholder": "بيتزا جيوفاني",
       "industry": "الصناعة",
       "industryPlaceholder": "اختر صناعة",
       "optional": "(اختياري)",
@@ -265,12 +265,16 @@
       "demographics": "ديموغرافيات مستهدفة",
       "demographicsPlaceholder": "مثال: أصحاب الأعمال، المحترفون الشباب، الآباء",
       "interests": "اهتماماتهم",
+      "interestsLabel": "اهتماماتهم (مفصولة بفواصل)",
       "interestsPlaceholder": "مثال: الأكل الصحي، الاستدامة، الطعام المحلي",
       "interestsHint": "افصل بين الاهتمامات المتعددة بفواصل",
       "painPoints": "نقاط ألمهم",
+      "painPointsLabel": "نقاط ألمهم (مفصولة بفواصل)",
       "painPointsPlaceholder": "مثال: الوقت المحدود، قيود الميزانية، البحث عن خيارات جودة",
       "painPointsHint": "افصل بين نقاط الألم المتعددة بفواصل",
-      "back": "رجوع"
+      "commaSeparated": "مفصولة بفواصل",
+      "back": "رجوع",
+      "continue": "متابعة"
     },
     "goalsAndTone": {
       "heading": "الأهداف وصوت العلامة التجارية",
@@ -282,6 +286,8 @@
       "brandKeywordsHint": "(اختياري)",
       "brandKeywordsPlaceholder": "أضف كلمة مفتاحية...",
       "add": "إضافة",
+      "back": "الرجوع",
+      "continue": "متابعة",
       "goals": {
         "brandAwareness": "زيادة الوعي بالعلامة التجارية",
         "generateLeads": "توليد العملاء المحتملين",
@@ -322,6 +328,7 @@
         "keywords": "كلمات مفتاحية للعلامة التجارية"
       },
       "message": "💡 يمكنك دائماً تحديث هذه الإعدادات لاحقاً من لوحة المعلومات الخاصة بك.",
+      "back": "رجوع",
       "getStarted": "ابدأ الآن"
     }
   }
