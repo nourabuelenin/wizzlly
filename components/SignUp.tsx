@@ -26,7 +26,7 @@ export default function SignUp({
 
         <div className="mt-4">
           <label
-            className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+            className="block mb-2 text-sm font-medium rtl:text-start text-gray-600 dark:text-gray-200"
             htmlFor="FullName"
           >
             {dict.auth.signUp.fullNameLabel}
@@ -40,7 +40,7 @@ export default function SignUp({
 
         <div className="mt-4">
           <label
-            className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+            className="block mb-2 text-sm font-medium rtl:text-start text-gray-600 dark:text-gray-200"
             htmlFor="SignupEmailAddress"
           >
             {dict.auth.signUp.emailLabel}
@@ -54,7 +54,7 @@ export default function SignUp({
 
         <div className="mt-4">
           <label
-            className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+            className="block mb-2 text-sm font-medium rtl:text-start text-gray-600 dark:text-gray-200"
             htmlFor="signupPassword"
           >
             {dict.auth.signUp.passwordLabel}
