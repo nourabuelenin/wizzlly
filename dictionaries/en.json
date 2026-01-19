@@ -230,5 +230,106 @@
       "send": "Send",
       "disclaimer": "Wizlly may display inaccurate info, so please double check the response. Your Privacy & Wizlly GPT"
     }
+  },
+  "onboarding": {
+    "stepper": {
+      "title": "Set Up Your Business Profile",
+      "subtitle": "Help our AI understand your business to create perfect content"
+    },
+    "steps": {
+      "businessInfo": "Business Info",
+      "targetAudience": "Target Audience",
+      "goalsAndTone": "Goals & Tone",
+      "finish": "Finish"
+    },
+    "businessInfo": {
+      "heading": "Tell us about your business",
+      "subheading": "Basic information to personalize your content",
+      "businessName": "Business Name",
+      "businessNamePlaceholder": "Tasty Bites",
+      "industry": "Industry",
+      "industryPlaceholder": "Select an industry",
+      "optional": "(optional)",
+      "website": "Website URL",
+      "websitePlaceholder": "example.com or https://example.com",
+      "continue": "Continue",
+      "industries": {
+        "foodBeverage": "Food & Beverage",
+        "technology": "Technology",
+        "healthcare": "Healthcare",
+        "retail": "Retail",
+        "finance": "Finance",
+        "education": "Education",
+        "realEstate": "Real Estate",
+        "entertainment": "Entertainment",
+        "professionalServices": "Professional Services",
+        "other": "Other"
+      }
+    },
+    "targetAudience": {
+      "heading": "Who's your target audience?",
+      "subheading": "Help us understand who you're trying to reach",
+      "demographics": "Target Demographics",
+      "demographicsPlaceholder": "e.g., Business owners, Young professionals, Parents",
+      "interests": "Their Interests",
+      "interestsPlaceholder": "e.g., Healthy eating, Sustainability, Local food",
+      "interestsHint": "Separate multiple interests with commas",
+      "painPoints": "Their Pain Points",
+      "painPointsPlaceholder": "e.g., Limited time, Budget constraints, Finding quality options",
+      "painPointsHint": "Separate multiple pain points with commas",
+      "back": "Back"
+    },
+    "goalsAndTone": {
+      "heading": "Goals & Brand Voice",
+      "subheading": "Define your objectives and how you want to sound",
+      "businessGoals": "Business Goals",
+      "businessGoalsHint": "(select all that apply)",
+      "toneOfVoice": "Tone of Voice",
+      "brandKeywords": "Brand Keywords",
+      "brandKeywordsHint": "(optional)",
+      "brandKeywordsPlaceholder": "Add a keyword...",
+      "add": "Add",
+      "goals": {
+        "brandAwareness": "Increase Brand Awareness",
+        "generateLeads": "Generate Leads",
+        "driveSales": "Drive Sales",
+        "buildCommunity": "Build Community",
+        "customerEngagement": "Improve Customer Engagement",
+        "launchProduct": "Launch New Product",
+        "expandMarkets": "Expand to New Markets",
+        "thoughtLeadership": "Establish Thought Leadership"
+      },
+      "tones": {
+        "professional": "Professional",
+        "professionalDesc": "Formal, trustworthy, expert",
+        "friendly": "Friendly",
+        "friendlyDesc": "Warm, approachable, casual",
+        "bold": "Bold",
+        "boldDesc": "Confident, daring, impactful",
+        "playful": "Playful",
+        "playfulDesc": "Fun, witty, energetic",
+        "inspirational": "Inspirational",
+        "inspirationalDesc": "Motivating, uplifting, empowering",
+        "educational": "Educational",
+        "educationalDesc": "Informative, helpful, clear"
+      }
+    },
+    "finish": {
+      "heading": "You're all set!",
+      "subheading": "Review your business profile and start creating content",
+      "labels": {
+        "business": "Business",
+        "industry": "Industry",
+        "website": "Website",
+        "targetAudience": "Target Audience",
+        "goals": "Goals",
+        "tone": "Tone",
+        "interests": "Audience Interests",
+        "painPoints": "Audience Pain Points",
+        "keywords": "Brand Keywords"
+      },
+      "message": "💡 You can always update these settings later from your dashboard.",
+      "getStarted": "Get Started"
+    }
   }
 }

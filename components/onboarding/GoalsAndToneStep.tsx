@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Dictionary } from "@/types/dictionary";
 
 interface GoalsAndToneStepProps {
   formData: {
@@ -8,9 +9,10 @@ interface GoalsAndToneStepProps {
     toneOfVoice: string;
     brandKeywords: string[];
   };
-  onUpdate: (field: string, value: any) => void;
+  onUpdate: (field: string, value: string | string[]) => void;
   onNext: () => void;
   onBack: () => void;
+  dict: Dictionary | null;
 }
 
 const BUSINESS_GOALS = [
@@ -60,6 +62,7 @@ export function GoalsAndToneStep({
   onUpdate,
   onNext,
   onBack,
+  dict,
 }: GoalsAndToneStepProps) {
   const [keywordInput, setKeywordInput] = useState("");
 
@@ -95,10 +98,11 @@ export function GoalsAndToneStep({
     <div className="max-w-2xl mx-auto">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-3">
-          Goals & Brand Voice
+          {dict?.onboarding?.goalsAndTone?.heading || "Goals & Brand Voice"}
         </h2>
         <p className="text-gray-600">
-          Define your objectives and how you want to sound
+          {dict?.onboarding?.goalsAndTone?.subheading ||
+            "Define your objectives and how you want to sound"}
         </p>
       </div>
 
@@ -106,9 +110,14 @@ export function GoalsAndToneStep({
         {/* Business Goals */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-3">
-            Business Goals <span className="text-red-500">*</span>
+            {dict?.onboarding?.goalsAndTone?.businessGoalsLabel ||
+              "Business Goals"}{" "}
+            <span className="text-red-500">*</span>
             <span className="text-gray-400 font-normal ml-1">
-              (select all that apply)
+              (
+              {dict?.onboarding?.goalsAndTone?.selectAllThatApply ||
+                "select all that apply"}
+              )
             </span>
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -129,7 +138,7 @@ export function GoalsAndToneStep({
                   <span className="text-sm font-medium">{goal.label}</span>
                   {formData.businessGoals.includes(goal.value) && (
                     <svg
-                      className="w-5 h-5 text-blue-600"
+                      className="w-5 h-5 text-primary"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -149,7 +158,8 @@ export function GoalsAndToneStep({
         {/* Tone of Voice */}
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-3">
-            Tone of Voice <span className="text-red-500">*</span>
+            {dict?.onboarding?.goalsAndTone?.toneLabel || "Tone of Voice"}{" "}
+            <span className="text-red-500">*</span>
           </label>
           <div className="grid grid-cols-3 gap-3">
             {TONE_OPTIONS.map((tone) => (
@@ -172,7 +182,7 @@ export function GoalsAndToneStep({
                   </div>
                   {formData.toneOfVoice === tone.value && (
                     <svg
-                      className="w-5 h-5 text-blue-600 mt-2 mx-auto"
+                      className="w-5 h-5 text-primary mt-2 mx-auto"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -195,7 +205,7 @@ export function GoalsAndToneStep({
             htmlFor="keywords"
             className="block text-sm font-semibold text-gray-900 mb-3"
           >
-            Brand Keywords{" "}
+            {dict?.onboarding?.goalsAndTone?.keywordsLabel || "Brand Keywords"}{" "}
             <span className="text-gray-400 font-normal">(optional)</span>
           </label>
           <div className="flex gap-2">
@@ -210,15 +220,18 @@ export function GoalsAndToneStep({
                   handleAddKeyword();
                 }
               }}
-              placeholder="Add a keyword..."
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              placeholder={
+                dict?.onboarding?.goalsAndTone?.keywordsPlaceholder ||
+                "Add a keyword..."
+              }
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
             />
             <button
               type="button"
               onClick={handleAddKeyword}
               className="px-6 py-3 bg-gray-100 text-foreground font-semibold rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
             >
-              Add
+              {dict?.onboarding?.goalsAndTone?.addKeyword || "Add"}
             </button>
           </div>
           {formData.brandKeywords.length > 0 && (
@@ -232,7 +245,7 @@ export function GoalsAndToneStep({
                   <button
                     type="button"
                     onClick={() => handleRemoveKeyword(index)}
-                    className="hover:text-blue-900 cursor-pointer"
+                    className="hover:text-primary/80 cursor-pointer"
                   >
                     <svg
                       className="w-4 h-4"
@@ -258,7 +271,7 @@ export function GoalsAndToneStep({
             onClick={onBack}
             className="px-8 py-3 border border-gray-300 text-foreground font-semibold rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
           >
-            Back
+            {dict?.onboarding?.goalsAndTone?.back || "Back"}
           </button>
           <button
             type="submit"
@@ -267,7 +280,7 @@ export function GoalsAndToneStep({
             }
             className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors cursor-pointer"
           >
-            Continue
+            {dict?.onboarding?.goalsAndTone?.continue || "Continue"}
           </button>
         </div>
       </form>

@@ -223,5 +223,106 @@
       "send": "إرسال",
       "disclaimer": "قد يعرض Wizlly معلومات غير دقيقة، يرجى التحقق من الرد. خصوصيتك و Wizlly GPT"
     }
+  },
+  "onboarding": {
+    "stepper": {
+      "title": "إعداد ملف التعريف الخاص بك",
+      "subtitle": "ساعد ذكاءنا الاصطناعي على فهم عملك لإنشاء محتوى مثالي"
+    },
+    "steps": {
+      "businessInfo": "معلومات الأعمال",
+      "targetAudience": "الجمهور المستهدف",
+      "goalsAndTone": "الأهداف والنبرة",
+      "finish": "إنهاء"
+    },
+    "businessInfo": {
+      "heading": "أخبرنا عن عملك",
+      "subheading": "معلومات أساسية لتخصيص المحتوى الخاص بك",
+      "businessName": "اسم الأعمال",
+      "businessNamePlaceholder": "Tasty Bites",
+      "industry": "الصناعة",
+      "industryPlaceholder": "اختر صناعة",
+      "optional": "(اختياري)",
+      "website": "عنوان موقع الويب",
+      "websitePlaceholder": "example.com أو https://example.com",
+      "continue": "متابعة",
+      "industries": {
+        "foodBeverage": "الأغذية والمشروبات",
+        "technology": "التكنولوجيا",
+        "healthcare": "الرعاية الصحية",
+        "retail": "البيع بالتجزئة",
+        "finance": "المالية",
+        "education": "التعليم",
+        "realEstate": "العقارات",
+        "entertainment": "الترفيه",
+        "professionalServices": "الخدمات المهنية",
+        "other": "أخرى"
+      }
+    },
+    "targetAudience": {
+      "heading": "من هو جمهورك المستهدف؟",
+      "subheading": "ساعدنا على فهم من تحاول الوصول إليه",
+      "demographics": "ديموغرافيات مستهدفة",
+      "demographicsPlaceholder": "مثال: أصحاب الأعمال، المحترفون الشباب، الآباء",
+      "interests": "اهتماماتهم",
+      "interestsPlaceholder": "مثال: الأكل الصحي، الاستدامة، الطعام المحلي",
+      "interestsHint": "افصل بين الاهتمامات المتعددة بفواصل",
+      "painPoints": "نقاط ألمهم",
+      "painPointsPlaceholder": "مثال: الوقت المحدود، قيود الميزانية، البحث عن خيارات جودة",
+      "painPointsHint": "افصل بين نقاط الألم المتعددة بفواصل",
+      "back": "رجوع"
+    },
+    "goalsAndTone": {
+      "heading": "الأهداف وصوت العلامة التجارية",
+      "subheading": "حدد أهدافك وكيف تريد أن تبدو",
+      "businessGoals": "أهداف العمل",
+      "businessGoalsHint": "(حدد جميع ما ينطبق)",
+      "toneOfVoice": "نبرة الصوت",
+      "brandKeywords": "كلمات مفتاحية للعلامة التجارية",
+      "brandKeywordsHint": "(اختياري)",
+      "brandKeywordsPlaceholder": "أضف كلمة مفتاحية...",
+      "add": "إضافة",
+      "goals": {
+        "brandAwareness": "زيادة الوعي بالعلامة التجارية",
+        "generateLeads": "توليد العملاء المحتملين",
+        "driveSales": "زيادة المبيعات",
+        "buildCommunity": "بناء مجتمع",
+        "customerEngagement": "تحسين التفاعل مع العملاء",
+        "launchProduct": "إطلاق منتج جديد",
+        "expandMarkets": "التوسع إلى أسواق جديدة",
+        "thoughtLeadership": "تأسيس الريادة الفكرية"
+      },
+      "tones": {
+        "professional": "احترافي",
+        "professionalDesc": "رسمي وموثوق وخبير",
+        "friendly": "ودي",
+        "friendlyDesc": "دافئ وسهل التواصل وغير رسمي",
+        "bold": "جريء",
+        "boldDesc": "واثق وجريء وذو تأثير",
+        "playful": "مرح",
+        "playfulDesc": "مرح وذكي وحيوي",
+        "inspirational": "ملهم",
+        "inspirationalDesc": "محفز ومرفع للمعنويات ومشجع",
+        "educational": "تعليمي",
+        "educationalDesc": "إعلامي ومفيد وواضح"
+      }
+    },
+    "finish": {
+      "heading": "أنت جاهز!",
+      "subheading": "راجع ملف التعريف الخاص بك وابدأ إنشاء محتوى",
+      "labels": {
+        "business": "الأعمال",
+        "industry": "الصناعة",
+        "website": "موقع الويب",
+        "targetAudience": "الجمهور المستهدف",
+        "goals": "الأهداف",
+        "tone": "النبرة",
+        "interests": "اهتمامات الجمهور",
+        "painPoints": "نقاط ألم الجمهور",
+        "keywords": "كلمات مفتاحية للعلامة التجارية"
+      },
+      "message": "💡 يمكنك دائماً تحديث هذه الإعدادات لاحقاً من لوحة المعلومات الخاصة بك.",
+      "getStarted": "ابدأ الآن"
+    }
   }
 }

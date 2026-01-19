@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
+import { Dictionary } from "@/types/dictionary";
 
 interface FinishStepProps {
   formData: {
@@ -15,25 +16,28 @@ interface FinishStepProps {
     brandKeywords: string[];
   };
   onBack: () => void;
+  dict: Dictionary | null;
 }
 
-export function FinishStep({ formData, onBack }: FinishStepProps) {
+export function FinishStep({ formData, onBack, dict }: FinishStepProps) {
   const router = useRouter();
+  const params = useParams();
+  const currentLang = (params.lang as string) || "en";
 
   const handleFinish = () => {
     // TODO: Save data to backend/database
     console.log("Onboarding complete:", formData);
 
-    // Redirect to dashboard or chat
-    router.push("/en/chat");
+    // Redirect to dashboard or chat with current language
+    router.push(`/${currentLang}/chat`);
   };
 
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col">
       <div className="mb-6 text-center">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg
-            className="w-10 h-10 text-green-600"
+            className="w-10 h-10 text-primary"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -45,10 +49,11 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           </svg>
         </div>
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          You're all set!
+          {dict?.onboarding?.finish?.heading || "You're all set!"}
         </h2>
         <p className="text-gray-600">
-          Review your business profile and start creating content
+          {dict?.onboarding?.finish?.subheading ||
+            "Review your business profile and start creating content"}
         </p>
       </div>
 
@@ -59,7 +64,7 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {/* Business Info */}
           <div>
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Business:
+              {dict?.onboarding?.finish?.labels?.business || "Business"}:
             </h3>
             <p className="text-lg font-semibold text-gray-900">
               {formData.businessName}
@@ -69,7 +74,7 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {/* Industry */}
           <div>
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Industry:
+              {dict?.onboarding?.finish?.labels?.industry || "Industry"}:
             </h3>
             <p className="text-lg font-semibold text-gray-900">
               {formData.industry}
@@ -80,13 +85,13 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {formData.websiteUrl && (
             <div>
               <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                Website:
+                {dict?.onboarding?.finish?.labels?.website || "Website"}:
               </h3>
               <a
                 href={formData.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-semibold text-blue-600 hover:text-blue-700"
+                className="text-lg font-semibold text-primary hover:text-primary/90"
               >
                 {formData.websiteUrl}
               </a>
@@ -96,7 +101,9 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {/* Target Audience */}
           <div>
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Target Audience:
+              {dict?.onboarding?.finish?.labels?.targetAudience ||
+                "Target Audience"}
+              :
             </h3>
             <p className="text-lg font-semibold text-gray-900">
               {formData.targetDemographics}
@@ -106,7 +113,7 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {/* Tone */}
           <div>
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Tone:
+              {dict?.onboarding?.finish?.labels?.tone || "Tone"}:
             </h3>
             <p className="text-lg font-semibold text-gray-900 capitalize">
               {formData.toneOfVoice.toLowerCase()}
@@ -119,7 +126,7 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {/* Goals */}
           <div>
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Goals:
+              {dict?.onboarding?.finish?.labels?.goals || "Goals"}:
             </h3>
             <ul className="space-y-1">
               {formData.businessGoals.map((goal, index) => (
@@ -128,7 +135,7 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
                   className="flex items-center gap-2 text-gray-900"
                 >
                   <svg
-                    className="w-5 h-5 text-green-600 flex-shrink-0"
+                    className="w-5 h-5 text-primary shrink-0"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -148,7 +155,9 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {formData.interests && (
             <div>
               <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                Audience Interests:
+                {dict?.onboarding?.finish?.labels?.interests ||
+                  "Audience Interests"}
+                :
               </h3>
               <p className="text-gray-900">{formData.interests}</p>
             </div>
@@ -158,7 +167,9 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {formData.painPoints && (
             <div>
               <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                Audience Pain Points:
+                {dict?.onboarding?.finish?.labels?.painPoints ||
+                  "Audience Pain Points"}
+                :
               </h3>
               <p className="text-gray-900">{formData.painPoints}</p>
             </div>
@@ -168,7 +179,8 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           {formData.brandKeywords.length > 0 && (
             <div>
               <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                Brand Keywords:
+                {dict?.onboarding?.finish?.labels?.keywords || "Brand Keywords"}
+                :
               </h3>
               <div className="flex flex-wrap gap-2">
                 {formData.brandKeywords.map((keyword, index) => (
@@ -187,7 +199,8 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
 
       <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
         <p className="text-sm text-primary text-center">
-          💡 You can always update these settings later from your dashboard.
+          {dict?.onboarding?.finish?.message ||
+            "💡 You can always update these settings later from your dashboard."}
         </p>
       </div>
 
@@ -197,14 +210,14 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
           onClick={onBack}
           className="px-8 py-3 border border-gray-300 text-foreground font-semibold rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
         >
-          Back
+          {dict?.onboarding?.finish?.back || "Back"}
         </button>
         <button
           type="button"
           onClick={handleFinish}
           className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
         >
-          Get Started
+          {dict?.onboarding?.finish?.getStarted || "Get Started"}
         </button>
       </div>
     </div>
