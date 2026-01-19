@@ -6,6 +6,9 @@ import { BusinessInfoStep } from "@/components/onboarding/BusinessInfoStep";
 import { TargetAudienceStep } from "@/components/onboarding/TargetAudienceStep";
 import { GoalsAndToneStep } from "@/components/onboarding/GoalsAndToneStep";
 import { FinishStep } from "@/components/onboarding/FinishStep";
+import { OnboardingHeader } from "@/components/onboarding/OnboardingHeader";
+import { useParams } from "next/navigation";
+import { Locale } from "@/lib/i18n/config";
 
 interface OnboardingData {
   businessName: string;
@@ -20,6 +23,9 @@ interface OnboardingData {
 }
 
 export default function OnboardingPage() {
+  const params = useParams();
+  const currentLang = (params.lang as string) || "en";
+
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<OnboardingData>({
     businessName: "",
@@ -57,40 +63,46 @@ export default function OnboardingPage() {
 
   return (
     <div className="flex min-h-screen bg-white">
-      {/* Left side - Stepper */}
+      {/* Left side - Stepper (full height) */}
       <Stepper steps={steps} currentStep={currentStep} />
 
-      {/* Right side - Content */}
-      <div className="flex-1 p-12">
-        {currentStep === 1 && (
-          <BusinessInfoStep
-            formData={formData}
-            onUpdate={handleUpdate}
-            onNext={handleNext}
-          />
-        )}
+      {/* Right side - Header and Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <OnboardingHeader currentLang={currentLang as Locale} />
 
-        {currentStep === 2 && (
-          <TargetAudienceStep
-            formData={formData}
-            onUpdate={handleUpdate}
-            onNext={handleNext}
-            onBack={handleBack}
-          />
-        )}
+        {/* Content */}
+        <div className="flex-1 p-12 overflow-y-auto">
+          {currentStep === 1 && (
+            <BusinessInfoStep
+              formData={formData}
+              onUpdate={handleUpdate}
+              onNext={handleNext}
+            />
+          )}
 
-        {currentStep === 3 && (
-          <GoalsAndToneStep
-            formData={formData}
-            onUpdate={handleUpdate}
-            onNext={handleNext}
-            onBack={handleBack}
-          />
-        )}
+          {currentStep === 2 && (
+            <TargetAudienceStep
+              formData={formData}
+              onUpdate={handleUpdate}
+              onNext={handleNext}
+              onBack={handleBack}
+            />
+          )}
 
-        {currentStep === 4 && (
-          <FinishStep formData={formData} onBack={handleBack} />
-        )}
+          {currentStep === 3 && (
+            <GoalsAndToneStep
+              formData={formData}
+              onUpdate={handleUpdate}
+              onNext={handleNext}
+              onBack={handleBack}
+            />
+          )}
+
+          {currentStep === 4 && (
+            <FinishStep formData={formData} onBack={handleBack} />
+          )}
+        </div>
       </div>
     </div>
   );
