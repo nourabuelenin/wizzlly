@@ -104,7 +104,7 @@ export function BusinessInfoStep({
           <button
             type="submit"
             disabled={!formData.businessName || !formData.industry}
-            className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors cursor-pointer"
+            className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors cursor-pointer"
           >
             Continue
           </button>

@@ -174,7 +174,7 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
                 {formData.brandKeywords.map((keyword, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                    className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium"
                   >
                     {keyword}
                   </span>
@@ -185,8 +185,8 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-        <p className="text-sm text-blue-900 text-center">
+      <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
+        <p className="text-sm text-primary text-center">
           💡 You can always update these settings later from your dashboard.
         </p>
       </div>
@@ -195,14 +195,14 @@ export function FinishStep({ formData, onBack }: FinishStepProps) {
         <button
           type="button"
           onClick={onBack}
-          className="px-8 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
+          className="px-8 py-3 border border-gray-300 text-foreground font-semibold rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
         >
           Back
         </button>
         <button
           type="button"
           onClick={handleFinish}
-          className="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors cursor-pointer"
+          className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
         >
           Get Started
         </button>

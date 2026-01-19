@@ -117,11 +117,11 @@ export function GoalsAndToneStep({
                 key={goal.value}
                 type="button"
                 onClick={() => handleGoalToggle(goal.value)}
-                className={`px-4 py-3 text-left border rounded-lg transition-all cursor-pointer
+                className={`px-4 py-3 text-left border rounded-full transition-all cursor-pointer
                   ${
                     formData.businessGoals.includes(goal.value)
-                      ? "border-blue-600 bg-blue-50 text-blue-900"
-                      : "border-gray-300 bg-white text-gray-700 hover:border-gray-400"
+                      ? "border-primary bg-primary/10 text-foreground"
+                      : "border-gray-300 bg-white text-foreground hover:border-gray-400"
                   }
                 `}
               >
@@ -157,11 +157,11 @@ export function GoalsAndToneStep({
                 key={tone.value}
                 type="button"
                 onClick={() => onUpdate("toneOfVoice", tone.value)}
-                className={`px-4 py-3 border rounded-lg transition-all cursor-pointer
+                className={`px-4 py-3 border rounded-full transition-all cursor-pointer
                   ${
                     formData.toneOfVoice === tone.value
-                      ? "border-blue-600 bg-blue-50 text-blue-900"
-                      : "border-gray-300 bg-white text-gray-700 hover:border-gray-400"
+                      ? "border-primary bg-primary/10 text-foreground"
+                      : "border-gray-300 bg-white text-foreground hover:border-gray-400"
                   }
                 `}
               >
@@ -216,7 +216,7 @@ export function GoalsAndToneStep({
             <button
               type="button"
               onClick={handleAddKeyword}
-              className="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
+              className="px-6 py-3 bg-gray-100 text-foreground font-semibold rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
             >
               Add
             </button>
@@ -226,7 +226,7 @@ export function GoalsAndToneStep({
               {formData.brandKeywords.map((keyword, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-100 text-blue-800 rounded-full text-sm"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm"
                 >
                   {keyword}
                   <button
@@ -256,7 +256,7 @@ export function GoalsAndToneStep({
           <button
             type="button"
             onClick={onBack}
-            className="px-8 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
+            className="px-8 py-3 border border-gray-300 text-foreground font-semibold rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
           >
             Back
           </button>
@@ -265,7 +265,7 @@ export function GoalsAndToneStep({
             disabled={
               formData.businessGoals.length === 0 || !formData.toneOfVoice
             }
-            className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors cursor-pointer"
+            className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors cursor-pointer"
           >
             Continue
           </button>
