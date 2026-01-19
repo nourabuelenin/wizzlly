@@ -1,9 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Loader } from "lucide-react";
-import ReactMarkdown from "react-markdown";
-import { ApiEndPoint } from "@/constants/api.constant";
 import { mockBusinessProfile } from "@/data/mockBusinessProfile";
 import ChatInterfaceGreetings from "./ChatInterfaceGreetings";
 import ChatInterfaceCardsGrid from "./ChatInterfaceCardsGrid";
@@ -46,14 +43,23 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
       content: inputValue,
     };
 
-    setMessages((prev) => [...prev, userMessage]);
     setInputValue("");
     setIsLoading(true);
 
-    try {
-      const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || "http://134.209.30.66:6060"}${ApiEndPoint.chatCompletions}`;
+    // Fix race condition: capture the updated messages state
+    setMessages((prevMessages) => {
+      const updatedMessages = [...prevMessages, userMessage];
 
-      const response = await fetch(apiUrl, {
+      // Send to API with the latest state
+      sendToApi(updatedMessages);
+
+      return updatedMessages;
+    });
+  };
+
+  const sendToApi = async (currentMessages: ChatMessage[]) => {
+    try {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,16 +67,10 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
         body: JSON.stringify({
           request_id: `mova-${++requestIdCounter.current}`,
           conversation_id: conversationId.current,
-          messages: [
-            ...messages.map((msg) => ({
-              role: msg.role,
-              content: msg.content,
-            })),
-            {
-              role: "user",
-              content: userMessage.content,
-            },
-          ],
+          messages: currentMessages.map((msg) => ({
+            role: msg.role,
+            content: msg.content,
+          })),
           business_profile: mockBusinessProfile,
           options: {
             stream: false,
