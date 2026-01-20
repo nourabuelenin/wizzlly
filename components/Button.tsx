@@ -20,8 +20,8 @@ export default function Button({
   return (
     <button
       className={`group relative inline-flex cursor-pointer items-center justify-center md:justify-start p-3 md:p-4 ${
-        ShowArrow ? "pr-12 md:pr-16" : ""
-      } rounded-full text-sm md:text-lg lg:text-xl w-full md:w-fit overflow-hidden transition-all duration-300 ${
+        ShowArrow ? "pr-16 md:pr-20" : ""
+      } rounded-full text-sm md:text-lg lg:text-xl w-fit overflow-hidden transition-all duration-300 ${
         isPrimary
           ? "bg-white text-black"
           : isSecondary
