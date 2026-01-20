@@ -37,22 +37,23 @@ export default function HomepageWorkStats({ dict }: any) {
     status: dict.homepage.workStats.projectsStatus,
   };
   return (
-    <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
-      <div className="grid grid-cols-[auto_1fr] gap-2 container mx-auto px-10">
+    <section className="bg-surface-muted -mt-5 py-10 md:py-20 rounded-t-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-2 container mx-auto px-4 md:px-10">
         {/* Left Side - Image */}
-        <div>
+        <div className="w-full md:w-auto flex justify-center md:justify-start">
           <Image
             src={DevelopImage}
             width={570}
             height={570}
             alt="design-develop-image"
+            className="w-full md:w-auto md:max-w-[400px] lg:max-w-[570px] h-auto"
           />
         </div>
 
         {/* Right Side - Bento Grid */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3 md:gap-4">
           {/* Top Row */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
             <WorkStatsServiceCard {...SERVICE_CONFIG} />
             <ProjectsCard {...PROJECTS_CONFIG} />
           </div>
