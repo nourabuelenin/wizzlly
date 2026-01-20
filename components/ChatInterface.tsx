@@ -7,11 +7,23 @@ import ChatInterfaceCardsGrid from "./ChatInterfaceCardsGrid";
 import ChatInterfaceQuickActionButtons from "./ChatInterfaceQuickActionButtons";
 import ChatInterfaceChatMessagesArea from "./ChatInterfaceChatMessagesArea";
 import ChatInterfaceChatInput from "./ChatInterfaceChatInput";
+import ChatInterfaceThinkingBox from "./ChatInterfaceThinkingBox";
+
+interface ToolCall {
+  tool_name: string;
+  tool_input: Record<string, unknown>;
+  tool_output: unknown;
+}
 
 interface ChatMessage {
   id: string;
   role: "user" | "assistant";
   content: string;
+  toolCalls?: ToolCall[];
+  processingTimeMs?: number;
+  intermediateTools?: Array<{ tool: string; input: Record<string, unknown> }>;
+  isStreaming?: boolean;
+  hasContentStarted?: boolean;
 }
 
 interface ChatInterfaceProps {
@@ -25,6 +37,7 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const conversationId = useRef(`mova-session-${Date.now()}`);
   const requestIdCounter = useRef(0);
+  const isSendingRef = useRef(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -35,7 +48,9 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
   }, [messages]);
 
   const sendMessage = async () => {
-    if (!inputValue.trim()) return;
+    if (!inputValue.trim() || isSendingRef.current) return;
+
+    isSendingRef.current = true;
 
     const userMessage: ChatMessage = {
       id: `msg-${Date.now()}-${Math.random()}`,
@@ -43,21 +58,28 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
       content: inputValue,
     };
 
+    const updatedMessages = [...messages, userMessage];
+
     setInputValue("");
+    setMessages(updatedMessages);
     setIsLoading(true);
 
-    // Fix race condition: capture the updated messages state
-    setMessages((prevMessages) => {
-      const updatedMessages = [...prevMessages, userMessage];
-
-      // Send to API with the latest state
-      sendToApi(updatedMessages);
-
-      return updatedMessages;
-    });
+    // Call API with the new messages array
+    await sendToApi(updatedMessages);
   };
 
   const sendToApi = async (currentMessages: ChatMessage[]) => {
+    const messageId = `msg-${Date.now()}-${Math.random()}`;
+    let accumulatedContent = "";
+    let toolCalls: ToolCall[] = [];
+    let processingTimeMs = 0;
+    let hasStartedStreaming = false;
+    let hasContentStarted = false;
+    const intermediateTools: Array<{
+      tool: string;
+      input: Record<string, unknown>;
+    }> = [];
+
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -73,7 +95,7 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
           })),
           business_profile: mockBusinessProfile,
           options: {
-            stream: false,
+            stream: true,
           },
         }),
       });
@@ -82,14 +104,120 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
         throw new Error(`API error: ${response.statusText}`);
       }
 
-      const data = await response.json();
+      // Handle streaming response
+      const reader = response.body?.getReader();
+      if (!reader) {
+        throw new Error("No response body");
+      }
+
+      const decoder = new TextDecoder();
       const assistantMessage: ChatMessage = {
-        id: `msg-${Date.now()}-${Math.random()}`,
+        id: messageId,
         role: "assistant",
-        content: data.response || data.message || "No response received",
+        content: "",
+        toolCalls: [],
+        intermediateTools: [],
+        isStreaming: true,
+        hasContentStarted: false,
       };
 
+      // Add empty assistant message while streaming
       setMessages((prev) => [...prev, assistantMessage]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split("\n");
+
+        for (const line of lines) {
+          if (line.startsWith("data: ")) {
+            const data = line.slice(6);
+
+            if (data === "[DONE]") {
+              continue;
+            }
+
+            try {
+              const event = JSON.parse(data);
+
+              if (event.type === "token") {
+                // First token marks start of streaming
+                if (!hasStartedStreaming) {
+                  hasStartedStreaming = true;
+                  hasContentStarted = true;
+                }
+
+                // Accumulate text tokens
+                accumulatedContent += event.content;
+                // Update message with new content
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === messageId
+                      ? {
+                          ...msg,
+                          content: accumulatedContent,
+                          isStreaming: true,
+                          hasContentStarted: true,
+                        }
+                      : msg,
+                  ),
+                );
+              } else if (event.type === "tool_start") {
+                // Track intermediate tool usage
+                intermediateTools.push({
+                  tool: event.tool,
+                  input: event.input || {},
+                });
+
+                // Update message to show intermediate tools
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === messageId
+                      ? {
+                          ...msg,
+                          intermediateTools: [...intermediateTools],
+                        }
+                      : msg,
+                  ),
+                );
+              } else if (event.type === "tool_result") {
+                // Tool completed - just log for now
+                console.log("Tool completed:", event.tool);
+              } else if (event.type === "final") {
+                // Final response with metadata
+                accumulatedContent = event.content || accumulatedContent;
+                toolCalls = event.tool_calls || [];
+                processingTimeMs = event.processing_time_ms || 0;
+
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === messageId
+                      ? {
+                          ...msg,
+                          content: accumulatedContent,
+                          toolCalls,
+                          processingTimeMs,
+                          isStreaming: false,
+                          intermediateTools: [],
+                        }
+                      : msg,
+                  ),
+                );
+              } else if (event.type === "error") {
+                throw new Error(event.error);
+              }
+            } catch (e) {
+              if (e instanceof SyntaxError) {
+                // Not a JSON line, skip
+                continue;
+              }
+              throw e;
+            }
+          }
+        }
+      }
     } catch (error) {
       console.error("Chat API error:", error);
       const errorMessage: ChatMessage = {
@@ -100,13 +228,7 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
+      isSendingRef.current = false;
     }
   };
 
@@ -139,7 +261,6 @@ export default function ChatInterface({ dict }: ChatInterfaceProps) {
         dict={dict}
         inputValue={inputValue}
         onInputChange={setInputValue}
-        onKeyPress={handleKeyPress}
         onSend={sendMessage}
         isLoading={isLoading}
       />
