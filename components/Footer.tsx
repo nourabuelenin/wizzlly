@@ -50,19 +50,21 @@ function Footer({ dict }: any) {
   const FOOTER_DATA = dict.footer;
   return (
     <footer className="bg-[#171717] text-white">
-      <div className="container p-6 mx-auto">
-        <div className="lg:flex">
-          <div className="w-full -mx-6 lg:w-2/5">
-            <div className="px-6">
-              <p className="max-w-sm mt-2">{FOOTER_DATA.description}</p>
-              <Logo lightMode={true} className="mt-2" />
+      <div className="container p-4 md:p-6 mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
+          <div className="w-full lg:w-2/5">
+            <div className="px-0 md:px-6">
+              <p className="max-w-sm mt-2 text-sm md:text-base">
+                {FOOTER_DATA.description}
+              </p>
+              <Logo lightMode={true} className="mt-4 w-20 h-20" />
 
-              <div className="flex mt-6 -mx-2">
+              <div className="flex mt-6 gap-4 md:gap-0 md:-mx-2">
                 {SOCIAL_LINKS.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="mx-2 transition-colors duration-300 hover:text-blue-400"
+                    className="md:mx-2 transition-colors duration-300 hover:text-blue-400"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -72,16 +74,18 @@ function Footer({ dict }: any) {
             </div>
           </div>
 
-          <div className="mt-6 lg:mt-0 lg:flex-1">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="w-full lg:w-3/5 lg:flex-1">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {FOOTER_DATA.sections.map((section) => (
                 <div key={section.title}>
-                  <h3 className="text-lg font-semibold">{section.title}</h3>
+                  <h3 className="text-sm md:text-lg font-semibold">
+                    {section.title}
+                  </h3>
                   {section.links?.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
-                      className="block mt-2 text-base hover:underline"
+                      className="block mt-2 text-xs md:text-base hover:underline"
                     >
                       {link.label}
                     </a>
@@ -89,7 +93,7 @@ function Footer({ dict }: any) {
                   {section.items?.map((item) => (
                     <span
                       key={item.label}
-                      className="block mt-2 text-sm hover:underline"
+                      className="block mt-2 text-xs md:text-sm hover:underline"
                     >
                       {item.label}
                     </span>
@@ -102,9 +106,11 @@ function Footer({ dict }: any) {
       </div>
 
       <div className="bg-primary">
-        <div className="flex justify-between items-center mx-auto p-6 container mt-10">
-          <p className="text-center">{FOOTER_DATA.copyright}</p>
-          <div className="flex gap-5">
+        <div className="flex flex-col md:flex-row justify-between items-center mx-auto p-4 md:p-6 container gap-4 md:gap-0 md:mt-10">
+          <p className="text-center md:text-left text-sm md:text-base">
+            {FOOTER_DATA.copyright}
+          </p>
+          <div className="flex gap-3 md:gap-5 text-xs md:text-base">
             {FOOTER_DATA.bottomLinks.map((link) => (
               <a key={link.label} href={link.href}>
                 {link.label}
