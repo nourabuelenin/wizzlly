@@ -38,22 +38,22 @@ export default function HomepageWorkStats({ dict }: any) {
   };
   return (
     <section className="bg-surface-muted -mt-5 py-10 md:py-20 rounded-t-4xl">
-      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-2 container mx-auto px-4 md:px-10">
+      <div className="grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-8 md:gap-8 lg:gap-12 container mx-auto px-4 md:px-10">
         {/* Left Side - Image */}
-        <div className="w-full md:w-auto flex justify-center md:justify-start">
+        <div className="w-full flex justify-center xl:justify-start">
           <Image
             src={DevelopImage}
             width={570}
             height={570}
             alt="design-develop-image"
-            className="w-full md:w-auto md:max-w-[400px] lg:max-w-[570px] h-auto"
+            className="w-full md:w-full md:h-[300px] xl:h-auto   h-auto"
           />
         </div>
 
         {/* Right Side - Bento Grid */}
-        <div className="flex flex-col gap-3 md:gap-4">
+        <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
           {/* Top Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 lg:gap-5">
             <WorkStatsServiceCard {...SERVICE_CONFIG} />
             <ProjectsCard {...PROJECTS_CONFIG} />
           </div>
