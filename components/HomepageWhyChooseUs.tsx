@@ -19,48 +19,50 @@ export default function HomepageWhyChooseUs({ dict }: any) {
 
   const TESTIMONIALS = dict.homepage.whyChooseUs.testimonials;
   return (
-    <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
-      <div className="container mx-auto px-10 space-y-12">
+    <section className="bg-surface-muted -mt-5 py-10 md:py-20 rounded-t-4xl">
+      <div className="container mx-auto px-4 md:px-10 space-y-8 md:space-y-12">
         <div className="space-y-5">
           <SectionHeader {...SECTION_CONFIG.badge} />
           <Headline lines={SECTION_CONFIG.headline} />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {TESTIMONIALS.map((item: any, index: any) => (
             <div
               key={item.name + index}
-              className="bg-white rounded-2xl p-6 shadow-sm flex flex-col"
+              className="bg-white rounded-2xl p-4 md:p-6 shadow-sm flex flex-col"
             >
               {/* Top Content */}
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {/* Quote Icon */}
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                  <Quote className="w-5 h-5 text-white fill-white" />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-4 h-4 md:w-5 md:h-5 text-white fill-white" />
                 </div>
 
                 {/* Title */}
-                <h4 className="font-medium text-3xl">{item.title}</h4>
+                <h4 className="font-medium text-lg md:text-2xl lg:text-3xl">
+                  {item.title}
+                </h4>
 
                 {/* Text */}
-                <p className="text-gray-500 text-lg leading-relaxed">
+                <p className="text-gray-500 text-sm md:text-base lg:text-lg leading-relaxed">
                   {item.text}
                 </p>
               </div>
 
               {/* Identity — always at bottom */}
-              <div className="flex items-center gap-3 pt-6 mt-auto">
+              <div className="flex items-center gap-2 md:gap-3 pt-4 md:pt-6 mt-auto">
                 <Image
                   src={SaudiFlag}
                   alt={`${item.name} country`}
                   width={40}
                   height={40}
-                  className="rounded-sm"
+                  className="rounded-sm w-8 h-8 md:w-10 md:h-10"
                 />
 
-                <div className="text-base">
+                <div className="text-sm md:text-base">
                   <p className="font-medium text-gray-900">{item.name}</p>
-                  <p className="text-gray-500">
+                  <p className="text-gray-500 text-xs md:text-sm">
                     {item.role} @ {item.company}
                   </p>
                 </div>
