@@ -8,22 +8,17 @@ type logoProps = {
   className?: string;
 };
 
-export default function Logo({ className, lightMode }: logoProps) {
+export default function Logo({
+  className = "w-16 h-16 xl:w-22 xl:h-22",
+  lightMode,
+}: logoProps) {
   return (
     <LocaleLink href="/">
-      {lightMode ? (
-        <Image
-          src={logoLightImage}
-          alt="Wizlly Logo"
-          className={`w-28 h-28 ${className}`}
-        />
-      ) : (
-        <Image
-          src={logoImage}
-          alt="Wizlly Logo"
-          className={`w-28 h-28 ${className}`}
-        />
-      )}
+      <Image
+        src={lightMode ? logoLightImage : logoImage}
+        alt="Wizlly Logo"
+        className={`${className}`}
+      />
     </LocaleLink>
   );
 }
