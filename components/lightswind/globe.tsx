@@ -156,7 +156,7 @@ const Globe: React.FC<GlobeProps> = ({
         // Clamped between -PI/2 and PI/2 to prevent globe from going upside down
         thetaRef.current = Math.max(
           -Math.PI / 2,
-          Math.min(Math.PI / 2, thetaRef.current - deltaY * rotationSpeed)
+          Math.min(Math.PI / 2, thetaRef.current - deltaY * rotationSpeed),
         );
 
         lastMouseX.current = e.clientX;
@@ -222,8 +222,8 @@ const Globe: React.FC<GlobeProps> = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-center  mx-auto absolute -right-15 -top-35 ",
-        className
+        "flex items-center justify-center mx-auto relative hidden md:flex",
+        className,
       )}
       style={{
         width: "auto",
@@ -238,13 +238,13 @@ const Globe: React.FC<GlobeProps> = ({
       <canvas
         ref={canvasRef}
         style={{
-          width: "60rem", // Canvas takes full width of its parent (which is constrained)
-          height: "60rem", // Canvas takes full height of its parent (which is constrained)
-          maxWidth: "auto", // Limit max width to viewport height to ensure square aspect in landscape
-          maxHeight: "auto", // Limit max height to viewport width to ensure square aspect in portrait
-          aspectRatio: "1", // Force a 1:1 aspect ratio for the canvas element
-          display: "block", // Ensure canvas behaves as a block element
-          cursor: "grab", // Default cursor
+          width: "clamp(25rem, 50vw, 60rem)",
+          height: "clamp(25rem, 50vw, 60rem)",
+          maxWidth: "auto",
+          maxHeight: "auto",
+          aspectRatio: "1",
+          display: "block",
+          cursor: "grab",
         }}
       />
     </div>
