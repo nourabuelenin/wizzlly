@@ -41,8 +41,8 @@ export default function HomepageWhatWeDo({ dict }: any) {
     },
   ];
   return (
-    <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
-      <div className="container mx-auto px-10 space-y-5">
+    <section className="bg-surface-muted -mt-5 py-10 md:py-20 rounded-t-4xl">
+      <div className="container mx-auto px-4 md:px-10 space-y-5">
         <SectionHeader {...SECTION_CONFIG.badge} />
         <Headline lines={SECTION_CONFIG.headline} />
         <ServicesGrid services={SERVICES_CONFIG} />
