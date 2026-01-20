@@ -15,14 +15,18 @@ export default function HomepageHeroSection({ dict }: any) {
             <div className="w-3 h-3 rounded-full bg-pink-500"></div>
             <div className="w-3 h-3 rounded-full bg-orange-500"></div>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium leading-tight tracking-wide">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-wide">
             {dict.homepage.hero.title} <br />
             <span>{dict.homepage.hero.titleHighlight}</span>
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl font-medium tracking-wide text-center md:text-left">
+          <p className="text-lg md:text-xl lg:text-3xl font-medium tracking-wide text-center md:text-left">
             {dict.homepage.hero.subtitle}
           </p>
-          <Button text={dict.homepage.hero.cta} ShowArrow={true} />
+          <Button
+            text={dict.homepage.hero.cta}
+            ShowArrow={true}
+            className="md:mt-5"
+          />
         </aside>
         {/* Right Side */}
         <aside className="w-full xl:basis-1/2 flex items-center justify-center xl:items-end xl:justify-end">
@@ -31,7 +35,7 @@ export default function HomepageHeroSection({ dict }: any) {
             width={600}
             height={600}
             alt="Hero Image"
-            className="w-full md:w-[600px] lg:w-[800px] h-auto"
+            className="w-full md:w-150  h-auto"
           />
         </aside>
       </div>
