@@ -185,8 +185,22 @@
       "fullNameLabel": "Full Name",
       "emailLabel": "Email Address",
       "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm Password",
       "signUpButton": "Sign Up",
+      "creatingAccount": "Creating account...",
       "toggleSignIn": "or sign in"
+    },
+    "toast": {
+      "loginSuccess": "Welcome back! You've successfully logged in.",
+      "signupSuccess": "Account created successfully!",
+      "loginError": "Login failed. Please check your credentials.",
+      "signupError": "Signup failed. Please try again."
+    },
+    "onboardingPrompt": {
+      "title": "Complete Your Profile",
+      "message": "Would you like to continue with onboarding to set up your profile?",
+      "continue": "Continue to Onboarding",
+      "cancel": "Stay on Chat"
     }
   },
   "chat": {

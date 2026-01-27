@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import Logo from "@/components/Logo";
 import FormInput from "@/components/FormInput";
 import PasswordInput from "@/components/PasswordInput";
@@ -13,6 +14,7 @@ import { type Locale } from "@/lib/i18n/config";
 
 interface SignInProps {
   onToggleSignUp: () => void;
+  onSuccess?: () => void;
   dict: Awaited<ReturnType<typeof import("@/dictionaries").getDictionary>>;
   lang: Locale;
   compact?: boolean;
@@ -20,6 +22,7 @@ interface SignInProps {
 
 export default function SignIn({
   onToggleSignUp,
+  onSuccess,
   dict,
   lang,
   compact = false,
@@ -41,12 +44,26 @@ export default function SignIn({
       const result = await login(formData);
 
       if (result.success) {
-        router.push(`/${lang}/chat`);
+        toast.success(dict.auth.toast.loginSuccess);
+
+        // If in compact mode (modal), close modal
+        if (compact && onSuccess) {
+          setTimeout(() => {
+            onSuccess();
+          }, 500);
+        } else {
+          // If in full page mode, redirect to chat
+          router.push(`/${lang}/chat`);
+        }
       } else {
-        setError(result.error || "Login failed");
+        const errorMsg = result.error || dict.auth.toast.loginError;
+        setError(errorMsg);
+        toast.error(dict.auth.toast.loginError);
       }
-    } catch (err) {
-      setError("An unexpected error occurred");
+    } catch {
+      const errorMsg = "An unexpected error occurred";
+      setError(errorMsg);
+      toast.error(dict.auth.toast.loginError);
     } finally {
       setIsLoading(false);
     }

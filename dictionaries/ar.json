@@ -178,8 +178,22 @@
       "fullNameLabel": "الاسم الكامل",
       "emailLabel": "عنوان البريد الإلكتروني",
       "passwordLabel": "كلمة المرور",
+      "confirmPasswordLabel": "تأكيد كلمة المرور",
       "signUpButton": "إنشاء حساب",
+      "creatingAccount": "جارٍ إنشاء الحساب...",
       "toggleSignIn": "أو قم بتسجيل الدخول"
+    },
+    "toast": {
+      "loginSuccess": "مرحباً بعودتك! تم تسجيل الدخول بنجاح.",
+      "signupSuccess": "تم إنشاء الحساب بنجاح!",
+      "loginError": "فشل تسجيل الدخول. يرجى التحقق من بيانات الاعتماد.",
+      "signupError": "فشل التسجيل. يرجى المحاولة مرة أخرى."
+    },
+    "onboardingPrompt": {
+      "title": "أكمل ملفك الشخصي",
+      "message": "هل ترغب في الاستمرار في إعداد ملفك الشخصي؟",
+      "continue": "المتابعة إلى الإعداد",
+      "cancel": "البقاء في الدردشة"
     }
   },
   "chat": {

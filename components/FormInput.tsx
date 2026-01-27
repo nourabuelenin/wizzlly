@@ -4,6 +4,7 @@ interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   error?: string;
   helperText?: React.ReactNode;
+  containerClassName?: string;
 }
 
 export default function FormInput({
@@ -12,10 +13,11 @@ export default function FormInput({
   helperText,
   id,
   className = "",
+  containerClassName = "",
   ...props
 }: FormInputProps) {
   return (
-    <div>
+    <div className={containerClassName}>
       <div className="flex justify-between mb-2">
         <label
           className="block text-sm font-medium text-gray-600 dark:text-gray-200"

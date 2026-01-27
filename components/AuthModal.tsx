@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 import Modal from "@/components/Modal";
 import SignIn from "@/components/SignIn";
 import SignUp from "@/components/SignUp";
@@ -23,23 +24,55 @@ export default function AuthModal({ dict }: AuthModalProps) {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleSuccess = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      {isSignUp ? (
-        <SignUp
-          onToggleSignIn={() => setIsSignUp(false)}
-          dict={dict}
-          lang={lang}
-          compact
-        />
-      ) : (
-        <SignIn
-          onToggleSignUp={() => setIsSignUp(true)}
-          dict={dict}
-          lang={lang}
-          compact
-        />
-      )}
-    </Modal>
+    <>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+          success: {
+            duration: 3000,
+            iconTheme: {
+              primary: "#10B981",
+              secondary: "#fff",
+            },
+          },
+          error: {
+            duration: 4000,
+            iconTheme: {
+              primary: "#EF4444",
+              secondary: "#fff",
+            },
+          },
+        }}
+      />
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        {isSignUp ? (
+          <SignUp
+            onToggleSignIn={() => setIsSignUp(false)}
+            onSuccess={handleSuccess}
+            dict={dict}
+            lang={lang}
+            compact
+          />
+        ) : (
+          <SignIn
+            onToggleSignUp={() => setIsSignUp(true)}
+            onSuccess={handleSuccess}
+            dict={dict}
+            lang={lang}
+            compact
+          />
+        )}
+      </Modal>
+    </>
   );
 }

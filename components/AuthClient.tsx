@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 import SignIn from "@/components/SignIn";
 import SignUp from "@/components/SignUp";
 import { type Locale } from "@/lib/i18n/config";
@@ -17,6 +18,30 @@ export default function AuthClient({ dict }: AuthClientProps) {
 
   return (
     <>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+          success: {
+            duration: 3000,
+            iconTheme: {
+              primary: "#10B981",
+              secondary: "#fff",
+            },
+          },
+          error: {
+            duration: 4000,
+            iconTheme: {
+              primary: "#EF4444",
+              secondary: "#fff",
+            },
+          },
+        }}
+      />
       {isSignUp ? (
         <SignUp
           onToggleSignIn={() => setIsSignUp(false)}

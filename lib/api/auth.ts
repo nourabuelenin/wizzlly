@@ -37,9 +37,12 @@ export async function register(data: RegisterData): Promise<AuthResponse> {
       };
     }
 
-    // Store token if provided
+    // Store token and user data if provided
     if (result.token) {
       localStorage.setItem("authToken", result.token);
+    }
+    if (result.user) {
+      localStorage.setItem("user", JSON.stringify(result.user));
     }
 
     return result;
@@ -70,9 +73,12 @@ export async function login(data: LoginData): Promise<AuthResponse> {
       };
     }
 
-    // Store token if provided
+    // Store token and user data if provided
     if (result.token) {
       localStorage.setItem("authToken", result.token);
+    }
+    if (result.user) {
+      localStorage.setItem("user", JSON.stringify(result.user));
     }
 
     return result;
@@ -100,6 +106,7 @@ export async function logout(): Promise<void> {
     console.error("Logout error:", error);
   } finally {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
   }
 }
 
