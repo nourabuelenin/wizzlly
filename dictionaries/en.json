@@ -194,7 +194,8 @@
       "loginSuccess": "Welcome back! You've successfully logged in.",
       "signupSuccess": "Account created successfully!",
       "loginError": "Login failed. Please check your credentials.",
-      "signupError": "Signup failed. Please try again."
+      "signupError": "Signup failed. Please try again.",
+      "logoutSuccess": "Logged out successfully. See you soon!"
     },
     "onboardingPrompt": {
       "title": "Complete Your Profile",
@@ -209,7 +210,9 @@
       "badge": "Plus",
       "configuration": "Configuration",
       "share": "Share",
-      "newChat": "New Chat"
+      "newChat": "New Chat",
+      "login": "Login",
+      "logout": "Logout"
     },
     "sidebar": {
       "newChat": "New chat",

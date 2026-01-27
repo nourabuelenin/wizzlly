@@ -1,9 +1,6 @@
 import { type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/dictionaries";
-import Sidebar from "@/components/Sidebar";
-import ChatHeader from "@/components/ChatHeader";
-import ChatInterface from "@/components/ChatInterface";
-import AuthModal from "@/components/AuthModal";
+import ChatPageClient from "@/components/ChatPageClient";
 
 interface ChatPageProps {
   params: Promise<{
@@ -15,19 +12,5 @@ export default async function Chat({ params }: ChatPageProps) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
-  return (
-    <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <Sidebar dict={dict} />
-
-      {/* Main Area */}
-      <div className="flex flex-col flex-1">
-        <ChatHeader dict={dict} lang={lang} />
-        <ChatInterface dict={dict} />
-      </div>
-
-      {/* Auth Modal - Opens after 1 second */}
-      <AuthModal dict={dict} />
-    </div>
-  );
+  return <ChatPageClient dict={dict} lang={lang} />;
 }

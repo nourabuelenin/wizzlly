@@ -19,15 +19,21 @@ export default function AuthClient({ dict }: AuthClientProps) {
   return (
     <>
       <Toaster
-        position="top-right"
+        position="top-left"
         toastOptions={{
           duration: 3000,
           style: {
-            background: "#333",
-            color: "#fff",
+            padding: "16px",
+            minWidth: "250px",
           },
           success: {
             duration: 3000,
+            style: {
+              background: "#D1FAE5",
+              color: "#065F46",
+              border: "1px solid #10B981",
+              padding: "16px",
+            },
             iconTheme: {
               primary: "#10B981",
               secondary: "#fff",
@@ -35,6 +41,12 @@ export default function AuthClient({ dict }: AuthClientProps) {
           },
           error: {
             duration: 4000,
+            style: {
+              background: "#FEE2E2",
+              color: "#991B1B",
+              border: "1px solid #EF4444",
+              padding: "16px",
+            },
             iconTheme: {
               primary: "#EF4444",
               secondary: "#fff",
