@@ -175,6 +175,7 @@
       "passwordLabel": "Password",
       "forgotPassword": "Forget Password?",
       "signInButton": "Sign In",
+      "signingIn": "Signing in...",
       "toggleSignUp": "or sign up"
     },
     "signUp": {

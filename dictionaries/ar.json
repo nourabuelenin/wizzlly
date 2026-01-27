@@ -168,6 +168,7 @@
       "passwordLabel": "كلمة المرور",
       "forgotPassword": "هل نسيت كلمة المرور؟",
       "signInButton": "تسجيل الدخول",
+      "signingIn": "جارٍ تسجيل الدخول...",
       "toggleSignUp": "أو قم بإنشاء حساب"
     },
     "signUp": {
