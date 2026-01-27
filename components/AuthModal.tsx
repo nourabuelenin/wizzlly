@@ -1,15 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import Modal from "@/components/Modal";
 import SignIn from "@/components/SignIn";
 import SignUp from "@/components/SignUp";
+import { type Locale } from "@/lib/i18n/config";
 
 interface AuthModalProps {
   dict: Awaited<ReturnType<typeof import("@/dictionaries").getDictionary>>;
 }
 
 export default function AuthModal({ dict }: AuthModalProps) {
+  const params = useParams();
+  const lang = params.lang as Locale;
   const [isOpen, setIsOpen] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
 
@@ -22,9 +26,19 @@ export default function AuthModal({ dict }: AuthModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
       {isSignUp ? (
-        <SignUp onToggleSignIn={() => setIsSignUp(false)} dict={dict} compact />
+        <SignUp
+          onToggleSignIn={() => setIsSignUp(false)}
+          dict={dict}
+          lang={lang}
+          compact
+        />
       ) : (
-        <SignIn onToggleSignUp={() => setIsSignUp(true)} dict={dict} compact />
+        <SignIn
+          onToggleSignUp={() => setIsSignUp(true)}
+          dict={dict}
+          lang={lang}
+          compact
+        />
       )}
     </Modal>
   );
