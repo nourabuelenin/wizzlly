@@ -1,11 +1,8 @@
 import type { RegisterData, LoginData, AuthResponse } from "@/models/Auth";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_GAD_BASE_URL || "http://134.209.30.66";
-
 export async function register(data: RegisterData): Promise<AuthResponse> {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/register/`, {
+    const response = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +53,7 @@ export async function register(data: RegisterData): Promise<AuthResponse> {
 
 export async function login(data: LoginData): Promise<AuthResponse> {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/login/`, {
+    const response = await fetch("/api/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +91,7 @@ export async function logout(): Promise<void> {
   try {
     const token = localStorage.getItem("authToken");
 
-    await fetch(`${API_BASE_URL}/api/auth/logout/`, {
+    await fetch("/api/auth/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
