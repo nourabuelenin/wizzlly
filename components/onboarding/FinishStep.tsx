@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import toast from "react-hot-toast";
 import { Dictionary } from "@/types/dictionary";
+import { updateProfile } from "@/lib/api/auth";
 
 interface FinishStepProps {
   formData: {
@@ -23,13 +26,62 @@ export function FinishStep({ formData, onBack, dict }: FinishStepProps) {
   const router = useRouter();
   const params = useParams();
   const currentLang = (params.lang as string) || "en";
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleFinish = () => {
-    // TODO: Save data to backend/database
-    console.log("Onboarding complete:", formData);
+  const handleFinish = async () => {
+    setIsLoading(true);
 
-    // Redirect to dashboard or chat with current language
-    router.push(`/${currentLang}/chat`);
+    try {
+      // Transform form data to match API structure
+      const knowledge_base = {
+        brand: {
+          name: formData.businessName,
+          industry: formData.industry,
+          description: `${formData.businessName} - ${formData.industry}`,
+        },
+        account: {
+          // Optional account fields - can be added later
+        },
+        preferences: {
+          tone: formData.toneOfVoice.toLowerCase(),
+          language: currentLang,
+        },
+      };
+
+      // Add optional fields if provided
+      if (formData.interests || formData.painPoints || formData.targetDemographics) {
+        (knowledge_base as any).target_audience = {
+          demographics: formData.targetDemographics,
+          interests: formData.interests ? formData.interests.split(",").map(i => i.trim()) : [],
+          pain_points: formData.painPoints ? formData.painPoints.split(",").map(p => p.trim()) : [],
+        };
+      }
+
+      if (formData.businessGoals.length > 0) {
+        (knowledge_base as any).business_goals = formData.businessGoals;
+      }
+
+      if (formData.brandKeywords.length > 0) {
+        (knowledge_base as any).brand_keywords = formData.brandKeywords;
+      }
+
+      // Update profile with knowledge_base
+      const result = await updateProfile({ knowledge_base });
+
+      if (result.success) {
+        toast.success("Profile updated successfully!");
+        
+        // Redirect to dashboard
+        router.push(`/${currentLang}/dashboard`);
+      } else {
+        toast.error(result.error || "Failed to save profile");
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.error("Error saving onboarding data:", error);
+      toast.error("An unexpected error occurred");
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -215,9 +267,10 @@ export function FinishStep({ formData, onBack, dict }: FinishStepProps) {
         <button
           type="button"
           onClick={handleFinish}
-          className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
+          disabled={isLoading}
+          className="px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
         >
-          {dict?.onboarding?.finish?.getStarted || "Get Started"}
+          {isLoading ? "Saving..." : (dict?.onboarding?.finish?.getStarted || "Get Started")}
         </button>
       </div>
     </div>

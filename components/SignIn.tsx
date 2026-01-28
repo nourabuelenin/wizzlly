@@ -52,8 +52,8 @@ export default function SignIn({
             onSuccess();
           }, 500);
         } else {
-          // If in full page mode, redirect to chat
-          router.push(`/${lang}/chat`);
+          // If in full page mode, redirect to dashboard
+          router.push(`/${lang}/dashboard`);
         }
       } else {
         const errorMsg = result.error || dict.auth.toast.loginError;

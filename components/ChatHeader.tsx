@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { Settings, Share2, User, LogIn, LogOut } from "lucide-react";
 import { type Locale } from "@/lib/i18n/config";
@@ -20,6 +21,7 @@ export default function ChatHeader({
   onOpenAuth,
   onAuthChange,
 }: ChatHeaderProps) {
+  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -45,6 +47,10 @@ export default function ChatHeader({
     await logout();
     setIsAuthenticated(false);
     toast.success(dict.auth.toast.logoutSuccess);
+  };
+
+  const handleProfileClick = () => {
+    router.push(`/${lang}/profile`);
   };
 
   return (
@@ -89,7 +95,10 @@ export default function ChatHeader({
 
         <div className="ltr:ml-2 ltr:border-l ltr:pl-2 rtl:mr-2 rtl:border-r rtl:pr-2 flex items-center gap-2">
           {isAuthenticated && (
-            <button className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer">
+            <button
+              onClick={handleProfileClick}
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors cursor-pointer"
+            >
               <User className="w-5 h-5 text-gray-700" />
             </button>
           )}

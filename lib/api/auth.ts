@@ -115,3 +115,88 @@ export function getAuthToken(): string | null {
 export function isAuthenticated(): boolean {
   return !!getAuthToken();
 }
+
+export async function getProfile(): Promise<AuthResponse & { user?: any }> {
+  try {
+    const token = getAuthToken();
+
+    if (!token) {
+      return {
+        success: false,
+        error: "Not authenticated",
+      };
+    }
+
+    const response = await fetch("/api/auth/profile", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        success: false,
+        error: result.error || "Failed to fetch profile",
+      };
+    }
+
+    return result;
+  } catch (error) {
+    return {
+      success: false,
+      error: "Network error. Please try again.",
+    };
+  }
+}
+
+export async function updateProfile(data: {
+  first_name?: string;
+  last_name?: string;
+  email?: string;
+  knowledge_base?: any;
+}): Promise<AuthResponse & { user?: any }> {
+  try {
+    const token = getAuthToken();
+
+    if (!token) {
+      return {
+        success: false,
+        error: "Not authenticated",
+      };
+    }
+
+    const response = await fetch("/api/auth/profile", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        success: false,
+        error: result.error || "Failed to update profile",
+      };
+    }
+
+    // Update stored user data
+    if (result.user) {
+      localStorage.setItem("user", JSON.stringify(result.user));
+    }
+
+    return result;
+  } catch (error) {
+    return {
+      success: false,
+      error: "Network error. Please try again.",
+    };
+  }
+}

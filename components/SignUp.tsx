@@ -47,18 +47,13 @@ export default function SignUp({
     setIsLoading(true);
 
     try {
-      // Split full name into first and last name if needed
-      const names = formData.first_name.split(" ");
-      const firstName = names[0] || "";
-      const lastName = names.slice(1).join(" ") || "";
-
       const result = await register({
-        username: formData.username || formData.email.split("@")[0],
+        username: formData.username,
         email: formData.email,
         password: formData.password,
         password_confirm: formData.password_confirm,
-        first_name: firstName,
-        last_name: lastName,
+        first_name: formData.first_name,
+        last_name: formData.last_name,
       });
 
       if (result.success) {
@@ -113,12 +108,34 @@ export default function SignUp({
   const renderForm = () => (
     <form onSubmit={handleSubmit} className={compact ? "mt-4" : ""}>
       <FormInput
-        id="fullName"
+        id="firstName"
         name="first_name"
-        label={dict.auth.signUp.fullNameLabel}
+        label={dict.auth.signUp.firstNameLabel || "First Name"}
         type="text"
         value={formData.first_name}
         onChange={handleChange}
+        required
+      />
+
+      <FormInput
+        id="lastName"
+        name="last_name"
+        label={dict.auth.signUp.lastNameLabel || "Last Name"}
+        type="text"
+        value={formData.last_name}
+        onChange={handleChange}
+        containerClassName="mt-4"
+        required
+      />
+
+      <FormInput
+        id="username"
+        name="username"
+        label={dict.auth.signUp.usernameLabel || "Username"}
+        type="text"
+        value={formData.username}
+        onChange={handleChange}
+        containerClassName="mt-4"
         required
       />
 
