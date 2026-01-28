@@ -24,7 +24,7 @@ export default function ChatPageClient({ dict, lang }: ChatPageClientProps) {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Sidebar */}
-      <Sidebar dict={dict} />
+      <Sidebar dict={dict} lang={lang} />
 
       {/* Main Area */}
       <div className="flex flex-col flex-1">

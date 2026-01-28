@@ -55,7 +55,7 @@ export async function GET(req: Request) {
       return NextResponse.json(
         {
           success: false,
-          error: errorDetails.error || "Failed to fetch profile",
+          error: errorDetails.error || errorDetails.detail || "Failed to fetch profile",
           details: errorDetails.details || errorDetails,
         },
         { status: response.status }
@@ -153,7 +153,7 @@ export async function PUT(req: Request) {
       return NextResponse.json(
         {
           success: false,
-          error: errorDetails.error || "Failed to update profile",
+          error: errorDetails.error || errorDetails.detail || "Failed to update profile",
           details: errorDetails.details || errorDetails,
         },
         { status: response.status }

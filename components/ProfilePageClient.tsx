@@ -96,7 +96,7 @@ export default function ProfilePageClient({
   if (isLoading) {
     return (
       <div className="flex h-screen overflow-hidden bg-gray-50">
-        <Sidebar dict={dict} />
+        <Sidebar dict={dict} lang={lang} />
         <div className="flex flex-col flex-1">
           <ChatHeader dict={dict} lang={lang} />
           <div className="flex-1 flex items-center justify-center">
@@ -114,7 +114,7 @@ export default function ProfilePageClient({
   if (error || !profileData) {
     return (
       <div className="flex h-screen overflow-hidden bg-gray-50">
-        <Sidebar dict={dict} />
+        <Sidebar dict={dict} lang={lang} />
         <div className="flex flex-col flex-1">
           <ChatHeader dict={dict} lang={lang} />
           <div className="flex-1 flex items-center justify-center">
@@ -138,7 +138,7 @@ export default function ProfilePageClient({
   return (
     <div className="flex h-screen overflow-hidden bg-gray-50">
       {/* Sidebar */}
-      <Sidebar dict={dict} />
+      <Sidebar dict={dict} lang={lang} />
 
       {/* Main Area */}
       <div className="flex flex-col flex-1">

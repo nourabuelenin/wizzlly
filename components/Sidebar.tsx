@@ -14,11 +14,14 @@ import {
   Trash2,
 } from "lucide-react";
 import { useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 import Logo from "./Logo";
 import Dropdown from "./Dropdown";
+import { type Locale } from "@/lib/i18n/config";
 
 interface SidebarProps {
   dict: Awaited<ReturnType<typeof import("@/dictionaries").getDictionary>>;
+  lang?: Locale;
 }
 
 const savedChats = [
@@ -53,11 +56,22 @@ const yesterdayChats = [
   "ما الفرق بين مصمم واجهة المستخدم ومصمم تجربة المستخدم؟",
 ];
 
-export default function Sidebar({ dict }: SidebarProps) {
+export default function Sidebar({ dict, lang }: SidebarProps) {
+  const params = useParams();
+  const router = useRouter();
+  const currentLang = (lang || params.lang || "en") as Locale;
+
+  const handleLogoClick = () => {
+    router.push(`/${currentLang}/chat`);
+  };
+
   return (
     <aside className="flex flex-col w-64 h-screen bg-white border-r dark:bg-gray-900 dark:border-gray-700 overflow-hidden">
       {/* Logo */}
-      <div className="flex items-center justify-center py-4">
+      <div 
+        className="flex items-center justify-center py-4 cursor-pointer hover:opacity-80 transition-opacity"
+        onClick={handleLogoClick}
+      >
         <Logo />
       </div>
 

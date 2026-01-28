@@ -47,6 +47,9 @@ export default function ChatHeader({
     await logout();
     setIsAuthenticated(false);
     toast.success(dict.auth.toast.logoutSuccess);
+    
+    // Redirect to chat page after logout
+    router.push(`/${lang}/chat`);
   };
 
   const handleProfileClick = () => {
