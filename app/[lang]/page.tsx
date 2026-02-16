@@ -6,7 +6,10 @@ import { notFound } from "next/navigation";
 import HomepageWorkStats from "@/components/HomepageWorkStatsSection";
 import HomepageHowWeWork from "@/components/HomepageHowWeWork";
 import HomepageWhyChooseUs from "@/components/HomepageWhyChooseUs";
-import HomepageWhatWeDo from "@/components/HomepageWhatWeDoSection";
+import HomepageWhatWeOffer from "@/components/HomepageWhatWeOffer";
+import HomepageAboutUs from "@/components/HomepageAboutUs";
+import HomepageOurApproach from "@/components/HomepageOurApproach";
+import HomepageCTA from "@/components/HomepageCTA";
 
 export default async function Home({
   params,
@@ -25,10 +28,13 @@ export default async function Home({
       <main>
         <Navbar lang={lang as Locale} dict={dict} />
         <HomepageHeroSection dict={dict} />
+        <HomepageWhatWeOffer dict={dict} />
+        <HomepageAboutUs dict={dict} />
+        <HomepageOurApproach dict={dict} />
         <HomepageWorkStats />
-        <HomepageWhatWeDo />
         <HomepageHowWeWork />
         <HomepageWhyChooseUs />
+        <HomepageCTA dict={dict} />
       </main>
     </>
   );

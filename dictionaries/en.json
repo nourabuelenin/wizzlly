@@ -13,16 +13,161 @@
   },
   "homepage": {
     "hero": {
-      "title": "Crafting Future",
-      "titleHighlight": "Software Today!",
-      "subtitle": "Transforming Ideas Into Software Success Stories",
-      "cta": "Let's Connect"
+      "title": "Empowerment That Goes Beyond Visibility",
+      "subtitle": "Marketing that understands your brand, grows with your values, and delivers measurable results.",
+      "subtitle2": "ENABLR combines strategic marketing expertise with smart technology to create growth that respects your brand identity and community values.",
+      "cta": "ENABLR Tool Demo",
+      "cta2": "View Services",
+      "trustedBy": "Trusted by the world’s biggest brands",
+      "stats": {
+        "clientResults": {
+          "title": "Average Client Results",
+          "value": "287%",
+          "subtitle": "Increase in conversion rate",
+          "roi": "Average ROI",
+          "revenue": "Revenue Generated",
+          "renewed": "Clients Renewed"
+        },
+        "companies": {
+          "value": "230+",
+          "text": "Big Companies That We Work With And Trust Us With Their Marketing Campaigns."
+        },
+        "scale": {
+          "title": "Ready to scale your business?",
+          "subtitle": "Create High-Converting Marketing Campaigns That Actually Drives Revenue.",
+          "cta": "Get Your Free Trial"
+        },
+        "traffic": {
+          "title": "Drive More Traffic And Success",
+          "visitors": "Visitors"
+        }
+      }
+    },
+    "whatWeOffer": {
+      "badge": "What We Offer",
+      "title": "Choose Your Growth Path With Us",
+      "steps": [
+        {
+          "number": "1",
+          "title": "A Team That Manages Your Marketing End-to-End",
+          "description": "We lead your strategy, execute your campaigns, and measure the results.",
+          "cta": "Let Our Team Lead Your Marketing"
+        },
+        {
+          "number": "2",
+          "title": "A Smart Tool That Gives You Full Control",
+          "description": "Plan, execute, and monitor your performance independently.",
+          "cta": "Try ENABLR Tool Now"
+        }
+      ]
+    },
+    "aboutUs": {
+      "badge": "About Us",
+      "title": "ENABLR — Strategic Marketing, Built on Insights",
+      "description": "ENABLR is a full-service digital marketing agency blending strategic thinking with technical innovation to deliver measurable results for brands. We begin by understanding your market and audience, then build data-driven strategies and execute them with persistent optimization — ensuring real, accountable outcomes.\n\nWe believe marketing is more than exposure. It's an integrated system that starts with deep market understanding and ends with tangible business impact — either through our agency services or via our Enablr Tool.",
+      "cards": {
+        "whoWeAre": "Who We Are",
+        "vision": {
+          "title": "Our Vision",
+          "description": "To be the most trusted partner for brands seeking analytical, insight-driven marketing that elevates growth without compromising identity or values."
+        },
+        "mission": {
+          "title": "Our Mission",
+          "description": "Enable businesses to grow with smart planning and creative execution, guided by professional and ethical standards — producing meaningful digital content that fulfills our partners' ambitions."
+        },
+        "values": {
+          "title": "Our Values",
+          "list": [
+            {
+              "title": "Professionalism",
+              "description": "We deliver effective marketing solutions grounded in best practices and measurable impact."
+            },
+            {
+              "title": "Trust & Transparency",
+              "description": "Long-term relationships built on clarity and accountability."
+            },
+            {
+              "title": "Responsible Creativity",
+              "description": "Innovative ideas that achieve goals while honoring brand identity and societal values."
+            },
+            {
+              "title": "Values-Driven Execution",
+              "description": "Balanced marketing content that respects ethical standards in every visual and audio element."
+            }
+          ]
+        }
+      }
+    },
+    "ourApproach": {
+      "badge": "Our Approach",
+      "title": "A clear, repeatable framework that ensures quality delivery and results.",
+      "imageText": "Our Approach",
+      "steps": [
+        "Market analysis & audience understanding",
+        "Competitor research & opportunity mapping",
+        "Strategy development (integrated marketing plan)",
+        "Creative ideation & content production",
+        "Campaign execution across channels",
+        "Performance measurement & analysis",
+        "Continuous optimization and iteration"
+      ]
+    },
+    "cta": {
+      "title": "Ready to grow with strategy and values?",
+      "subtitle": "Let's build a marketing plan that reflects your identity and drives real results.",
+      "note": "No obligations. Flexible plans for agencies, brands, and in-house teams.",
+      "ctaPrimary": "Start Your Strategy Call",
+      "ctaSecondary": "Demo ENABLR Tool"
     }
   },
+  "footer": {
+    "description": "An award-winning SEO agency with disciplines in digital marketing, design, and website development, focused on understanding you.",
+    "links": {
+      "company": {
+        "title": "Company",
+        "items": [
+          { "text": "Home", "href": "/" },
+          { "text": "Services", "href": "/services" },
+          { "text": "Pricing", "href": "/pricing" },
+          { "text": "About Us", "href": "/about-us" },
+          { "text": "Contact Us", "href": "/contact-us" }
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "items": [
+          { "text": "Growth & Performance", "href": "/services/growth" },
+          { "text": "Creative Services", "href": "/services/creative" },
+          { "text": "Strategy & Research", "href": "/services/strategy" },
+          { "text": "Digital & Technical Solutions", "href": "/services/digital" }
+        ]
+      },
+      "resources": {
+        "title": "Resources",
+        "items": [
+          { "text": "Blogs", "href": "/blogs" },
+          { "text": "Case Studies", "href": "/case-studies" },
+          { "text": "Documentation", "href": "/docs" }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "items": [
+          { "text": "Privacy and Policy", "href": "/privacy" },
+          { "text": "Terms and Conditions", "href": "/terms" },
+          { "text": "Cookies Policy", "href": "/cookies" }
+        ]
+      }
+    },
+    "copyright": "ENABLR – Strategic marketing powered by insight and responsible creativity. © 2025"
+  },
   "navbar": {
-    "whoWeAre": "Who We Are",
-    "whatWeDo": "What We Do",
-    "blog": "Blog",
-    "pages": "Pages"
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started"
   }
 }
