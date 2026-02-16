@@ -20,15 +20,13 @@ export function LanguageSwitcher({ currentLang }: { currentLang: Locale }) {
   };
 
   return (
-    <li>
-      <Link
-        href={redirectedPathname()}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full font-medium text-surface-muted hover:bg-background/5 transition-colors text-base"
-        aria-label={`Switch language to ${nextLang}`}
-      >
-        <Globe className="h-4 w-4" />
-        <span>{LANG_LABEL[nextLang]}</span>
-      </Link>
-    </li>
+    <Link
+      href={redirectedPathname()}
+      className="flex items-center justify-center gap-2 px-4 py-4 rounded-full font-medium text-foreground bg-background/20 backdrop-blur-md hover:bg-background/80 transition-colors text-base"
+      aria-label={`Switch language to ${nextLang}`}
+    >
+        <Globe className="h-5 w-5" />
+      <span>{LANG_LABEL[nextLang]}</span>
+    </Link>
   );
 }
