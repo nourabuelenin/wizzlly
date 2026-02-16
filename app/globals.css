@@ -3,7 +3,8 @@
 :root {
   /* Base */
   --background: #f7f6f7;
-  --foreground: #1e1e1e;
+  --foreground: #14161c;
+  --foreground-light: #2d2f33;
 
   /* Surfaces */
   --surface: #ffffff;
@@ -12,7 +13,9 @@
 
   /* Brand */
   --primary: #723ff4;
+  --primary-light: #8368a2;
   --secondary: #0062a5;
+  --secondary-dark: #394a6e;
   --accent: #098ed1;
 }
 
