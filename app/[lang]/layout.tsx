@@ -6,13 +6,13 @@ import localFont from "next/font/local";
 import { Alexandria } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import React from "react";
 
 export const metadata: Metadata = {
   title: "Willzy",
   description: "Your Analysis Companion",
 };
-
 const roundsNeue = localFont({
   src: [
     {
@@ -115,7 +115,6 @@ const alexandria = Alexandria({
   variable: "--font-arabic",
   display: "swap",
 });
-
 export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
 }
@@ -143,7 +142,9 @@ export default async function RootLayout({
           isArabic ? alexandria.className : roundsNeue.className
         } antialiased `}
       >
-        {children}
+        <Navbar lang={lang as Locale} dict={dict} />
+        <main>{children}</main>
+        <Footer dict={dict} />
       </body>
     </html>
   );
