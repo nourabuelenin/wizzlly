@@ -1,5 +1,6 @@
 import Image from "next/image";
-import HeroImg from "@/public/images/hero-image.png"; // reusing existing image as placeholder
+import HeroStatsImg from "@/public/images/hero_stats.png";
+import HeroTrialImg from "@/public/images/hero_trial.png";
 import Button from "./Button";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,7 +39,7 @@ export default function HomepageHeroStats({ dict }: any) {
       {/* Card 2: 230+ Big Companies */}
       <div className="relative bg-gray-900 text-white p-8 rounded-[30px] h-[350px] overflow-hidden group">
         <Image
-          src={HeroImg}
+          src={HeroStatsImg}
           alt="Team working"
           fill
           className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
@@ -54,7 +55,7 @@ export default function HomepageHeroStats({ dict }: any) {
       {/* Card 3: Ready to Scale */}
       <div className="relative bg-gray-900 text-white p-8 rounded-[30px] h-[350px] overflow-hidden group">
         <Image
-          src={HeroImg}
+          src={HeroTrialImg}
           alt="Business scaling"
           fill
           className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"

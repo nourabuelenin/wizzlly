@@ -3,7 +3,7 @@ import { Zap } from "lucide-react";
 export default function HomepageHowWeWork() {
   return (
     <section className="bg-linear-to-tr from-[#032d79] to-[#0eaeef] -mt-5 py-24 rounded-t-2xl text-white">
-      <div className="container mx-auto px-10 grid grid-cols-[1fr_2fr] gap-16 items-start">
+      <div className="w-full px-4 lg:px-40 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
         {/* Left Side */}
         <div className="flex flex-col gap-6  h-full justify-center">
           <span className="border border-white/70 w-fit rounded-full px-5 py-2 text-lg tracking-wide">

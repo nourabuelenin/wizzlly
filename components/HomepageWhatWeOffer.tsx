@@ -13,7 +13,7 @@ export default function HomepageWhatWeOffer({ dict }: any) {
         <Image src={PatternDark} alt="Pattern" fill className="object-cover" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-20 relative z-10">
+      <div className="w-full px-40 lg:px-40 relative z-10">
         <div className="text-center mb-16">
           <p className="text-primary font-medium uppercase tracking-wider mb-4">
             {t.badge}

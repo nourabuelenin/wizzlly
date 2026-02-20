@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImg from "@/public/images/hero-image.png"; // Placeholder
+import WhoWeAreImg from "@/public/images/who_we_are.png";
 import { Target, Rocket, Star } from "lucide-react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -8,7 +8,7 @@ export default function HomepageAboutUs({ dict }: any) {
 
   return (
     <section className="bg-surface py-20">
-      <div className="container mx-auto px-4 lg:px-20">
+      <div className="w-full px-4 lg:px-40">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-16 items-start">
           <div>
@@ -29,9 +29,9 @@ export default function HomepageAboutUs({ dict }: any) {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Col 1: Who We Are Image */}
-          <div className="relative h-[400px] lg:h-auto rounded-[30px] overflow-hidden group">
+          <div className="relative h-[400px] lg:h-full rounded-[30px] overflow-hidden group">
             <Image
-              src={HeroImg}
+              src={WhoWeAreImg}
               alt="Who We Are"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"

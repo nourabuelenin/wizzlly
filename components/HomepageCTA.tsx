@@ -13,7 +13,7 @@ export default function HomepageCTA({ dict }: any) {
         <Image src={PatternDark} alt="Pattern" fill className="object-cover" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-20 relative z-10 text-center">
+      <div className="w-full px-4 lg:px-40 relative z-10 text-center">
         <h2 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight">
           {t.title}
         </h2>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImg from "@/public/images/hero-image.png"; // Placeholder image
+import OurApproachImg from "@/public/images/our_approach.png";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HomepageOurApproach({ dict }: any) {
@@ -7,7 +7,7 @@ export default function HomepageOurApproach({ dict }: any) {
 
   return (
     <section className="bg-border py-20">
-      <div className="container mx-auto px-4 lg:px-20">
+      <div className="w-full px-4 lg:px-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left Side: Stepper */}
           <div className="relative">
@@ -42,10 +42,10 @@ export default function HomepageOurApproach({ dict }: any) {
             
             <div className="relative h-[300px] lg:h-[400px] rounded-[30px] overflow-hidden group w-full">
               <Image
-                src={HeroImg}
+                src={OurApproachImg}
                 alt="Our Approach"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <h3 className="text-white text-5xl font-medium">

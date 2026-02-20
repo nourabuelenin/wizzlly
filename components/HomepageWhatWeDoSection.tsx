@@ -47,7 +47,7 @@ const SERVICES_CONFIG: ServiceCardProps[] = [
 export default function HomepageWhatWeDo() {
   return (
     <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
-      <div className="container mx-auto px-10 space-y-5">
+      <div className="w-full px-4 lg:px-40 space-y-5">
         <SectionHeader {...SECTION_CONFIG.badge} />
         <Headline lines={SECTION_CONFIG.headline} />
         <ServicesGrid services={SERVICES_CONFIG} />

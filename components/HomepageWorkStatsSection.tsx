@@ -40,7 +40,7 @@ const PROJECTS_CONFIG = {
 export default function HomepageWorkStats() {
   return (
     <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
-      <div className="grid grid-cols-[auto_1fr] gap-2 container mx-auto px-10">
+      <div className="grid grid-cols-[auto_1fr] gap-2 w-full px-4 lg:px-40">
         {/* Left Side - Image */}
         <div>
           <Image
