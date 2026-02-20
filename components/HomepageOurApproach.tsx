@@ -40,12 +40,13 @@ export default function HomepageOurApproach({ dict }: any) {
               </h2>
             </div>
             
-            <div className="relative h-[300px] lg:h-[400px] rounded-[30px] overflow-hidden group w-full">
+            <div className="relative h-[300px] lg:h-[400px] w-full rounded-[30px] overflow-hidden group">
               <Image
                 src={OurApproachImg}
                 alt="Our Approach"
                 fill
-                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <h3 className="text-white text-5xl font-medium">

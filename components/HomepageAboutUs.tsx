@@ -29,14 +29,13 @@ export default function HomepageAboutUs({ dict }: any) {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Col 1: Who We Are Image */}
-          <div className="relative min-h-[400px] rounded-[30px] overflow-hidden group">
+          <div className="relative min-h-[400px] h-full w-full rounded-[30px] overflow-hidden group">
             <Image
               src={WhoWeAreImg}
               alt="Who We Are"
               fill
               sizes="(max-width: 1024px) 100vw, 33vw"
-              style={{ objectFit: 'cover' }}
-              className="transition-transform duration-700 group-hover:scale-105"
+              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/40"></div>
             <h3 className="absolute bottom-8 left-8 text-white text-4xl font-bold z-10">

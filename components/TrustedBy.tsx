@@ -1,14 +1,21 @@
 import Image from "next/image";
+import adwatLogo from "@/public/images/logos/adwat.png";
+import alDonyLogo from "@/public/images/logos/al-dony.png";
+import alRefaayLogo from "@/public/images/logos/al-refaay.png";
+import alNassefLogo from "@/public/images/logos/Al-nassef.png";
+import goCareMenaLogo from "@/public/images/logos/go-care-mena.png";
+import ibnAlGazryLogo from "@/public/images/logos/Ibn-Algazry.png";
+import yaraLogo from "@/public/images/logos/yara.png";
+
 
 // Placeholder for now, ideally these would be actual brand logos
 const brands = [
-  { name: "Brand 1", color: "bg-indigo-900" },
-  { name: "Brand 2", color: "bg-emerald-100" },
-  { name: "Brand 3", color: "bg-rose-200" },
-  { name: "Brand 4", color: "bg-white" }, 
-  { name: "Brand 5", color: "bg-black" },
-  { name: "Brand 6", color: "bg-amber-100" },
-  { name: "Brand 7", color: "bg-white" },
+  { name: "Al-Nassef", image: alNassefLogo }, 
+  { name: "Yara", image: yaraLogo },
+  { name: "Al-Dony", image: alDonyLogo },
+  { name: "Adwat Information Technology", image: adwatLogo },
+  { name: "Al-Refaay", image: alRefaayLogo },
+  { name: "Ibn Al-Gazry", image: ibnAlGazryLogo },
 ];
 
 export default function TrustedBy({ text }: { text: string }) {
@@ -22,10 +29,10 @@ export default function TrustedBy({ text }: { text: string }) {
             className={`w-16 h-16 rounded-full flex items-center justify-center shadow-sm ${brand.color}`}
             title={brand.name}
           >
-             {/* Placeholder content - replace with actual Image when available */}
-             <div className="text-xs text-center opacity-50 px-1">{brand.name}</div>
+            <Image src={brand.image} alt={brand.name} width={50} height={50} />
           </div>
         ))}
+        <Image src={goCareMenaLogo} alt="Go-Care Mena" width={200} height={50} />
       </div>
     </div>
   );

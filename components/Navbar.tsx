@@ -12,7 +12,7 @@ type NavbarProps = {
 
 export default function Navbar({ lang, dict }: NavbarProps) {
   return (
-    <div className="fixed top-10 left-0 w-full z-50 flex justify-center items-center gap-4 px-20 pointer-events-none">
+    <div className="fixed top-10 left-0 w-full z-50 flex justify-center items-center gap-4 px-40 pointer-events-none">
       <nav className="pointer-events-auto rounded-full bg-background/20 w-full">
         <div className="flex items-center justify-between px-6 py-4 w-full">
           {/* Logo */}

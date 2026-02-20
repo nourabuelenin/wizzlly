@@ -37,31 +37,35 @@ export default function HomepageHeroStats({ dict }: any) {
       </div>
 
       {/* Card 2: 230+ Big Companies */}
-      <div className="relative bg-gray-900 text-white p-8 rounded-[30px] h-[350px] overflow-hidden group">
+      <div className="relative bg-gray-900 text-white rounded-[30px] h-[350px] w-full overflow-hidden group">
         <Image
           src={HeroStatsImg}
           alt="Team working"
           fill
-          className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="relative z-10 flex flex-col justify-center h-full">
-          <h2 className="text-6xl font-bold mb-4">{t.companies.value}</h2>
-          <p className="text-lg leading-relaxed">
-            {t.companies.text}
-          </p>
+        <div className="absolute inset-0 p-8 flex flex-col justify-center z-10 pointer-events-none">
+          <div className="pointer-events-auto">
+            <h2 className="text-6xl font-bold mb-4">{t.companies.value}</h2>
+            <p className="text-lg leading-relaxed">
+              {t.companies.text}
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Card 3: Ready to Scale */}
-      <div className="relative bg-gray-900 text-white p-8 rounded-[30px] h-[350px] overflow-hidden group">
+      <div className="relative bg-gray-900 text-white rounded-[30px] h-[350px] w-full overflow-hidden group">
         <Image
           src={HeroTrialImg}
           alt="Business scaling"
           fill
-          className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="relative z-10 flex flex-col justify-between h-full">
-          <div>
+        <div className="absolute inset-0 p-8 flex flex-col justify-between z-10 pointer-events-none">
+          <div className="pointer-events-auto">
             <h3 className="text-xl font-bold mb-3 uppercase">
               {t.scale.title}
             </h3>
@@ -69,7 +73,9 @@ export default function HomepageHeroStats({ dict }: any) {
               {t.scale.subtitle}
             </p>
           </div>
-          <Button text={t.scale.cta} showArrow={false} className="w-full" />
+          <div className="pointer-events-auto">
+            <Button text={t.scale.cta} showArrow={false} className="w-full" />
+          </div>
         </div>
       </div>
 

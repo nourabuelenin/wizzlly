@@ -36,15 +36,9 @@ export function NavbarLinks({ lang, dict }: NavbarLinksProps) {
 
         if (link.key === "contactUs") {
           return (
-            // <li key={link.key}>
-            //   <Link
-            //     href={link.href}
-            //     className="inline-flex items-center justify-center px-6 py-3 rounded-full text-lg font-medium bg-white text-primary transition-colors hover:bg-surface-muted ml-4"
-            //   >
-            //     {link.label}
-            //   </Link>
-            // </li>
-            <Button text={link.label} showArrow={true} />
+            <li key={link.key}>
+              <Button text={link.label} showArrow={true} />
+            </li>
           );
         }
 

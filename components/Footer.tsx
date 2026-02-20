@@ -17,7 +17,7 @@ export default function Footer({ dict }: any) {
 
   return (
     <footer className="bg-surface-muted text-foreground-light pt-20">
-      <div className="container mx-auto px-4 lg:px-20">
+      <div className="w-full px-4 lg:px-40">
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
           {/* Logo & Description */}
           <div className="lg:w-1/3">
@@ -54,7 +54,7 @@ export default function Footer({ dict }: any) {
 
       {/* Bottom Bar */}
       <div className="bg-foreground text-white border-t border-border pt-8 pb-8">
-        <div className="container mx-auto px-4 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="w-full px-4 lg:px-40 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs opacity-60 text-center md:text-left">
             {t.copyright}
           </p>
