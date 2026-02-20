@@ -1,4 +1,10 @@
 import HomepageHeroSection from "@/components/HomepageHeroSection";
+import HomepageServices from "@/components/HomepageServices";
+import HomepageEnablrCTA from "@/components/HomepageEnablrCTA";
+import HomepageWhyEnablr from "@/components/HomepageWhyEnablr";
+import HomepageProcess from "@/components/HomepageProcess";
+import HomepageFAQ from "@/components/HomepageFAQ";
+import HomepageTestimonials from "@/components/HomepageTestimonials";
 import Navbar from "@/components/Navbar";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
@@ -31,9 +37,12 @@ export default async function Home({
         <HomepageWhatWeOffer dict={dict} />
         <HomepageAboutUs dict={dict} />
         <HomepageOurApproach dict={dict} />
-        <HomepageWorkStats />
-        <HomepageHowWeWork />
-        <HomepageWhyChooseUs />
+        <HomepageServices dict={dict} />
+        <HomepageEnablrCTA dict={dict} />
+        <HomepageWhyEnablr dict={dict} />
+        <HomepageProcess dict={dict} />
+        <HomepageFAQ dict={dict} />
+        <HomepageTestimonials dict={dict} />
         <HomepageCTA dict={dict} />
       </main>
     </>
