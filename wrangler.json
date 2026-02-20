@@ -2,10 +2,8 @@
   "name": "willzy",
   "compatibility_flags": ["nodejs_compat"],
   "compatibility_date": "2025-12-01",
-
-  // Use the OpenNext default output directory
   "assets": {
-    "directory": ".open-next/assets",
+    "directory": ".open-next/assets"
   },
-  "main": ".open-next/worker.js",
+  "main": ".open-next/worker.js"
 }
