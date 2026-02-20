@@ -26,7 +26,7 @@ export default function TrustedBy({ text }: { text: string }) {
         {brands.map((brand, index) => (
           <div
             key={index}
-            className={`w-16 h-16 rounded-full flex items-center justify-center shadow-sm ${brand.color}`}
+            className={`w-16 h-16 rounded-full flex items-center justify-center shadow-sm`}
             title={brand.name}
           >
             <Image src={brand.image} alt={brand.name} width={50} height={50} />
