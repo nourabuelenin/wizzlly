@@ -13,7 +13,7 @@ export default function HomepageWhatWeOffer({ dict }: any) {
         <Image src={PatternDark} alt="Pattern" fill className="object-cover" />
       </div>
 
-      <div className="w-full px-40 lg:px-40 relative z-10">
+      <div className="w-full px-4 md:px-10 lg:px-40 relative z-10">
         <div className="text-center mb-16">
           <p className="text-primary font-medium uppercase tracking-wider mb-4">
             {t.badge}
@@ -32,10 +32,10 @@ export default function HomepageWhatWeOffer({ dict }: any) {
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold leading-tight">{t.steps[0].title}</h3>
             </div>
-            <p className="text-lg opacity-80 mb-8 leading-relaxed pl-[88px]">
+            <p className="text-lg opacity-80 mb-8 leading-relaxed pl-0 sm:pl-[88px]">
               {t.steps[0].description}
             </p>
-            <div className="pl-[88px]">
+            <div className="pl-0 sm:pl-[88px] w-full sm:w-auto">
               <Button
                 text={t.steps[0].cta}
                 variant="secondary"
@@ -55,10 +55,10 @@ export default function HomepageWhatWeOffer({ dict }: any) {
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold leading-tight">{t.steps[1].title}</h3>
             </div>
-            <p className="text-lg opacity-80 mb-8 leading-relaxed pl-[88px]">
+            <p className="text-lg opacity-80 mb-8 leading-relaxed pl-0 sm:pl-[88px]">
               {t.steps[1].description}
             </p>
-            <div className="pl-[88px]">
+            <div className="pl-0 sm:pl-[88px] w-full sm:w-auto">
               <Button
                 text={t.steps[1].cta}
                 variant="secondary"

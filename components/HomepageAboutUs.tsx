@@ -34,8 +34,7 @@ export default function HomepageAboutUs({ dict }: any) {
               src={WhoWeAreImg}
               alt="Who We Are"
               fill
-              sizes="(max-width: 1024px) 100vw, 33vw"
-              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+              className="scale-110"
             />
             <div className="absolute inset-0 bg-black/40"></div>
             <h3 className="absolute bottom-8 left-8 text-white text-4xl font-bold z-10">

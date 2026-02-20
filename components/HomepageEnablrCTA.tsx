@@ -15,8 +15,8 @@ export default function HomepageEnablrCTA({ dict }: any) {
         <Image src={PatternDark} alt="Pattern" fill className="object-cover" />
       </div>
 
-      <div className="w-full px-40 lg:px-40 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 m-16">
+      <div className="w-full px-4 md:px-10 lg:px-40 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 my-8 lg:m-16">
           {/* Left Column */}
           <div className="lg:w-2/3">
             <div className="mb-4">
@@ -54,7 +54,7 @@ export default function HomepageEnablrCTA({ dict }: any) {
 
         {/* Bottom CTA Row */}
         <div className="flex flex-col items-center justify-center">
-          <div className="flex flex-col sm:flex-row gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-4 w-full sm:w-auto">
             <Button
               text={t.ctaPrimary}
               showArrow={true}
@@ -67,8 +67,8 @@ export default function HomepageEnablrCTA({ dict }: any) {
               className="bg-white text-primary hover:bg-white/90 text-sm px-8 py-3"
             />
           </div>
-          <div className="flex items-center gap-2 text-white/60 text-sm mt-2">
-            <Info className="w-4 h-4" />
+          <div className="flex items-start sm:items-center gap-2 text-white/60 text-sm mt-2">
+            <Info className="w-4 h-4 mt-0.5 sm:mt-0 flex-shrink-0" />
             <p>{t.info}</p>
           </div>
         </div>

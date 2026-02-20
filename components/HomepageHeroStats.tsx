@@ -42,8 +42,7 @@ export default function HomepageHeroStats({ dict }: any) {
           src={HeroStatsImg}
           alt="Team working"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-500"
+          className="scale-150"
         />
         <div className="absolute inset-0 p-8 flex flex-col justify-center z-10 pointer-events-none">
           <div className="pointer-events-auto">
@@ -61,8 +60,7 @@ export default function HomepageHeroStats({ dict }: any) {
           src={HeroTrialImg}
           alt="Business scaling"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-500"
+          className="scale-150"
         />
         <div className="absolute inset-0 p-8 flex flex-col justify-between z-10 pointer-events-none">
           <div className="pointer-events-auto">

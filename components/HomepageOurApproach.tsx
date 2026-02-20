@@ -45,8 +45,7 @@ export default function HomepageOurApproach({ dict }: any) {
                 src={OurApproachImg}
                 alt="Our Approach"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover w-full h-full"
+                className="scale-110"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                   <h3 className="text-white text-5xl font-medium">
