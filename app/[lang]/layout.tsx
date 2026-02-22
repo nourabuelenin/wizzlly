@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Willzy",
+  title: "enablr",
   description: "Your Analysis Companion",
 };
 const roundsNeue = localFont({

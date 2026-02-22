@@ -1,5 +1,5 @@
 import Image from "next/image";
-import WhoWeAreImg from "@/public/images/who_we_are.png";
+import WhoWeAreImg from "@/public/images/who_we_are.webp";
 import { Target, Rocket, Star } from "lucide-react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

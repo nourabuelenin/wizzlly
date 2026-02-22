@@ -1,5 +1,5 @@
 import Image from "next/image";
-import WorkStatsImg from "@/public/images/workstats.png";
+import WorkStatsImg from "@/public/images/workstats.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AboutStatsSection({ dict }: any) {

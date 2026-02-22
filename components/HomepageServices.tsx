@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PatternLight from "@/public/images/Pattern_light.png";
+import PatternLight from "@/public/images/Pattern_light.webp";
 import Button from "./Button";
 import { Check } from "lucide-react";
 
@@ -26,7 +26,7 @@ export default function HomepageServices({ dict }: any) {
           {t.items.map((service: any, index: number) => (
             <div
               key={index}
-              className={`bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative overflow-hidden bg-[url('/images/Pattern_light.png')] bg-no-repeat bg-right bg-contain rtl:bg-left ${
+              className={`bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative overflow-hidden bg-[url('/images/Pattern_light.webp')] bg-no-repeat bg-right bg-contain rtl:bg-left ${
                 index === 0 || index === 3 ? "lg:col-span-3" : "lg:col-span-2"
               }`}
             >

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import PatternDark from "@/public/images/Pattern_dark.png";
-import enablrLogo from "@/public/images/enablr_logo_sec.png";
+import PatternDark from "@/public/images/Pattern_dark.webp";
+import enablrLogo from "@/public/images/enablr_logo_sec.webp";
 import Button from "./Button";
 import { Check, Info } from "lucide-react";
 

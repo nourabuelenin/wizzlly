@@ -1,5 +1,5 @@
 import Image from "next/image";
-import OurApproachImg from "@/public/images/our_approach.png";
+import OurApproachImg from "@/public/images/our_approach.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HomepageOurApproach({ dict }: any) {

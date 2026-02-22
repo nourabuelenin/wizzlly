@@ -1,5 +1,5 @@
 import Image from "next/image";
-import processBg from "@/public/images/process_bg.png";
+import processBg from "@/public/images/process_bg.webp";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HomepageProcess({ dict }: any) {

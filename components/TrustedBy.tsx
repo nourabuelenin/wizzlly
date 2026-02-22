@@ -1,11 +1,11 @@
 import Image from "next/image";
-import adwatLogo from "@/public/images/logos/adwat.png";
-import alDonyLogo from "@/public/images/logos/al-dony.png";
-import alRefaayLogo from "@/public/images/logos/al-refaay.png";
-import alNassefLogo from "@/public/images/logos/Al-nassef.png";
-import goCareMenaLogo from "@/public/images/logos/go-care-mena.png";
-import ibnAlGazryLogo from "@/public/images/logos/Ibn-Algazry.png";
-import yaraLogo from "@/public/images/logos/yara.png";
+import adwatLogo from "@/public/images/logos/adwat.webp";
+import alDonyLogo from "@/public/images/logos/al-dony.webp";
+import alRefaayLogo from "@/public/images/logos/al-refaay.webp";
+import alNassefLogo from "@/public/images/logos/Al-nassef.webp";
+import goCareMenaLogo from "@/public/images/logos/go-care-mena.webp";
+import ibnAlGazryLogo from "@/public/images/logos/Ibn-Algazry.webp";
+import yaraLogo from "@/public/images/logos/yara.webp";
 
 
 // Placeholder for now, ideally these would be actual brand logos

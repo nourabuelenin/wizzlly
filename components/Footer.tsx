@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import enablrLogo from "@/public/images/enablr_logo.png";
+import enablrLogo from "@/public/images/enablr_logo.webp";
 import { Github, Linkedin, Facebook, Twitter } from "lucide-react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { type Locale } from "@/lib/i18n/config";
 import { NavbarLinks } from "./NavbarLinks";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import enablrLogo from "@/public/images/enablr_logo.png";
+import enablrLogo from "@/public/images/enablr_logo.webp";
 
 type NavbarProps = {
   lang: Locale;

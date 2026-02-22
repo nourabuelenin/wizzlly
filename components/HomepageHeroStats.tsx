@@ -1,6 +1,6 @@
 import Image from "next/image";
-import HeroStatsImg from "@/public/images/hero_stats.png";
-import HeroTrialImg from "@/public/images/hero_trial.png";
+import HeroStatsImg from "@/public/images/hero_stats.webp";
+import HeroTrialImg from "@/public/images/hero_trial.webp";
 import Button from "./Button";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

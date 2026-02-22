@@ -11,7 +11,7 @@ const SECTION_CONFIG = {
     text: "What We Do",
   },
   headline: [
-    "With Willzy, You Perform Better.",
+    "With enablr, You Perform Better.",
     "Always! It is our guarantee.",
   ],
 };

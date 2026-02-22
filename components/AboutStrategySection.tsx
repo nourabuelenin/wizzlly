@@ -1,5 +1,5 @@
 import Image from "next/image";
-import StrategyImg from "@/public/images/strategy.png"; 
+import StrategyImg from "@/public/images/strategy.webp"; 
 import { Check } from "lucide-react";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

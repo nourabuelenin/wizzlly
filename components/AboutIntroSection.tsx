@@ -1,6 +1,6 @@
 import Image from "next/image";
-import AboutUsImg from "@/public/images/about_enablr.png";
-import GoalsImg from "@/public/images/goals.png"; 
+import AboutUsImg from "@/public/images/about_enablr.webp";
+import GoalsImg from "@/public/images/goals.webp"; 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AboutIntroSection({ dict }: any) {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DevelopImage from "@/public/images/workstats.png";
+import DevelopImage from "@/public/images/workstats.webp";
 import { Clock10, Code2, Globe, PhoneCall, Cloud } from "lucide-react";
 import { StatCard } from "./StatCard";
 import { WorkStatsServiceCard } from "./WorkStatsServiceCard";

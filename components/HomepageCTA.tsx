@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PatternDark from "@/public/images/Pattern_dark.png";
+import PatternDark from "@/public/images/Pattern_dark.webp";
 import Button from "./Button";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
