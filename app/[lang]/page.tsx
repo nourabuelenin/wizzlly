@@ -1,14 +1,21 @@
-import HomepageHeroSection from "@/components/HomepageHeroSection";
 import { getDictionary } from "@/dictionaries";
 import { Locale, locales } from "@/lib/i18n/config";
 import { notFound } from "next/navigation";
+import HomepageHeroSection from "@/components/HomepageHeroSection";
+import HomepageServices from "@/components/HomepageServices";
+import HomepageEnablrCTA from "@/components/HomepageEnablrCTA";
+import HomepageWhyEnablr from "@/components/HomepageWhyEnablr";
+import HomepageProcess from "@/components/HomepageProcess";
+import HomepageFAQ from "@/components/HomepageFAQ";
+import HomepageTestimonials from "@/components/HomepageTestimonials";
+import Navbar from "@/components/Navbar";
 import HomepageWorkStats from "@/components/HomepageWorkStatsSection";
 import HomepageHowWeWork from "@/components/HomepageHowWeWork";
 import HomepageWhyChooseUs from "@/components/HomepageWhyChooseUs";
-import HomepageWhatWeDo from "@/components/HomepageWhatWeDoSection";
-import HomepageCTASection from "@/components/HomepageCTASection";
-import HomepageCaseStudies from "@/components/HomepageCaseStudies";
-import Navbar from "@/components/Navbar";
+import HomepageWhatWeOffer from "@/components/HomepageWhatWeOffer";
+import HomepageAboutUs from "@/components/HomepageAboutUs";
+import HomepageOurApproach from "@/components/HomepageOurApproach";
+import HomepageCTA from "@/components/HomepageCTA";
 import Footer from "@/components/Footer";
 
 export default async function Home({
@@ -28,14 +35,18 @@ export default async function Home({
       <Navbar lang={lang as Locale} dict={dict} />
       <main>
         <HomepageHeroSection dict={dict} />
-        <HomepageWorkStats dict={dict} />
-        <HomepageWhatWeDo dict={dict} />
-        <HomepageHowWeWork dict={dict} />
-        <HomepageWhyChooseUs dict={dict} />
-        <HomepageCaseStudies dict={dict} />
-        <HomepageCTASection dict={dict} lang={lang} />
-        <Footer dict={dict} />
+        <HomepageWhatWeOffer dict={dict} />
+        <HomepageAboutUs dict={dict} />
+        <HomepageOurApproach dict={dict} />
+        <HomepageServices dict={dict} />
+        <HomepageEnablrCTA dict={dict} />
+        <HomepageWhyEnablr dict={dict} />
+        <HomepageProcess dict={dict} />
+        <HomepageFAQ dict={dict} />
+        <HomepageTestimonials dict={dict} />
+        <HomepageCTA dict={dict} />
       </main>
+      <Footer dict={dict} />
     </>
   );
 }

@@ -7,10 +7,9 @@ import { Alexandria } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 
 export const metadata: Metadata = {
-  title: "Wizlly",
+  title: "enablr",
   description: "Your Analysis Companion",
 };
-
 const roundsNeue = localFont({
   src: [
     {
