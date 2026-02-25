@@ -9,7 +9,7 @@ export default function HomepageHeroSection({ dict }: any) {
       <div className="flex flex-col xl:flex-row items-center justify-between w-full px-4 lg:px-16 xl:px-32 2xl:px-40 gap-16 xl:gap-20 pt-10 xl:pt-20">
         {/* Left Side */}
         <aside className="w-full xl:w-[45%] flex flex-col justify-center gap-8">
-          <h1 className="text-5xl lg:text-6xl 2xl:text-7xl text-foreground font-bold leading-tight tracking-wide">
+          <h1 className="text-3xl lg:text-4xl 2xl:text-5xl text-foreground font-bold leading-tight tracking-wide">
             {dict.homepage.hero.title}
           </h1>
           <div className="flex flex-col gap-5">

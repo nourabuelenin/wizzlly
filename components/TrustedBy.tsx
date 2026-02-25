@@ -22,7 +22,7 @@ export default function TrustedBy({ text }: { text: string }) {
   return (
     <div className="flex flex-col gap-6 mt-12">
       <p className="text-xl text-foreground font-medium">{text}</p>
-      <div className="flex flex-wrap gap-8 items-center">
+      <div className="flex flex-wrap gap-4 items-center">
         {brands.map((brand, index) => (
           <div
             key={index}
