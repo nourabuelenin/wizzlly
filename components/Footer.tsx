@@ -76,12 +76,12 @@ function Footer({ dict }: any) {
 
           <div className="w-full lg:w-3/5 lg:flex-1">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {FOOTER_DATA.sections.map((section) => (
+              {FOOTER_DATA.sections.map((section: any) => (
                 <div key={section.title}>
                   <h3 className="text-sm md:text-lg font-semibold">
                     {section.title}
                   </h3>
-                  {section.links?.map((link) => (
+                  {section.links?.map((link: any) => (
                     <a
                       key={link.label}
                       href={link.href}
@@ -90,7 +90,7 @@ function Footer({ dict }: any) {
                       {link.label}
                     </a>
                   ))}
-                  {section.items?.map((item) => (
+                  {section.items?.map((item: any) => (
                     <span
                       key={item.label}
                       className="block mt-2 text-xs md:text-sm hover:underline"
@@ -111,7 +111,7 @@ function Footer({ dict }: any) {
             {FOOTER_DATA.copyright}
           </p>
           <div className="flex gap-3 md:gap-5 text-xs md:text-base">
-            {FOOTER_DATA.bottomLinks.map((link) => (
+            {FOOTER_DATA.bottomLinks.map((link: any) => (
               <a key={link.label} href={link.href}>
                 {link.label}
               </a>
