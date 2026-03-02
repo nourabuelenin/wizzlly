@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { LocaleLink } from "./LocaleLink";
-import logoImage from "@/public/images/wizlly-logo-nobg.png";
-import logoLightImage from "@/public/images/wizlly-logo-light-nobg.png";
+import logoImage from "@/public/images/enablr_logo.webp";
+import logoLightImage from "@/public/images/enablr_logo_sec.webp";
 
 type logoProps = {
   lightMode?: boolean;
@@ -9,14 +9,14 @@ type logoProps = {
 };
 
 export default function Logo({
-  className = "w-16 h-16 xl:w-22 xl:h-22",
+  className = "w-auto h-8 xl:w-auto xl:h-8",
   lightMode,
 }: logoProps) {
   return (
     <LocaleLink href="/">
       <Image
         src={lightMode ? logoLightImage : logoImage}
-        alt="Wizlly Logo"
+        alt="Enablr Logo"
         className={`${className}`}
       />
     </LocaleLink>

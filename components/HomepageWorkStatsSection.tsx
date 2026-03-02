@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DevelopImage from "@/public/images/workstats.png";
+import DevelopImage from "@/public/images/workstats.webp";
 import { Clock10, Code2, Globe, PhoneCall, Cloud } from "lucide-react";
 import { StatCard } from "./StatCard";
 import { WorkStatsServiceCard } from "./WorkStatsServiceCard";
@@ -37,8 +37,8 @@ export default function HomepageWorkStats({ dict }: any) {
     status: dict.homepage.workStats.projectsStatus,
   };
   return (
-    <section className="bg-surface-muted -mt-5 py-10 md:py-20 rounded-t-4xl">
-      <div className="grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-8 md:gap-8 lg:gap-12 container mx-auto px-4 md:px-10">
+    <section className="bg-surface-muted -mt-5 py-20 rounded-t-4xl">
+      <div className="grid grid-cols-[auto_1fr] gap-2 w-full px-4 lg:px-40">
         {/* Left Side - Image */}
         <div className="w-full flex justify-center xl:justify-start">
           <Image

@@ -1,17 +1,12 @@
-"use client";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import Logo from "@/components/Logo";
+import AuthLayout from "@/components/AuthLayout";
+import Stepper from "@/components/onboarding/Stepper";
+import { ONBOARDING_STEPS } from "@/constants/onboarding-steps";
 import FormInput from "@/components/FormInput";
-import PasswordInput from "@/components/PasswordInput";
-import GoogleSignInButton from "@/components/GoogleSignInButton";
-import FormDivider from "@/components/FormDivider";
-import OnboardingPromptModal from "@/components/OnboardingPromptModal";
-import authImage from "@/public/images/auth-image.jpg";
-import { register } from "@/lib/api/auth";
 import { type Locale } from "@/lib/i18n/config";
+import { getFacebookAuthUrl, createGuestSession } from "@/lib/api/stg2-auth";
 
 interface SignUpProps {
   onToggleSignIn: () => void;
@@ -30,57 +25,54 @@ export default function SignUp({
 }: SignUpProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    password_confirm: "",
-    first_name: "",
-    last_name: "",
+    companyName: "",
+    companyDescription: "",
   });
-  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [showOnboardingPrompt, setShowOnboardingPrompt] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
     setIsLoading(true);
 
     try {
-      const result = await register({
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
-        password_confirm: formData.password_confirm,
-        first_name: formData.first_name,
-        last_name: formData.last_name,
-      });
+      // Store company info locally for use during onboarding
+      localStorage.setItem("pendingCompany", JSON.stringify(formData));
 
-      if (result.success) {
-        toast.success(dict.auth.toast.signupSuccess);
+      // Redirect to Facebook OAuth to create account
+      const redirectUri = `${window.location.origin}/${lang}/auth/callback`;
+      const result = await getFacebookAuthUrl(redirectUri);
 
-        // If in compact mode (modal), show onboarding prompt
-        if (compact) {
-          setShowOnboardingPrompt(true);
-        } else {
-          // If in full page mode, go directly to onboarding
-          router.push(`/${lang}/onboarding`);
-        }
+      if (result.success && result.auth_url) {
+        window.location.href = result.auth_url;
       } else {
-        // Handle validation errors with details
-        const errorMessage = result.details
-          ? Object.entries(result.details)
-              .map(([field, messages]) => `${field}: ${messages.join(", ")}`)
-              .join("; ")
-          : result.error || dict.auth.toast.signupError;
-
-        setError(errorMessage);
-        toast.error(dict.auth.toast.signupError);
+        toast.error(result.error || "Failed to connect to Facebook");
+        setIsLoading(false);
       }
     } catch {
-      const errorMsg = "An unexpected error occurred";
-      setError(errorMsg);
-      toast.error(dict.auth.toast.signupError);
+      toast.error("An unexpected error occurred");
+      setIsLoading(false);
+    }
+  };
+
+  const handleGuestLogin = async () => {
+    setIsLoading(true);
+    try {
+      const result = await createGuestSession(formData.companyName || undefined);
+
+      if (result.success && result.auth_token) {
+        toast.success("Continuing as a guest...");
+        router.push(`/${lang}/dashboard`);
+      } else {
+        // Fallback: if backend is unavailable, use legacy localStorage-only guest
+        localStorage.setItem("guestMode", "true");
+        toast.success("Continuing as a guest...");
+        router.push(`/${lang}/dashboard`);
+      }
+    } catch {
+      // Fallback to legacy guest mode
+      localStorage.setItem("guestMode", "true");
+      toast.success("Continuing as a guest...");
+      router.push(`/${lang}/dashboard`);
     } finally {
       setIsLoading(false);
     }
@@ -93,188 +85,78 @@ export default function SignUp({
     });
   };
 
-  const handleContinueToOnboarding = () => {
-    setShowOnboardingPrompt(false);
-    router.push(`/${lang}/onboarding`);
-  };
+  const formContent = (
+    <div className="w-full">
+      <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-2">Sign up</h1>
+      <p className="text-gray-500 mb-8">{dict.auth.signUp.title || "Welcome to NABLR! Please enter your details."}</p>
 
-  const handleStayOnChat = () => {
-    setShowOnboardingPrompt(false);
-    if (onSuccess) {
-      onSuccess();
-    }
-  };
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <FormInput
+            id="companyName"
+            name="companyName"
+            label="Company Name"
+            type="text"
+            value={formData.companyName}
+            onChange={handleChange}
+            placeholder="Enter your company name..."
+            required
+          />
+          <p className="text-[13px] text-gray-400 mt-1.5 font-medium ml-1">Use your official brand or company name.</p>
+        </div>
 
-  const renderForm = () => (
-    <form onSubmit={handleSubmit} className={compact ? "mt-4" : ""}>
-      <FormInput
-        id="firstName"
-        name="first_name"
-        label={dict.auth.signUp.firstNameLabel || "First Name"}
-        type="text"
-        value={formData.first_name}
-        onChange={handleChange}
-        required
-      />
+        <div>
+          <FormInput
+            id="companyDescription"
+            name="companyDescription"
+            label="Company Description"
+            type="text"
+            value={formData.companyDescription}
+            onChange={handleChange}
+            placeholder="Describe your business, products, or services..."
+            required
+          />
+          <p className="text-[13px] text-gray-400 mt-1.5 font-medium ml-1">In one sentence, what does your brand do?</p>
+        </div>
 
-      <FormInput
-        id="lastName"
-        name="last_name"
-        label={dict.auth.signUp.lastNameLabel || "Last Name"}
-        type="text"
-        value={formData.last_name}
-        onChange={handleChange}
-        containerClassName="mt-4"
-        required
-      />
+        <div className="flex gap-4 pt-4">
+          <button
+            type="button"
+            onClick={onToggleSignIn}
+            className="px-8 py-3.5 border border-gray-300 rounded-full font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+          >
+            Back
+          </button>
+          
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="flex-1 py-3.5 px-6 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold transition-colors disabled:opacity-50"
+          >
+            {isLoading ? "Loading..." : "Next Step: Connect Meta"}
+          </button>
+        </div>
+      </form>
 
-      <FormInput
-        id="username"
-        name="username"
-        label={dict.auth.signUp.usernameLabel || "Username"}
-        type="text"
-        value={formData.username}
-        onChange={handleChange}
-        containerClassName="mt-4"
-        required
-      />
-
-      <FormInput
-        id="email"
-        name="email"
-        label={dict.auth.signUp.emailLabel}
-        type="email"
-        value={formData.email}
-        onChange={handleChange}
-        containerClassName="mt-4"
-        required
-      />
-
-      <PasswordInput
-        id="password"
-        name="password"
-        label={dict.auth.signUp.passwordLabel}
-        value={formData.password}
-        onChange={handleChange}
-        containerClassName="mt-4"
-        required
-      />
-
-      <PasswordInput
-        id="password_confirm"
-        name="password_confirm"
-        label={dict.auth.signUp.confirmPasswordLabel}
-        value={formData.password_confirm}
-        onChange={handleChange}
-        containerClassName="mt-4"
-        required
-      />
-
-      <div className="mt-6">
+      <div className="mt-10 text-center text-sm font-medium text-gray-600">
+        Want to tour the AI tool?{" "}
         <button
-          type="submit"
-          disabled={isLoading}
-          className="w-full px-6 py-3 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          onClick={handleGuestLogin}
+          className="text-primary font-semibold hover:underline"
         >
-          {isLoading
-            ? dict.auth.signUp.creatingAccount
-            : dict.auth.signUp.signUpButton}
+          Continue as a guest
         </button>
       </div>
-    </form>
+    </div>
   );
 
   if (compact) {
-    return (
-      <>
-        <div className="w-full px-6 py-8 md:px-8">
-          <div className="flex justify-center mx-auto">
-            <Logo />
-          </div>
-
-          <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-            {dict.auth.signUp.title}
-          </p>
-
-          {error && (
-            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-              {error}
-            </div>
-          )}
-
-          {renderForm()}
-
-          <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
-            <button
-              onClick={onToggleSignIn}
-              className="text-xs text-gray-500 cursor-pointer uppercase dark:text-gray-400 hover:underline"
-            >
-              {dict.auth.signUp.toggleSignIn}
-            </button>
-
-            <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-          </div>
-        </div>
-
-        <OnboardingPromptModal
-          isOpen={showOnboardingPrompt}
-          onContinue={handleContinueToOnboarding}
-          onCancel={handleStayOnChat}
-          dict={dict.auth.onboardingPrompt}
-        />
-      </>
-    );
+    return <div className="px-6 py-8">{formContent}</div>;
   }
 
   return (
-    <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-7xl">
-      <div
-        className="hidden bg-cover lg:block lg:w-1/2"
-        style={{
-          backgroundImage: `url(${authImage.src})`,
-        }}
-      ></div>
-
-      <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-        <div className="flex justify-center mx-auto">
-          <Logo />
-        </div>
-
-        <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-          {dict.auth.signUp.title}
-        </p>
-
-        {error && (
-          <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
-            {error}
-          </div>
-        )}
-
-        <div className="mt-4">
-          <GoogleSignInButton text={dict.auth.signUp.googleButton} />
-        </div>
-
-        <div className="mt-4">
-          <FormDivider text={dict.auth.signUp.emailDivider} />
-        </div>
-
-        {renderForm()}
-
-        <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
-          <button
-            onClick={onToggleSignIn}
-            className="text-xs text-gray-500 cursor-pointer uppercase dark:text-gray-400 hover:underline"
-          >
-            {dict.auth.signUp.toggleSignIn}
-          </button>
-
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-        </div>
-      </div>
-    </div>
+    <AuthLayout rightPanel={<Stepper steps={ONBOARDING_STEPS} currentStep={0} />}>
+      {formContent}
+    </AuthLayout>
   );
 }

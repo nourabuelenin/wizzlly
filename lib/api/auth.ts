@@ -104,6 +104,7 @@ export async function logout(): Promise<void> {
   } finally {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
+    localStorage.removeItem("guestMode");
   }
 }
 

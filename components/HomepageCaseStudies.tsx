@@ -39,8 +39,8 @@ export default function HomepageCaseStudies({ dict }: any) {
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <Button
             text={dict.homepage.caseStudies.buttonText}
-            ShowArrow={false}
-            variant="tertiary"
+            showArrow={false}
+            variant="secondary"
             className="px-8 md:px-14"
           />
         </div>

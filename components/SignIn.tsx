@@ -3,12 +3,11 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import Logo from "@/components/Logo";
+import AuthLayout from "@/components/AuthLayout";
+import LoginTestimonial from "@/components/LoginTestimonial";
 import FormInput from "@/components/FormInput";
 import PasswordInput from "@/components/PasswordInput";
-import GoogleSignInButton from "@/components/GoogleSignInButton";
-import FormDivider from "@/components/FormDivider";
-import authImage from "@/public/images/auth-image.jpg";
+import FacebookSignInButton from "@/components/FacebookSignInButton";
 import { login } from "@/lib/api/auth";
 import { type Locale } from "@/lib/i18n/config";
 
@@ -32,6 +31,7 @@ export default function SignIn({
     username: "",
     password: "",
   });
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -46,13 +46,11 @@ export default function SignIn({
       if (result.success) {
         toast.success(dict.auth.toast.loginSuccess);
 
-        // If in compact mode (modal), close modal
         if (compact && onSuccess) {
           setTimeout(() => {
             onSuccess();
           }, 500);
         } else {
-          // If in full page mode, redirect to dashboard
           router.push(`/${lang}/dashboard`);
         }
       } else {
@@ -76,130 +74,86 @@ export default function SignIn({
     });
   };
 
-  const renderForm = () => (
-    <form onSubmit={handleSubmit} className={compact ? "mt-4" : ""}>
-      <FormInput
-        id="username"
-        name="username"
-        label={dict.auth.signIn.emailLabel}
-        type="text"
-        value={formData.username}
-        onChange={handleChange}
-        required
-      />
+  const formContent = (
+    <div className="w-full">
+      <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-2">Log in</h1>
+      <p className="text-gray-500 mb-8">{dict.auth.signIn.title || "Welcome back! Please enter your details."}</p>
 
-      <PasswordInput
-        id="password"
-        name="password"
-        label={dict.auth.signIn.passwordLabel}
-        value={formData.password}
-        onChange={handleChange}
-        helperText={
-          <a
-            href="#"
-            className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
-          >
-            {dict.auth.signIn.forgotPassword}
+      {error && (
+        <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
+          {error}
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <FormInput
+          id="username"
+          name="username"
+          label={dict.auth.signIn.emailLabel || "Email"}
+          type="text"
+          value={formData.username}
+          onChange={handleChange}
+          placeholder="Enter your email..."
+          required
+        />
+
+        <PasswordInput
+          id="password"
+          name="password"
+          label={dict.auth.signIn.passwordLabel || "Password"}
+          value={formData.password}
+          onChange={handleChange}
+          placeholder="••••••••"
+          required
+        />
+
+        <div className="flex items-center justify-between text-sm py-1">
+          <label className="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="checkbox"
+              className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+            />
+            <span className="text-gray-600 font-medium">Remember for 30 days</span>
+          </label>
+          <a href="#" className="font-semibold text-gray-900 hover:text-black">
+            {dict.auth.signIn.forgotPassword || "Forgot password"}
           </a>
-        }
-        containerClassName="mt-4"
-        required
-      />
+        </div>
 
-      <div className="mt-6">
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full px-6 py-3 text-base font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+          className="w-full py-3.5 px-4 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold mt-4 transition-colors disabled:opacity-50"
         >
-          {isLoading ? dict.auth.signIn.signingIn : dict.auth.signIn.signInButton}
+          {isLoading ? dict.auth.signIn.signingIn : (dict.auth.signIn.signInButton || "Log in")}
+        </button>
+
+        <div className="pt-2">
+          <FacebookSignInButton text="Sign in with Facebook" />
+        </div>
+      </form>
+
+      <div className="mt-8 text-center text-sm font-medium text-gray-600">
+        Don&apos;t have an account?{" "}
+        <button
+          onClick={onToggleSignUp}
+          className="text-primary font-semibold hover:underline"
+        >
+          Sign up
         </button>
       </div>
-    </form>
+    </div>
   );
 
   if (compact) {
-    return (
-      <div className="w-full px-6 py-8 md:px-8">
-        <div className="flex justify-center mx-auto">
-          <Logo />
-        </div>
-
-        <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-          {dict.auth.signIn.title}
-        </p>
-
-        {error && (
-          <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-            {error}
-          </div>
-        )}
-
-        {renderForm()}
-
-        <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
-          <button
-            onClick={onToggleSignUp}
-            className="text-xs text-gray-500 cursor-pointer uppercase dark:text-gray-400 hover:underline"
-          >
-            {dict.auth.signIn.toggleSignUp}
-          </button>
-
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-        </div>
-      </div>
-    );
+    return <div className="px-6 py-8">{formContent}</div>;
   }
 
   return (
-    <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-7xl">
-      <div
-        className="hidden bg-cover lg:block lg:w-1/2"
-        style={{
-          backgroundImage: `url(${authImage.src})`,
-        }}
-      ></div>
-
-      <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-        <div className="flex justify-center mx-auto">
-          <Logo />
-        </div>
-
-        <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-          {dict.auth.signIn.title}
-        </p>
-
-        {error && (
-          <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
-            {error}
-          </div>
-        )}
-
-        <div className="mt-4">
-          <GoogleSignInButton text={dict.auth.signIn.googleButton} />
-        </div>
-
-        <div className="mt-4">
-          <FormDivider text={dict.auth.signIn.emailDivider} />
-        </div>
-
-        {renderForm()}
-
-        <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-
-          <button
-            onClick={onToggleSignUp}
-            className="text-xs text-gray-500 cursor-pointer uppercase dark:text-gray-400 hover:underline"
-          >
-            {dict.auth.signIn.toggleSignUp}
-          </button>
-
-          <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-        </div>
-      </div>
-    </div>
+    <AuthLayout rightPanel={<LoginTestimonial />}>
+      {formContent}
+    </AuthLayout>
   );
 }

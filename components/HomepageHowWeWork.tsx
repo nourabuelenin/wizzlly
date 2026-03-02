@@ -3,8 +3,8 @@ import { Zap } from "lucide-react";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HomepageHowWeWork({ dict }: any) {
   return (
-    <section className="bg-linear-to-tr from-[#032d79] to-[#0eaeef] -mt-5 py-10 md:py-24 rounded-t-2xl text-white">
-      <div className="container mx-auto px-4 md:px-10 grid grid-cols-1 xl:grid-cols-[1fr_2fr] gap-8 md:gap-8 lg:gap-10 xl:gap-16 items-start">
+    <section className="bg-linear-to-tr from-[#032d79] to-[#0eaeef] -mt-5 py-24 rounded-t-2xl text-white">
+      <div className="w-full px-4 lg:px-40 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
         {/* Left Side */}
         <div className="flex flex-col gap-4 md:gap-6 h-full justify-center items-center xl:items-start text-center xl:text-start">
           <span className="border border-white/70 w-fit rounded-full px-4 md:px-5 py-1.5 md:py-2 text-sm md:text-lg tracking-wide">

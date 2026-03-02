@@ -13,10 +13,35 @@
   },
   "homepage": {
     "hero": {
-      "title": "Crafting Future",
-      "titleHighlight": "Software Today!",
-      "subtitle": "Transforming Ideas Into Software Success Stories",
-      "cta": "Let's Connect"
+      "title": "Empowerment That Goes Beyond Visibility",
+      "subtitle": "Marketing that understands your brand, grows with your values, and delivers measurable results.",
+      "subtitle2": "ENABLR combines strategic marketing expertise with smart technology to create growth that respects your brand identity and community values.",
+      "cta": "ENABLR Tool Demo",
+      "cta2": "View Services",
+      "trustedBy": "Trusted by the world’s biggest brands",
+      "stats": {
+        "clientResults": {
+          "title": "Average Client Results",
+          "value": "287%",
+          "subtitle": "Increase in conversion rate",
+          "roi": "Average ROI",
+          "revenue": "Revenue Generated",
+          "renewed": "Clients Renewed"
+        },
+        "companies": {
+          "value": "230+",
+          "text": "Big Companies That We Work With And Trust Us With Their Marketing Campaigns."
+        },
+        "scale": {
+          "title": "Ready to scale your business?",
+          "subtitle": "Create High-Converting Marketing Campaigns That Actually Drives Revenue.",
+          "cta": "Get Your Free Trial"
+        },
+        "traffic": {
+          "title": "Drive More Traffic And Success",
+          "visitors": "Visitors"
+        }
+      }
     },
     "workStats": {
       "experience": "Years of Experience",
@@ -111,60 +136,584 @@
       "buttonText": "View Case Studies"
     },
     "cta": {
-      "headline": "Connect with us",
-      "description": "Having helped many clients globally with MVP development, prototyping, and full-cycle application development to go to market quickly, efficiently and cost effectively, We would like to do the same for you.",
-      "buttonText": "Let's Connect"
+      "title": "Ready to grow with strategy and values?",
+      "subtitle": "Let's build a marketing plan that reflects your identity and drives real results.",
+      "note": "No obligations. Flexible plans for agencies, brands, and in-house teams.",
+      "ctaPrimary": "Start Your Strategy Call",
+      "ctaSecondary": "Demo ENABLR Tool"
+    },
+    "whatWeOffer": {
+      "badge": "What We Offer",
+      "title": "Choose Your Growth Path With Us",
+      "steps": [
+        {
+          "number": "1",
+          "title": "A Team That Manages Your Marketing End-to-End",
+          "description": "We lead your strategy, execute your campaigns, and measure the results.",
+          "cta": "Let Our Team Lead Your Marketing"
+        },
+        {
+          "number": "2",
+          "title": "A Smart Tool That Gives You Full Control",
+          "description": "Plan, execute, and monitor your performance independently.",
+          "cta": "Try ENABLR Tool Now"
+        }
+      ]
+    },
+    "aboutUs": {
+      "badge": "About Us",
+      "title": "ENABLR — Strategic Marketing, Built on Insights",
+      "description": "ENABLR is a full-service digital marketing agency blending strategic thinking with technical innovation to deliver measurable results for brands. We begin by understanding your market and audience, then build data-driven strategies and execute them with persistent optimization — ensuring real, accountable outcomes.\n\nWe believe marketing is more than exposure. It's an integrated system that starts with deep market understanding and ends with tangible business impact — either through our agency services or via our Enablr Tool.",
+      "cards": {
+        "whoWeAre": "Who We Are",
+        "vision": {
+          "title": "Our Vision",
+          "description": "To be the most trusted partner for brands seeking analytical, insight-driven marketing that elevates growth without compromising identity or values."
+        },
+        "mission": {
+          "title": "Our Mission",
+          "description": "Enable businesses to grow with smart planning and creative execution, guided by professional and ethical standards — producing meaningful digital content that fulfills our partners' ambitions."
+        },
+        "values": {
+          "title": "Our Values",
+          "list": [
+            {
+              "title": "Professionalism",
+              "description": "We deliver effective marketing solutions grounded in best practices and measurable impact."
+            },
+            {
+              "title": "Trust & Transparency",
+              "description": "Long-term relationships built on clarity and accountability."
+            },
+            {
+              "title": "Responsible Creativity",
+              "description": "Innovative ideas that achieve goals while honoring brand identity and societal values."
+            },
+            {
+              "title": "Values-Driven Execution",
+              "description": "Balanced marketing content that respects ethical standards in every visual and audio element."
+            }
+          ]
+        }
+      }
+    },
+    "ourApproach": {
+      "badge": "Our Approach",
+      "title": "A clear, repeatable framework that ensures quality delivery and results.",
+      "imageText": "Our Approach",
+      "steps": [
+        "Market analysis & audience understanding",
+        "Competitor research & opportunity mapping",
+        "Strategy development (integrated marketing plan)",
+        "Creative ideation & content production",
+        "Campaign execution across channels",
+        "Performance measurement & analysis",
+        "Continuous optimization and iteration"
+      ]
+    },
+    "services": {
+      "badge": "Services",
+      "title": "ENABLR Services",
+      "items": [
+        {
+          "title": "Growth & Performance",
+          "list": [
+            "Social media management",
+            "Paid digital campaign planning & management",
+            "Streamline workflows with advanced automation tools.",
+            "Ad optimization & scaling"
+          ]
+        },
+        {
+          "title": "Strategy & Research",
+          "list": [
+            "Audience Persona & Competitor Analysis",
+            "Brand Positioning & Messaging Strategy"
+          ]
+        },
+        {
+          "title": "Creative Services",
+          "list": [
+            "Copywriting & Content Creation",
+            "Video Production & Editing"
+          ]
+        },
+        {
+          "title": "Digital & Technical Solutions",
+          "list": [
+            "Marketing Automation Setup",
+            "CRM Integration & Optimization"
+          ]
+        }
+      ],
+      "footerText": "Not Sure What You Need?",
+      "cta": "Book a Free Strategy Call"
+    },
+    "enablrCTA": {
+      "badge": "Our AI Marketing Engine",
+      "title": "Take control of your marketing with\nENABLR Tool",
+      "description": "Enablr Tool is a standalone platform designed to empower in-house teams and businesses with professional marketing workflows — analysis, planning, execution, and measurement — all in one place. It mirrors the agency's methodology so your internal teams can manage campaigns with the same rigor and clarity.",
+      "features": [
+        "Data-driven planning and automated insights",
+        "Campaign building and calendar management",
+        "Creative generation and assets library",
+        "Performance tracking and reporting",
+        "Full control over your marketing data"
+      ],
+      "ctaPrimary": "Try ENABLR Tool",
+      "ctaSecondary": "Request a Demo",
+      "info": "A standalone marketing operating system - No agency required"
+    },
+    "whyEnablr": {
+      "badge": "Why ENABLR",
+      "title": "Marketing That Understands You\nAnd the Market",
+      "cards": [
+        {
+          "title": "Deep Understanding Before Every Step (Business Deep-Dive)",
+          "description": "The tool never starts from scratch. Through an intelligent conversation, Enablr Tool absorbs the core of your business, your target audience, and your brand voice — building a strategic data foundation that becomes the reference for all your future campaigns."
+        },
+        {
+          "title": "Market & Competitor Radar (Competitor & Market Intelligence)",
+          "description": "Don't leave your decisions to chance. The tool provides a comprehensive dashboard that analyzes competitor movements and uncovers what audiences truly engage with in your industry — keeping you one step ahead at all times."
+        },
+        {
+          "title": "Content Creation (Ethical AI Content Creation)",
+          "description": "Experience the power of artificial intelligence with confidence. The tool generates creative texts, captions, and visual ideas tailored perfectly to each platform and audience segment while strictly adhering to ethical standards and cultural values."
+        },
+        {
+          "title": "Campaign Setup & Management (Campaign Strategy & Setup)",
+          "description": "Forget scattered spreadsheets. The tool helps you structure your entire campaign—from setting objectives, allocating budgets, and defining target demographics to mapping out multi-channel deployment steps—in one clean workflow."
+        },
+        {
+          "title": "Direct Execution & Publishing (Omnichannel Publishing)",
+          "description": "No need to bounce between tools. Connect your social media and ad accounts directly to Enablr Tool and publish or schedule your approved content across all platforms with a single click."
+        },
+        {
+          "title": "Data Transparency & Analytics (Performance Analytics & Insights)",
+          "description": "Clear numbers, no fluff. Track how every post and ad is performing in real-time. The tool digests complex metrics and offers actionable recommendations on how to optimize your spend and improve your next campaign."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Our Process",
+      "title": "How ENABLR Works",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Book a discovery call",
+          "description": "We learn your business and goals."
+        },
+        {
+          "number": "2",
+          "title": "Build a strategy",
+          "description": "Data-driven plan tailored to your brand."
+        },
+        {
+          "number": "3",
+          "title": "Execute & optimize",
+          "description": "Creative production and full campaign management."
+        },
+        {
+          "number": "4",
+          "title": "Measure & evolve",
+          "description": "Transparent reporting and ongoing refinement."
+        }
+      ]
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Digital Marketing Frequently Asked Questions",
+      "cta": "View More",
+      "questions": [
+        {
+          "question": "Why is digital marketing important for my business?",
+          "answer": "Digital marketing allows businesses to reach and engage with a wider audience, generate leads, drive website traffic, and increase brand visibility. It provides measurable results, allows for targeted marketing efforts, and enables businesses to adapt and optimize their strategies based on data and insights."
+        },
+        {
+          "question": "How can digital marketing help improve my website's visibility?",
+          "answer": "Through search engine optimization (SEO), content marketing, and targeted advertising, digital marketing ensures your website ranks higher in search results, making it easier for potential customers to find you when they look for your products or services."
+        },
+        {
+          "question": "How long does it take to see results from digital marketing campaigns?",
+          "answer": "Results vary depending on the strategy. Paid advertising can yield immediate results, while SEO and content marketing may take 3 to 6 months to show significant traction. Consistency and optimization are key to long-term success."
+        },
+        {
+          "question": "How do you measure the success of digital marketing campaigns?",
+          "answer": "We use key performance indicators (KPIs) such as website traffic, conversion rates, cost per acquisition, and return on investment (ROI). Advanced analytics tools help track these metrics to ensure the campaign meets its objectives."
+        }
+      ]
+    },
+    "testimonials": {
+      "badge": "Client Testimonials",
+      "title": "What Our Clients Say",
+      "items": [
+        {
+          "title": "The best marketing tool for businesses. So easy to use!",
+          "date": "January 9, 2024",
+          "rating": 5,
+          "content": "\"you made it so simple. My business is so much more profitable after using **** AI Marketing Tool!\".",
+          "author": "John Doe",
+          "role": "Business Owner"
+        },
+        {
+          "title": "The best marketing tool for businesses. So easy to use!",
+          "date": "January 9, 2024",
+          "rating": 5,
+          "content": "\"you made it so simple. My business is so much more profitable after using **** AI Marketing Tool!\".",
+          "author": "John Doe",
+          "role": "Business Owner"
+        },
+        {
+          "title": "The best marketing tool for businesses. So easy to use!",
+          "date": "January 9, 2024",
+          "rating": 5,
+          "content": "\"you made it so simple. My business is so much more profitable after using **** AI Marketing Tool!\".",
+          "author": "John Doe",
+          "role": "Business Owner"
+        },
+        {
+          "title": "Incredible ROI and fantastic support! Truly game-changing.",
+          "date": "February 12, 2024",
+          "rating": 5,
+          "content": "\"I've never seen such detailed analytics and easy campaign setup. Highly recommended for any serious business.\".",
+          "author": "Jane Smith",
+          "role": "Marketing Director"
+        },
+        {
+          "title": "Saved us hours of work each week.",
+          "date": "March 5, 2024",
+          "rating": 5,
+          "content": "\"The conversational builder is magical. We launch campaigns in a fraction of the time it used to take us.\".",
+          "author": "Michael Lee",
+          "role": "Startup Founder"
+        },
+        {
+          "title": "A must-have for modern digital marketing.",
+          "date": "April 18, 2024",
+          "rating": 5,
+          "content": "\"The competitor radar alone is worth it. Absolutely brilliant platform that covers all our needs.\".",
+          "author": "Sarah Jones",
+          "role": "CMO"
+        }
+      ]
     }
   },
   "footer": {
-    "description": "Join 31,000+ other and never miss out on new tips, tutorials, and more.",
-    "logo": "W",
-    "sections": [
-      {
-        "title": "About",
-        "links": [
-          { "label": "Company", "href": "#" },
-          { "label": "Community", "href": "#" },
-          { "label": "Careers", "href": "#" }
-        ]
-      },
-      {
-        "title": "Blog",
-        "links": [
-          { "label": "Tech", "href": "#" },
-          { "label": "Music", "href": "#" },
-          { "label": "Videos", "href": "#" }
-        ]
-      },
-      {
-        "title": "Products",
-        "links": [
-          { "label": "Mega cloud", "href": "#" },
-          { "label": "Aperion UI", "href": "#" },
-          { "label": "Meraki UI", "href": "#" }
-        ]
-      },
-      {
-        "title": "Contact",
+    "description": "An award-winning SEO agency with disciplines in digital marketing, design, and website development, focused on understanding you.",
+    "links": {
+      "company": {
+        "title": "Company",
         "items": [
-          { "label": "+1 526 654 8965", "type": "text" },
-          { "label": "example@email.com", "type": "text" }
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "Services",
+            "href": "/services"
+          },
+          {
+            "text": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "text": "About Us",
+            "href": "/about"
+          },
+          {
+            "text": "Contact Us",
+            "href": "/contact-us"
+          }
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "items": [
+          {
+            "text": "Growth & Performance",
+            "href": "/services/growth"
+          },
+          {
+            "text": "Creative Services",
+            "href": "/services/creative"
+          },
+          {
+            "text": "Strategy & Research",
+            "href": "/services/strategy"
+          },
+          {
+            "text": "Digital & Technical Solutions",
+            "href": "/services/digital"
+          }
+        ]
+      },
+      "resources": {
+        "title": "Resources",
+        "items": [
+          {
+            "text": "Blogs",
+            "href": "/blogs"
+          },
+          {
+            "text": "Case Studies",
+            "href": "/case-studies"
+          },
+          {
+            "text": "Documentation",
+            "href": "/docs"
+          }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "items": [
+          {
+            "text": "Privacy and Policy",
+            "href": "/privacy-policy"
+          },
+          {
+            "text": "Terms and Conditions",
+            "href": "/terms-and-conditions"
+          },
+          {
+            "text": "Cookies Policy",
+            "href": "/cookies"
+          }
         ]
       }
-    ],
-    "bottomLinks": [
-      { "label": "Terms of Service", "href": "#" },
-      { "label": "Privacy Policy", "href": "#" },
-      { "label": "Cookies", "href": "#" }
-    ],
-    "copyright": "© Wizlly 2026 - All rights reserved"
+    },
+    "copyright": "ENABLR – Strategic marketing powered by insight and responsible creativity. © 2025"
   },
   "navbar": {
-    "whoWeAre": "Who We Are",
-    "whatWeDo": "What We Do",
-    "blog": "Blog",
-    "pages": "Pages",
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
     "getStarted": "Get Started"
+  },
+  "aboutUs": {
+    "hero": {
+      "badge": "About Us",
+      "title": "About ENABLR | Who We Are?",
+      "subtitle": "Learn more about ENABLR and the team behind it."
+    },
+    "intro": {
+      "text1": "At ENABLR, we believe that marketing is not merely advertisements or designs — it is the core driver of your business growth. We combine marketing agency expertise with intelligent technological solutions to transform your ambition into real results.",
+      "text2": "We give you the freedom to choose based on your needs: you can rely on our professional team to handle your marketing entirely, or use the smart ENABLR Tool to manage your campaigns yourself with ease — even if you are working alone or with just one employee. Our goal is to give you full control over your company's growth with minimal effort and maximum professionalism."
+    },
+    "stats": {
+      "badge": "We've helped hundreds of companies",
+      "title": "We're only just getting started on our journey",
+      "items": [
+        {
+          "value": "400+",
+          "label": "Projects completed"
+        },
+        {
+          "value": "600%",
+          "label": "Return on investment"
+        },
+        {
+          "value": "10k",
+          "label": "Global downloads"
+        },
+        {
+          "value": "200+",
+          "label": "5 - star reviews"
+        }
+      ]
+    },
+    "strategy": {
+      "badge": "ENABLR Agency",
+      "title": "The Mind of Strategy",
+      "description": "At our agency, we turn ideas into reality. We work with you as partners to build a strong and impactful brand through:",
+      "items": [
+        {
+          "title": "Brand Building:",
+          "description": "We craft a distinctive personality for your business that reflects its true values."
+        },
+        {
+          "title": "Smart Planning:",
+          "description": "We design a clear roadmap built on a precise understanding of your market and audience."
+        },
+        {
+          "title": "Growth Management:",
+          "description": "We accompany you step by step to ensure your business expands and its success continues."
+        }
+      ]
+    },
+    "enablrTool": {
+      "badge": "Our AI Marketing engine",
+      "title": "ENABLR Tool – Your Team in One Tool",
+      "description": "We have embedded the essence of our expertise into a smart tool that gives you the capabilities of a full marketing team at the click of a button.",
+      "features": [
+        {
+          "title": "Rapid Analysis:",
+          "description": "Understand the market and competitors accurately without the need for analytics experts."
+        },
+        {
+          "title": "Ready Plans & Content:",
+          "description": "Transform your information into complete strategies, content calendars, and creative ideas within seconds."
+        },
+        {
+          "title": "Saving Time and Money:",
+          "description": "We eliminate marketing complexities so you can focus solely on developing and managing your business."
+        }
+      ]
+    },
+    "whyEnablrBanner": {
+      "title": "Why ENABLR?",
+      "description": "Because we provide you with true empowerment. Whether you choose our agency services or use our technology tool, we ensure intelligent marketing that goes beyond mere visibility to achieve tangible growth.",
+      "ctaPrimary": "ENABLR Tool Demo",
+      "ctaSecondary": "View Services",
+      "footerText": "ENABLR.. Empowerment Beyond Visibility."
+    }
+  },
+  "privacyPolicy": {
+    "hero": {
+      "badge": "Privacy Policy",
+      "title": "ENABLR | Privacy Policy",
+      "subtitle": "Learn more about ENABLR's privacy policy."
+    },
+    "content": {
+      "agency": "ENABLR Agency",
+      "title": "Privacy Policy",
+      "intro": "ENABLR places the highest importance on protecting the privacy of its clients' and users' data. This policy explains how data is collected, used, and protected when using the website, the technology tool, or when contracting the agency's services.",
+      "dataCollection": {
+        "title": "Data We Collect",
+        "items": [
+          {
+            "title": "Personal Data",
+            "description": "Such as name, email address, phone number, and any information provided during registration or when requesting a consultation."
+          },
+          {
+            "title": "Business Data",
+            "description": "Includes information related to the business activity, competitors, marketing objectives, and any data entered into Enablr Tool."
+          },
+          {
+            "title": "Payment Data",
+            "description": "Payments are processed through secure and approved electronic payment gateways. Credit card details are not stored on the company's servers."
+          },
+          {
+            "title": "Technical Data",
+            "description": "Such as IP address, device type, and operating system, for performance analysis and service improvement purposes."
+          }
+        ]
+      },
+      "dataUsage": {
+        "title": "How We Use the Data",
+        "subtitle": "Data is used for the following purposes:",
+        "items": [
+          "Providing services and improving user experience.",
+          "Developing technical and consulting services.",
+          "Preparing marketing reports and analytics through the tool.",
+          "Communicating regarding updates, technical support, or relevant offers."
+        ]
+      },
+      "sections": [
+        {
+          "title": "Data Sharing",
+          "paragraphs": [
+            "The company does not sell or rent user data to any third party.",
+            "Data may be shared with trusted service providers (such as payment gateways or hosting providers) to the extent necessary to operate the service, while maintaining confidentiality obligations."
+          ]
+        },
+        {
+          "title": "Data Protection",
+          "paragraphs": [
+            "The company adopts appropriate technical and organizational measures to protect data from unauthorized access, modification, disclosure, or destruction."
+          ]
+        },
+        {
+          "title": "Cookies",
+          "paragraphs": [
+            "Cookies are used to improve website performance and analyze usage behavior in order to enhance user experience."
+          ]
+        },
+        {
+          "title": "Data Retention Period",
+          "paragraphs": [
+            "Data is retained for the duration of the contractual relationship, or for the period necessary to achieve the specified purposes, or as required by applicable regulations."
+          ]
+        },
+        {
+          "title": "User Rights",
+          "paragraphs": [
+            "Users have the right to request access to their data, modify it, or request its deletion by contacting the official channels announced on the website."
+          ]
+        }
+      ]
+    }
+  },
+  "termsAndConditions": {
+    "hero": {
+      "badge": "Terms & Conditions",
+      "title": "ENABLR | Terms & Conditions",
+      "subtitle": "Read the terms and conditions for using ENABLR services."
+    },
+    "content": {
+      "agency": "ENABLR Agency",
+      "title": "Terms & Conditions",
+      "intro": "By using the ENABLR website and services, you acknowledge and agree to comply with the terms and conditions set forth below.",
+      "sections": [
+        {
+          "title": "Definition of Services",
+          "paragraphs": [
+            "ENABLR provides marketing services through Enablr Agency and technical and analytical solutions through ENABLR Tool.",
+            "The company reserves the right to modify or develop services at any time in order to improve quality."
+          ]
+        },
+        {
+          "title": "User Accounts",
+          "paragraphs": [
+            "The user is responsible for maintaining the confidentiality of their account information.",
+            "The user agrees to provide accurate and correct information, and the company may suspend or cancel the account in case of proven violation."
+          ]
+        },
+        {
+          "title": "Subscriptions and Fees",
+          "paragraphs": [
+            "Subscriptions are subject to recurring fees as specified on the pricing page.",
+            "If a subscription is canceled, the user continues to benefit from the service until the end of the paid period.",
+            "Refunds are not issued once the subscription period has begun."
+          ]
+        },
+        {
+          "title": "Intellectual Property",
+          "paragraphs": [
+            "All software, content, designs, and trademarks belonging to ENABLR are protected under intellectual property laws.",
+            "It is prohibited to copy, modify, or redistribute any part of the platform without prior written consent."
+          ]
+        },
+        {
+          "title": "Limitation of Liability",
+          "paragraphs": [
+            "The company exercises reasonable professional care in providing its services; however, it does not guarantee specific financial results.",
+            "The company shall not be liable for any indirect losses or losses resulting from business decisions made by the user based on the analyses provided."
+          ]
+        },
+        {
+          "title": "Amendments",
+          "paragraphs": [
+            "The company may amend these terms at any time. The updated version will be published on the website, and continued use constitutes implicit acceptance of the amendments."
+          ]
+        },
+        {
+          "title": "Governing Law",
+          "paragraphs": [
+            "These terms are governed by and interpreted in accordance with the regulations applicable in the country where the company is registered. The competent judicial authorities shall have jurisdiction over any dispute arising therefrom."
+          ]
+        }
+      ]
+    }
+  },
+  "comingSoon": {
+    "label": "Coming Soon",
+    "title": "Something Great Is On the Way",
+    "subtitle": "We're working hard to bring you this page. Stay tuned for something amazing.",
+    "backText": "Back to Home"
   },
   "auth": {
     "signIn": {
@@ -254,13 +803,50 @@
   "onboarding": {
     "stepper": {
       "title": "Set Up Your Business Profile",
-      "subtitle": "Help our AI understand your business to create perfect content"
+      "subtitle": "Help our AI understand your business to create perfect content",
+      "supportTitle": "Having Trouble?",
+      "supportDescription": "Need help? Our team is always here to guide you.",
+      "contactSupport": "Contact support"
     },
     "steps": {
-      "businessInfo": "Business Info",
-      "targetAudience": "Target Audience",
-      "goalsAndTone": "Goals & Tone",
-      "finish": "Finish"
+      "connectMeta": {
+        "title": "Connect Meta",
+        "description": "Link Meta Business."
+      },
+      "brandBasics": {
+        "title": "Brand Basics",
+        "description": "Tell us about your brand."
+      },
+      "industryOffering": {
+        "title": "Industry & Offering",
+        "description": "What do you offer?"
+      },
+      "idealCustomers": {
+        "title": "Ideal Customers (ICP)",
+        "description": "Who are you trying to reach?"
+      },
+      "marketsLanguages": {
+        "title": "Markets & Languages",
+        "description": "Where do you operate?"
+      },
+      "pricingPositioning": {
+        "title": "Pricing & Positioning",
+        "description": "How do you compete?"
+      },
+      "brandRules": {
+        "title": "Brand Rules",
+        "description": "Brand voice & boundaries."
+      },
+      "digitalPresence": {
+        "title": "Digital Presence",
+        "description": "Brand online presence and experience."
+      }
+    },
+    "step1": {
+      "title": "Connect Meta Business",
+      "subtitle": "Link your facebook pages, instagram accounts, and ad campaigns to unlock powerful insights.",
+      "nextLabel": "Next Step: Brand Basics",
+      "connectedPages": "Connected Facebook Pages (2)"
     },
     "businessInfo": {
       "heading": "Tell us about your business",
@@ -357,6 +943,89 @@
       "message": "💡 You can always update these settings later from your dashboard.",
       "back": "Back",
       "getStarted": "Get Started"
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "workspaces": "Workspaces",
+      "campaigns": "Campaigns",
+      "marketOverview": "Market Overview",
+      "analytics": "Analytics & Insights",
+      "settings": "Settings",
+      "brandIdentity": "Brand identity",
+      "manageWorkspace": "Manage Workspace",
+      "logout": "Logout"
+    },
+    "guestBanner": {
+      "title": "Guest Mode",
+      "message": "You're viewing sample data. Sign up to use real data.",
+      "cta": "Sign up now"
+    },
+    "missingBrand": {
+      "title": "Missing Brand Identity",
+      "message": "Go to Settings > Brand identity to set it up"
+    },
+    "overview": {
+      "title": "Dashboard",
+      "heroTitle": "enablr, your marketing assistant",
+      "heroSubtitle": "AI-powered insights and campaign generation"
+    },
+    "pages": {
+      "workspaces": {
+        "title": "Workspaces",
+        "description": "Manage your AI-powered workspaces and conversations."
+      },
+      "campaigns": {
+        "title": "Campaigns",
+        "description": "Plan, create, and manage your marketing campaigns.",
+        "subtitle": "Recent marketing campaigns performance.",
+        "searchPlaceholder": "Search for campaign",
+        "filters": "Filters",
+        "posts": "Posts",
+        "platforms": "Platforms",
+        "notScheduled": "Not scheduled yet",
+        "noCampaigns": "No campaigns found",
+        "statusDraft": "Draft",
+        "statusScheduled": "Scheduled",
+        "statusLive": "Live",
+        "statusCompleted": "Completed",
+        "statusArchived": "Archived",
+        "allStatuses": "All Statuses",
+        "previous": "Previous",
+        "next": "Next",
+        "detail": {
+          "campaignDetails": "Campaign Details",
+          "campaignAnalytics": "Campaign Analytics",
+          "strategy": "Campaign Strategy",
+          "plan": "Campaign Plan",
+          "timeline": "Publishing Timeline",
+          "additionalInfo": "Additional Information",
+          "keyMessage": "Key Message",
+          "targetAudience": "Target Audience",
+          "analyticsWip": "Campaign analytics coming soon.",
+          "backToCampaigns": "Campaigns"
+        }
+      },
+      "marketOverview": {
+        "title": "Market Overview",
+        "description": "Analyze market trends, competitors, and opportunities."
+      },
+      "analytics": {
+        "title": "Analytics & Insights",
+        "description": "Track performance metrics and gain actionable insights."
+      },
+      "settings": {
+        "title": "Settings",
+        "brandIdentity": {
+          "title": "Brand Identity",
+          "description": "Define and manage your brand's visual identity and guidelines."
+        },
+        "manageWorkspace": {
+          "title": "Manage Workspace",
+          "description": "Configure workspace settings, members, and preferences."
+        }
+      }
     }
   }
 }
