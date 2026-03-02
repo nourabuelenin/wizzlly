@@ -9,7 +9,7 @@ type logoProps = {
 };
 
 export default function Logo({
-  className = "w-16 h-16 xl:w-22 xl:h-22",
+  className = "w-auto h-8 xl:w-auto xl:h-8",
   lightMode,
 }: logoProps) {
   return (

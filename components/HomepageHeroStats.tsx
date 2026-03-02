@@ -78,7 +78,7 @@ export default function HomepageHeroStats({ dict }: any) {
       </div>
 
       {/* Card 4: Drive More Traffic */}
-      <div className="bg-[#8B5CF6] text-white p-8 rounded-[30px] h-[350px] flex flex-col relative overflow-hidden">
+      <div className="bg-primary text-white p-8 rounded-[30px] h-[350px] flex flex-col relative overflow-hidden">
         <p className="text-sm font-medium uppercase tracking-wider mb-6 text-center">
           {t.traffic.title}
         </p>

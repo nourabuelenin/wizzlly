@@ -22,7 +22,7 @@ export default function HomepageCTASection({ dict, lang }: any) {
           </p>
           <Button
             text={dict.homepage.cta.buttonText}
-            ShowArrow={true}
+            showArrow={true}
             variant="secondary"
           />
         </div>
