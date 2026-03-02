@@ -803,13 +803,50 @@
   "onboarding": {
     "stepper": {
       "title": "Set Up Your Business Profile",
-      "subtitle": "Help our AI understand your business to create perfect content"
+      "subtitle": "Help our AI understand your business to create perfect content",
+      "supportTitle": "Having Trouble?",
+      "supportDescription": "Need help? Our team is always here to guide you.",
+      "contactSupport": "Contact support"
     },
     "steps": {
-      "businessInfo": "Business Info",
-      "targetAudience": "Target Audience",
-      "goalsAndTone": "Goals & Tone",
-      "finish": "Finish"
+      "connectMeta": {
+        "title": "Connect Meta",
+        "description": "Link Meta Business."
+      },
+      "brandBasics": {
+        "title": "Brand Basics",
+        "description": "Tell us about your brand."
+      },
+      "industryOffering": {
+        "title": "Industry & Offering",
+        "description": "What do you offer?"
+      },
+      "idealCustomers": {
+        "title": "Ideal Customers (ICP)",
+        "description": "Who are you trying to reach?"
+      },
+      "marketsLanguages": {
+        "title": "Markets & Languages",
+        "description": "Where do you operate?"
+      },
+      "pricingPositioning": {
+        "title": "Pricing & Positioning",
+        "description": "How do you compete?"
+      },
+      "brandRules": {
+        "title": "Brand Rules",
+        "description": "Brand voice & boundaries."
+      },
+      "digitalPresence": {
+        "title": "Digital Presence",
+        "description": "Brand online presence and experience."
+      }
+    },
+    "step1": {
+      "title": "Connect Meta Business",
+      "subtitle": "Link your facebook pages, instagram accounts, and ad campaigns to unlock powerful insights.",
+      "nextLabel": "Next Step: Brand Basics",
+      "connectedPages": "Connected Facebook Pages (2)"
     },
     "businessInfo": {
       "heading": "Tell us about your business",
@@ -906,6 +943,89 @@
       "message": "💡 You can always update these settings later from your dashboard.",
       "back": "Back",
       "getStarted": "Get Started"
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "workspaces": "Workspaces",
+      "campaigns": "Campaigns",
+      "marketOverview": "Market Overview",
+      "analytics": "Analytics & Insights",
+      "settings": "Settings",
+      "brandIdentity": "Brand identity",
+      "manageWorkspace": "Manage Workspace",
+      "logout": "Logout"
+    },
+    "guestBanner": {
+      "title": "Guest Mode",
+      "message": "You're viewing sample data. Sign up to use real data.",
+      "cta": "Sign up now"
+    },
+    "missingBrand": {
+      "title": "Missing Brand Identity",
+      "message": "Go to Settings > Brand identity to set it up"
+    },
+    "overview": {
+      "title": "Dashboard",
+      "heroTitle": "enablr, your marketing assistant",
+      "heroSubtitle": "AI-powered insights and campaign generation"
+    },
+    "pages": {
+      "workspaces": {
+        "title": "Workspaces",
+        "description": "Manage your AI-powered workspaces and conversations."
+      },
+      "campaigns": {
+        "title": "Campaigns",
+        "description": "Plan, create, and manage your marketing campaigns.",
+        "subtitle": "Recent marketing campaigns performance.",
+        "searchPlaceholder": "Search for campaign",
+        "filters": "Filters",
+        "posts": "Posts",
+        "platforms": "Platforms",
+        "notScheduled": "Not scheduled yet",
+        "noCampaigns": "No campaigns found",
+        "statusDraft": "Draft",
+        "statusScheduled": "Scheduled",
+        "statusLive": "Live",
+        "statusCompleted": "Completed",
+        "statusArchived": "Archived",
+        "allStatuses": "All Statuses",
+        "previous": "Previous",
+        "next": "Next",
+        "detail": {
+          "campaignDetails": "Campaign Details",
+          "campaignAnalytics": "Campaign Analytics",
+          "strategy": "Campaign Strategy",
+          "plan": "Campaign Plan",
+          "timeline": "Publishing Timeline",
+          "additionalInfo": "Additional Information",
+          "keyMessage": "Key Message",
+          "targetAudience": "Target Audience",
+          "analyticsWip": "Campaign analytics coming soon.",
+          "backToCampaigns": "Campaigns"
+        }
+      },
+      "marketOverview": {
+        "title": "Market Overview",
+        "description": "Analyze market trends, competitors, and opportunities."
+      },
+      "analytics": {
+        "title": "Analytics & Insights",
+        "description": "Track performance metrics and gain actionable insights."
+      },
+      "settings": {
+        "title": "Settings",
+        "brandIdentity": {
+          "title": "Brand Identity",
+          "description": "Define and manage your brand's visual identity and guidelines."
+        },
+        "manageWorkspace": {
+          "title": "Manage Workspace",
+          "description": "Configure workspace settings, members, and preferences."
+        }
+      }
     }
   }
 }

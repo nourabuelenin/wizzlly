@@ -796,13 +796,50 @@
   "onboarding": {
     "stepper": {
       "title": "إعداد ملف التعريف الخاص بك",
-      "subtitle": "ساعد ذكاءنا الاصطناعي على فهم عملك لإنشاء محتوى مثالي"
+      "subtitle": "ساعد ذكاءنا الاصطناعي على فهم عملك لإنشاء محتوى مثالي",
+      "supportTitle": "هل تواجه مشكلة؟",
+      "supportDescription": "تحتاج مساعدة؟ فريقنا دائماً هنا لمساعدتك.",
+      "contactSupport": "تواصل مع الدعم"
     },
     "steps": {
-      "businessInfo": "معلومات الأعمال",
-      "targetAudience": "الجمهور المستهدف",
-      "goalsAndTone": "الأهداف والنبرة",
-      "finish": "إنهاء"
+      "connectMeta": {
+        "title": "ربط ميتا",
+        "description": "ربط حساب ميتا للأعمال."
+      },
+      "brandBasics": {
+        "title": "أساسيات العلامة التجارية",
+        "description": "أخبرنا عن علامتك التجارية."
+      },
+      "industryOffering": {
+        "title": "الصناعة والعرض",
+        "description": "ماذا تقدم؟"
+      },
+      "idealCustomers": {
+        "title": "العملاء المثاليون",
+        "description": "من تحاول الوصول إليه؟"
+      },
+      "marketsLanguages": {
+        "title": "الأسواق واللغات",
+        "description": "أين تعمل؟"
+      },
+      "pricingPositioning": {
+        "title": "التسعير والتموضع",
+        "description": "كيف تنافس؟"
+      },
+      "brandRules": {
+        "title": "قواعد العلامة التجارية",
+        "description": "صوت وحدود العلامة التجارية."
+      },
+      "digitalPresence": {
+        "title": "الحضور الرقمي",
+        "description": "التواجد والتجربة الرقمية للعلامة التجارية."
+      }
+    },
+    "step1": {
+      "title": "ربط حساب ميتا للأعمال",
+      "subtitle": "اربط صفحات فيسبوك، حسابات إنستغرام، وحملاتك الإعلانية لفتح أفكار قوية.",
+      "nextLabel": "الخطوة التالية: أساسيات العلامة التجارية",
+      "connectedPages": "صفحات فيسبوك المرتبطة (2)"
     },
     "businessInfo": {
       "heading": "أخبرنا عن عملك",
@@ -899,6 +936,89 @@
       "message": "💡 يمكنك دائماً تحديث هذه الإعدادات لاحقاً من لوحة المعلومات الخاصة بك.",
       "back": "رجوع",
       "getStarted": "ابدأ الآن"
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "dashboard": "لوحة التحكم",
+      "workspaces": "مساحات العمل",
+      "campaigns": "الحملات",
+      "marketOverview": "نظرة عامة على السوق",
+      "analytics": "التحليلات والرؤى",
+      "settings": "الإعدادات",
+      "brandIdentity": "هوية العلامة التجارية",
+      "manageWorkspace": "إدارة مساحة العمل",
+      "logout": "تسجيل الخروج"
+    },
+    "guestBanner": {
+      "title": "وضع الزائر",
+      "message": "أنت تشاهد بيانات تجريبية. سجّل للوصول إلى بياناتك الحقيقية.",
+      "cta": "سجّل الآن"
+    },
+    "missingBrand": {
+      "title": "هوية العلامة التجارية مفقودة",
+      "message": "انتقل إلى الإعدادات > هوية العلامة التجارية لإعدادها"
+    },
+    "overview": {
+      "title": "لوحة التحكم",
+      "heroTitle": "enablr، مساعدك التسويقي",
+      "heroSubtitle": "رؤى وحملات مدعومة بالذكاء الاصطناعي"
+    },
+    "pages": {
+      "workspaces": {
+        "title": "مساحات العمل",
+        "description": "إدارة مساحات العمل والمحادثات المدعومة بالذكاء الاصطناعي."
+      },
+      "campaigns": {
+        "title": "الحملات",
+        "description": "تخطيط وإنشاء وإدارة حملاتك التسويقية.",
+        "subtitle": "أداء الحملات التسويقية الأخيرة.",
+        "searchPlaceholder": "البحث عن حملة",
+        "filters": "فلاتر",
+        "posts": "المنشورات",
+        "platforms": "المنصات",
+        "notScheduled": "لم تتم الجدولة بعد",
+        "noCampaigns": "لا توجد حملات",
+        "statusDraft": "مسودة",
+        "statusScheduled": "مجدولة",
+        "statusLive": "نشطة",
+        "statusCompleted": "مكتملة",
+        "statusArchived": "مؤرشفة",
+        "allStatuses": "جميع الحالات",
+        "previous": "السابق",
+        "next": "التالي",
+        "detail": {
+          "campaignDetails": "تفاصيل الحملة",
+          "campaignAnalytics": "تحليلات الحملة",
+          "strategy": "استراتيجية الحملة",
+          "plan": "خطة الحملة",
+          "timeline": "جدول النشر",
+          "additionalInfo": "معلومات إضافية",
+          "keyMessage": "الرسالة الرئيسية",
+          "targetAudience": "الجمهور المستهدف",
+          "analyticsWip": "تحليلات الحملة قريباً.",
+          "backToCampaigns": "الحملات"
+        }
+      },
+      "marketOverview": {
+        "title": "نظرة عامة على السوق",
+        "description": "تحليل اتجاهات السوق والمنافسين والفرص."
+      },
+      "analytics": {
+        "title": "التحليلات والرؤى",
+        "description": "تتبع مقاييس الأداء والحصول على رؤى قابلة للتنفيذ."
+      },
+      "settings": {
+        "title": "الإعدادات",
+        "brandIdentity": {
+          "title": "هوية العلامة التجارية",
+          "description": "تحديد وإدارة الهوية البصرية والمبادئ التوجيهية لعلامتك التجارية."
+        },
+        "manageWorkspace": {
+          "title": "إدارة مساحة العمل",
+          "description": "تكوين إعدادات مساحة العمل والأعضاء والتفضيلات."
+        }
+      }
     }
   }
 }
