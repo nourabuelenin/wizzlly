@@ -9,9 +9,7 @@ export default function HomepageServices({ dict }: any) {
 
   return (
     <section className="relative bg-background py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image src={PatternLight} alt="Pattern" fill className="object-cover" />
-        </div>
+
       <div className="w-full px-4 lg:px-40 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -23,13 +21,29 @@ export default function HomepageServices({ dict }: any) {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16">
-          {t.items.map((service: any, index: number) => (
+          {t.items.map((service: any, index: number) => {
+            const placementClasses = [
+              "object-right-top rtl:object-left-top",
+              "object-left-bottom rtl:object-right-bottom",
+              "object-left-top rtl:object-right-top",
+              "object-right-bottom rtl:object-left-bottom",
+            ][index % 4];
+            
+            const spanClasses = [
+              "lg:col-span-3",
+              "lg:col-span-2",
+              "lg:col-span-2",
+              "lg:col-span-3",
+            ][index % 4];
+            
+            return (
             <div
               key={index}
-              className={`bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative overflow-hidden bg-[url('/images/Pattern_light.webp')] bg-no-repeat bg-right bg-contain rtl:bg-left ${
-                index === 0 || index === 3 ? "lg:col-span-3" : "lg:col-span-2"
-              }`}
+              className={`bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative overflow-hidden ${spanClasses}`}
             >
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.05]">
+                <Image src={PatternLight} alt="Pattern" fill className={`object-cover scale-150 ${placementClasses}`} />
+              </div>
               <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">
                 {service.title}
               </h3>
@@ -46,7 +60,8 @@ export default function HomepageServices({ dict }: any) {
                 ))}
               </ul>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}

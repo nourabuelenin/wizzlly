@@ -4,16 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { type Locale } from "@/lib/i18n/config";
 import Button from "./Button";
+
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 type NavbarLinksProps = {
   lang: Locale;
   dict: {
     home: string;
-    products: string;
-    solutions: string;
-    pricing: string;
+    // products: string;
+    // solutions: string;
+    // pricing: string;
     aboutUs: string;
     contactUs: string;
   };
@@ -25,9 +26,9 @@ export function NavbarLinks({ lang, dict }: NavbarLinksProps) {
 
   const links = [
     { href: `/${lang}`, label: dict.home, key: "home" },
-    { href: `/${lang}/products`, label: dict.products, key: "products" },
-    { href: `/${lang}/solutions`, label: dict.solutions, key: "solutions" },
-    { href: `/${lang}/pricing`, label: dict.pricing, key: "pricing" },
+    // { href: `/${lang}/products`, label: dict.products, key: "products" },
+    // { href: `/${lang}/solutions`, label: dict.solutions, key: "solutions" },
+    // { href: `/${lang}/pricing`, label: dict.pricing, key: "pricing" },
     { href: `/${lang}/about`, label: dict.aboutUs, key: "aboutUs" },
     { href: `/${lang}/contact`, label: dict.contactUs, key: "contactUs" },
   ];
@@ -48,7 +49,12 @@ export function NavbarLinks({ lang, dict }: NavbarLinksProps) {
           if (link.key === "contactUs") {
             return (
               <li key={link.key}>
-                <Button text={link.label} showArrow={true} />
+                <Button
+                  href={link.href}
+                  text={link.label}
+                  showArrow={true}
+                  size="nav"
+                />
               </li>
             );
           }
@@ -80,7 +86,13 @@ export function NavbarLinks({ lang, dict }: NavbarLinksProps) {
               if (link.key === "contactUs") {
                 return (
                   <li key={link.key} className="w-full mt-4" onClick={() => setIsOpen(false)}>
-                    <Button text={link.label} showArrow={true} className="w-full justify-center" />
+                    <Button
+                      href={link.href}
+                      text={link.label}
+                      showArrow={true}
+                      size="nav"
+                      className="w-full justify-center"
+                    />
                   </li>
                 );
               }

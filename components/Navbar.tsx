@@ -16,7 +16,7 @@ type NavbarProps = {
 export default function Navbar({ lang, dict }: NavbarProps) {
   return (
     <div className="fixed top-4 lg:top-10 left-0 w-full z-50 flex justify-center items-start lg:items-center gap-2 lg:gap-4 px-4 md:px-10 lg:px-40 pointer-events-none">
-      <nav className="pointer-events-auto relative rounded-[2rem] bg-background/20 w-full backdrop-blur-md border border-white/10">
+      <nav className="pointer-events-auto relative rounded-[2rem] bg-background/20 w-full border border-white/10">
         <div className="flex items-center justify-between px-4 lg:px-6 py-3 lg:py-4 w-full">
           {/* Logo */}
           <div>
@@ -28,9 +28,9 @@ export default function Navbar({ lang, dict }: NavbarProps) {
             lang={lang}
             dict={{
               home: dict.navbar.home,
-              products: dict.navbar.products,
-              solutions: dict.navbar.solutions,
-              pricing: dict.navbar.pricing,
+              // products: dict.navbar.products,
+              // solutions: dict.navbar.solutions,
+              // pricing: dict.navbar.pricing,
               aboutUs: dict.navbar.aboutUs,
               contactUs: dict.navbar.contactUs,
             }}
